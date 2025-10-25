@@ -7,16 +7,15 @@ const Header = () => {
     { id: 5, topic: "Contact", link: "contact" },
   ]
   return (
-    <header className="flex items-center justify-between w-full px-8 py-4 bg-white shadow-md sticky top-0 z-50">
+    <header className="flex items-center justify-between w-full px-18 py-4 bg-white shadow-md">
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold text-gray-800">yabu</h1>
-        <p className="text-sm text-gray-600">frontend engineer</p>
       </div>
-      <nav className="hidden md:block">
+      <nav>
         <ul className="flex gap-6">
           {links.map((item) => {
             return (
-              <li key={item.id} className="hover:text-blue-600 transition-colors duration-200">
+              <li key={item.id} className="hover:text-blue-600">
                 <a href={`#${item.link}`} className="text-gray-700 hover:text-blue-600">
                   <span>{item.topic}</span>
                 </a>
@@ -25,11 +24,6 @@ const Header = () => {
           })}
         </ul>
       </nav>
-      <div className="flex flex-col items-center justify-center w-8 h-8 cursor-pointer md:hidden">
-        <span className="w-full h-0.5 mb-1 bg-gray-600"></span>
-        <span className="w-full h-0.5 mb-1 bg-gray-600"></span>
-        <span className="w-full h-0.5 bg-gray-600"></span>
-      </div>
     </header>
   )
 }
