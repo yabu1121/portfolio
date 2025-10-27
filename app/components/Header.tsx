@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Header = () => {
   const links = [
     { id: 1, topic: "About", link: "about" },
@@ -14,13 +16,21 @@ const Header = () => {
       <nav>
         <ul className="flex gap-6">
           {links.map((item) => {
-            return (
+            if(item.topic == "Contact"){
+              return(
               <li key={item.id} className="hover:text-blue-600">
-                <a href={`#${item.link}`} className="text-gray-700 hover:text-blue-600">
+                <Link href={`/${item.link}`} className="text-gray-700 hover:text-blue-600">
                   <span>{item.topic}</span>
-                </a>
+                </Link>
               </li>
-            )
+            )}else{
+              return(
+              <li key={item.id} className="hover:text-blue-600">
+                <Link href={`#${item.link}`} className="text-gray-700 hover:text-blue-600">
+                  <span>{item.topic}</span>
+                </Link>
+              </li>
+            )}
           })}
         </ul>
       </nav>
