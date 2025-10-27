@@ -48,7 +48,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <button className="text-blue-500 absolute m-16"><Link href="/">←戻る</Link></button>
+      <button className="text-blue-500 absolute m-16"><Link href="/">←TOPに戻る</Link></button>
 
       <form
         className="text-center mx-auto max-w-md p-8 items-center md:mt-12 rounded-lg md:shadow-md md:border-2"

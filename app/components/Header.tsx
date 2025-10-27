@@ -7,30 +7,23 @@ const Header = () => {
     { id: 3, topic: "Projects", link: "projects" },
     { id: 4, topic: "News", link: "news" },
     { id: 5, topic: "Contact", link: "contact" },
-  ]
+  ];
+
   return (
     <header className="flex items-center justify-between w-full px-18 py-4 bg-white shadow-md">
       <div className="flex flex-col">
-        <h1 className="text-2xl font-bold text-gray-800">yabu</h1>
+        <h1 className="text-2xl font-bold text-gray-800">hayato</h1>
       </div>
       <nav>
         <ul className="flex gap-6">
           {links.map((item) => {
-            if(item.topic == "Contact"){
               return(
               <li key={item.id} className="hover:text-blue-600">
                 <Link href={`/${item.link}`} className="text-gray-700 hover:text-blue-600">
                   <span>{item.topic}</span>
                 </Link>
               </li>
-            )}else{
-              return(
-              <li key={item.id} className="hover:text-blue-600">
-                <Link href={`#${item.link}`} className="text-gray-700 hover:text-blue-600">
-                  <span>{item.topic}</span>
-                </Link>
-              </li>
-            )}
+            )
           })}
         </ul>
       </nav>

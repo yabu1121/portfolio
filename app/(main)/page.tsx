@@ -1,10 +1,10 @@
-import Header from "../components/Header"
+import TopPage from "../components/TopPage"
 
 const HomePage = () => {
   return (
-    <div>
-      <Header />
-    </div>
+    <main className="relative">
+      <TopPage />
+    </main>
   )
 }
 
