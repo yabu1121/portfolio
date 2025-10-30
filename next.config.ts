@@ -33,12 +33,7 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/288px-ISO_C%2B%2B_Logo.svg.png",
       },
-      {
-        protocol: "https",
-        hostname: "w7.pngwing.com",
-        port: "",
-        pathname: "/pngs/130/82/png-transparent-prisma-hd-logo-thumbnail.png",
-      },
+
       {
         protocol: "https",
         hostname: "logo.svgcdn.com",
