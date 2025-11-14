@@ -66,13 +66,23 @@ const ProjectsPage = () => {
       category: "udemy",
     },
     {
-      id: 5,
+      id: 6,
       title: "calculator",
       description: "簡単な計算機",
       techs: ["Next.js"],
       github: "https://github.com/yabu1121/calculator.git",
       url: "https://calculator-smoky-phi-btvo8k36hd.vercel.app/",
       image: "/images/calculator.png",
+      category: "self",
+    },
+    {
+      id: 7,
+      title: "ecサイト風アプリ",
+      description: "今後は実際に機能を増やしていきます。",
+      techs: ["Next.js","Tailwind css", "supabase"],
+      github: "https://github.com/yabu1121/market",
+      url: "https://market-pied-seven.vercel.app/",
+      image: "/images/market.png",
       category: "self",
     }
   ]
