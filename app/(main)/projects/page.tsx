@@ -84,6 +84,16 @@ const ProjectsPage = () => {
       url: "https://market-pied-seven.vercel.app/",
       image: "/images/market.png",
       category: "self",
+    },
+    {
+      id: 8,
+      title: "ニュースアプリ",
+      description: "news apiを使って取得した内容を表示し、記事に遷移する簡単なアプリです",
+      techs: ["Next.js","Tailwind css", "news api"],
+      github: "https://github.com/yabu1121/news-app",
+      url: "https://news-app-alpha-murex.vercel.app/",
+      image: "/images/news.png",
+      category: "self",
     }
   ]
 
