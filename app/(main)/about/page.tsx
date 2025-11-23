@@ -32,7 +32,7 @@ const AboutPage = () => {
     { id: 2, year: "2024", month: 6, title: "HTML, CSS, JavaScript", detail: "独学でフロントエンド技術を学習開始"},
     { id: 3, year: "2025", month: 8, title: "Next.js Tailwind css", detail: "Udemyを用いて学習開始"},
     { id: 4, year: "2025", month: 9, title: "Java", detail: "大学の講義でJavaを学習開始"},
-    { id: 5, year: "2025", month: 10, title: "Go", detail: "独学で簡単にGoを学習開始"},
+    { id: 5, year: "2025", month: 11, title: "Go", detail: "独学で簡単にGoを学習開始"},
   ]
 
   return (
