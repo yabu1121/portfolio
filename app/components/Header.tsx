@@ -2,9 +2,10 @@ import Link from "next/link"
 
 const Header = () => {
   const links = [
-    { id: 1, topic: "About", link: "about" },
-    { id: 2, topic: "Projects", link: "projects" },
-    { id: 3, topic: "Contact", link: "contact" },
+    { id: 1, topic: "Top", link: "/" },
+    { id: 2, topic: "About", link: "about" },
+    { id: 3, topic: "Projects", link: "projects" },
+    { id: 4, topic: "Contact", link: "contact" },
   ];
 
   return (
