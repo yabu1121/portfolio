@@ -1,13 +1,7 @@
 import Link from "next/link"
+import {links} from "@/app/utils/data"
 
 const Header = () => {
-  const links = [
-    { id: 1, topic: "Top", link: "/" },
-    { id: 2, topic: "About", link: "about" },
-    { id: 3, topic: "Projects", link: "projects" },
-    { id: 4, topic: "Contact", link: "contact" },
-  ];
-
   return (
     <header className="flex w-full justify-between items-center px-6 md:px-12 py-4 bg-white shadow-md">
       <div className="flex flex-col">

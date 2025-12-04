@@ -1,7 +1,6 @@
 'use client'
 
 import ReturnTopButton from "@/app/components/ReturnTopButton"
-import Link from "next/link"
 import { useRef } from "react"
 
 const ContactPage = () => {

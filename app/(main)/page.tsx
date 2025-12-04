@@ -2,7 +2,7 @@ import TopPage from "../components/TopPage"
 
 const HomePage = () => {
   return (
-    <main className="relative">
+    <main>
       <TopPage />
     </main>
   )

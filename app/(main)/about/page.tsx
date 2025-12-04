@@ -1,46 +1,14 @@
 import ReturnTopButton from "@/app/components/ReturnTopButton"
 import Link from "next/link"
 
+import { techs, timeline } from "@/app/utils/data"
+
 const AboutPage = () => {
-
-  type Tech = {
-    id: number
-    name: string
-    level: number
-    description: string
-  }
-
-  type TimelineItem = {
-    id: number
-    year: string
-    month: number
-    title: string
-    detail: string
-  }
-
-  const techs: Tech[] = [
-    { id: 1, name: "C", level:  30, description: "基礎、ファイル操作、ポインタ、ソートのアルゴリズム、二分木の探索"},
-    { id: 2, name: "C++", level: 30, description: "基礎部分、ソートのアルゴリズム、二分木の探索、DFS"},
-    { id: 3, name: "Python", level: 20, description: "Pandas, Numpyに少し触れた程度"},
-    { id: 4, name: "Go", level: 10, description: "基本構文を学習中"},
-    { id: 5, name: "Java", level: 20, description: "基礎、ファイル操作"},
-    { id: 6, name: "Next.js", level: 35, description: "Api操作、データベース接続学習中"},
-  ]
-
-  const timeline: TimelineItem[] = [
-    { id: 1, year: "2024", month: 4, title: "C", detail: "大学での情報工学コースの講義でc言語を学習開始、基本構文からソートなどのアルゴリズムを学習しています"},
-    { id: 2, year: "2024", month: 6, title: "HTML, CSS, JavaScript", detail: "独学でフロントエンド技術を学習開始"},
-    { id: 3, year: "2025", month: 8, title: "Next.js Tailwind css", detail: "Udemyを用いて学習開始"},
-    { id: 4, year: "2025", month: 9, title: "Java", detail: "大学の講義でJavaを学習開始"},
-    { id: 5, year: "2025", month: 11, title: "Go", detail: "独学で簡単にGoを学習開始"},
-  ]
-
   return (
     <div className="px-16 py-8 md:px-32 lg:px-48">
       <ReturnTopButton />
       <h1 className="text-2xl text-center underline">About me</h1>
-      <div className="mt-4 space-y-2">
-        <p>hayatoです。現在は知識をつけ、インプットをすることをメインに学習をしています。</p>
+      <div className="mt-4 space-y-2 border">
         <p>学校の授業では C, Java、独学では Next.js を中心に、フロントエンド技術の基礎を学習中です。</p>
         <p>目標はフルスタックエンジニアで、0から1をひとりで製作できるようなエンジニアになることです。</p>
         <p>今後は学習した基礎を用いて作品を作っていこうと思います。</p>
@@ -65,15 +33,18 @@ const AboutPage = () => {
               <div key={item.id} className="relative pl-8 md:pl-12 group">
                 <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-4 border-slate-300 group-hover:border-blue-500 transition-colors" />
                 
-                <div className="flex flex-col gap-2 mb-2 sm:flex-row sm:items-baseline">
-                  <span className="text-sm font-bold text-blue-700">
-                    {item.year}.{item.month}
-                  </span>
-                  <h3 className="text-lg font-bold transition-colors text-slate-800 group-hover:text-blue-700">
-                    {item.title}
-                  </h3>
+                <div className="flex flex-col gap-4 mb-2 w-80 sm:flex-row items-center justify-between">
+                  <div className="">
+                    <span className="text-sm font-bold text-blue-700">
+                      {item.year}.{item.month}
+                    </span>
+                    <h3 className="text-lg font-bold mb-4 border-blue-300 transition-all hover:border-b-4 hover:mb-3 text-slate-800 group-hover:text-blue-700">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="px-3 py-1 bg-blue-400 text-white rounded mx-4">{item.category}</p>
                 </div>
-                <p className="leading-relaxed rounded-lg text-slate-600 bg-white/50 backdrop-blur-sm">
+                <p className="leading-relaxed text-glay-300">
                   {item.detail}
                 </p>
               </div>

@@ -47,7 +47,10 @@ const nextConfig: NextConfig = {
         pathname: "/300x200.png",
       }
     ]
-  }
+  },
+  allowedDevOrigins: [
+    'http://192.168.40.55:3000',
+  ]
 };
 
 export default nextConfig;
