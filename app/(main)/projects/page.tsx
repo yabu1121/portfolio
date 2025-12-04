@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { projects } from "@/app/utils/data"
+import { Project } from "@/app/utils/type"
+
 const ProjectsPage = () => {
   const renderList = (items: Project[]) => (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
