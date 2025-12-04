@@ -1,8 +1,10 @@
+
 import Image from "next/image"
 import Link from "next/link"
 
 import { projects } from "@/app/utils/data"
 import { Project } from "@/app/utils/type"
+import FadeInSection from "@/app/components/FadeInSection"
 
 const ProjectsPage = () => {
   const renderList = (items: Project[]) => (
@@ -37,23 +39,30 @@ const ProjectsPage = () => {
   )
   return (
     <div className="px-6 md:px-10 lg:px-16 py-8">
-      <h1 className="text-2xl underline text-center">Projects</h1>
-      
-      <section className="mt-24">
-        <h2 className="text-xl mb-12">Self</h2>
-        {renderList(projects.filter((project) => project.category === "self"))}
-      </section>
+      <FadeInSection animation="fadeInDown">
+        <h1 className="text-2xl mb-2 text-center">Projects</h1>
+      </FadeInSection>
 
-      <section className="mt-24">
-        <h2 className="text-xl mb-12">use AI</h2>
-        {renderList(projects.filter((project) => project.category === "ai"))}
-      </section>
+      <FadeInSection className="mt-24" animation="fadeInLeft">
+        <section>
+          <h2 className="text-xl mb-12">Self</h2>
+          {renderList(projects.filter((project) => project.category === "self"))}
+        </section>
+      </FadeInSection>
 
-      <section className="mt-24">
-        <h2 className="text-xl mb-12">use Udemy</h2>
-        {renderList(projects.filter((project) => project.category === "udemy"))}
-      </section>
+      <FadeInSection className="mt-24" animation="fadeInRight">
+        <section>
+          <h2 className="text-xl mb-12">use AI</h2>
+          {renderList(projects.filter((project) => project.category === "ai"))}
+        </section>
+      </FadeInSection>
 
+      <FadeInSection className="mt-24" animation="fadeInScale">
+        <section>
+          <h2 className="text-xl mb-12">use Udemy</h2>
+          {renderList(projects.filter((project) => project.category === "udemy"))}
+        </section>
+      </FadeInSection>
     </div>
   )
 }
