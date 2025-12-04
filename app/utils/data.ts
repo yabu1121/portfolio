@@ -1,4 +1,4 @@
-import { Tech, TimelineItem, Project, Links } from "./type.ts"
+import { Tech, TimelineItem, Project, Links } from "@/app/utils/type"
 
 export const techs: Tech[] = [
   { id: 1, name: "C", level:  30, description: "基礎、ファイル操作、ポインタ、ソートのアルゴリズム、二分木の探索"},

@@ -1,11 +1,11 @@
-interface Tech {
+export interface Tech {
   id: number
   name: string
   level: number
   description: string
 }
 
-interface TimelineItem {
+export interface TimelineItem {
   id: number
   year: string
   month: number
@@ -14,7 +14,7 @@ interface TimelineItem {
   detail: string
 }
 
-interface Project {
+export interface Project {
   id: number
   title: string
   description: string
@@ -26,7 +26,7 @@ interface Project {
 }
 
 
-interface Links {
+export interface Links {
   id: number;
   topic: string;
   link: string;
