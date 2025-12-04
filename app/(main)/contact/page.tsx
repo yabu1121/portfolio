@@ -48,7 +48,6 @@ const ContactPage = () => {
 
   return (
     <>
-      <ReturnTopButton />
       <form
         className="text-center mx-auto max-w-md p-8 items-center mb-12 md:mt-12 rounded-lg md:shadow-md md:border-2"
         onSubmit={handleSubmit}

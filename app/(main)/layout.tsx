@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden bg-gray-300">
         <Header />
         {children}
       </body>

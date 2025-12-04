@@ -2,28 +2,31 @@ import ReturnTopButton from "@/app/components/ReturnTopButton"
 import Link from "next/link"
 
 import { techs, timeline } from "@/app/utils/data"
+import Image from "next/image"
 
 const AboutPage = () => {
   return (
-    <div className="px-16 py-8 md:px-32 lg:px-48">
-      <ReturnTopButton />
-      <h1 className="text-2xl text-center underline">About me</h1>
-      <div className="mt-4 space-y-2 border">
-        <p>学校の授業では C, Java、独学では Next.js を中心に、フロントエンド技術の基礎を学習中です。</p>
-        <p>目標はフルスタックエンジニアで、0から1をひとりで製作できるようなエンジニアになることです。</p>
-        <p>今後は学習した基礎を用いて作品を作っていこうと思います。</p>
+    <div className="w-250 mx-auto">
+      <div className="mt-40 mb-40 border px-8 py-8 rounded bg-white">
+        <h1 className="text-2xl text-center underline">About me</h1>
+        <div className="mt-4 space-y-2 border">
+          <p>学校の授業では C, Java、独学では Next.js を中心に、フロントエンド技術の基礎を学習中です。</p>
+          <p>目標はフルスタックエンジニアで、0から1をひとりで製作できるようなエンジニアになることです。</p>
+          <p>今後は学習した基礎を用いて作品を作っていこうと思います。</p>
+        </div>
+
+        <section className="mt-6">
+          <h2 className="mb-2 text-xl">Profile</h2>
+          <ul className="pl-5 space-y-1 list-disc">
+            <li>興味: フロントエンド、バックエンド</li>
+            <li>強み: 忍耐力、分野の開拓</li>
+            <li>開発環境: Next.js, TypeScript</li>
+          </ul>
+        </section>
+
       </div>
 
-      <section className="mt-6">
-        <h2 className="mb-2 text-xl">Profile</h2>
-        <ul className="pl-5 space-y-1 list-disc">
-          <li>興味: フロントエンド、バックエンド</li>
-          <li>強み: 忍耐力、分野の開拓</li>
-          <li>開発環境: Next.js, TypeScript</li>
-        </ul>
-      </section>
-
-      <section className="mt-24 mb-24">
+      <section className="mt-40 mb-40 border px-8 py-8 rounded bg-white">
           <div className="mb-10">
             <h2 className="text-3xl font-bold tracking-normal text-slate-900">Timeline</h2>
             <p className="mt-1 text-sm font-medium tracking-wider uppercase text-slate-500">これまでの経歴</p>
@@ -52,7 +55,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-      <section className="mt-6">
+      <section className="mt-40 mb-40 border px-8 py-8 rounded bg-white">
         <h2 className="mb-2 text-xl">Skills</h2>
         <div className="space-y-3">
         {techs.map((tech) => (
@@ -76,22 +79,56 @@ const AboutPage = () => {
       </div>
       </section>
 
-      <section className="mt-6">
-        <h2 className="mb-2 text-xl">Links</h2>
-        <ul className="pl-5 space-y-1 list-disc">
-          <li>
-            <a className="text-blue-600 underline" href="https://github.com/yabu1121" target="_blank" rel="noreferrer">GitHub</a>
+      <section className="mt-40 mb-40 border px-8 py-8 rounded bg-white">
+        <h2 className="text-center">Contact</h2>
+        <Link href="/contact"><p className="mx-auto m-4 text-white bg-blue-500 px-4 p-2 rounded w-fit hover:bg-blue-400">こちらからお気軽にご連絡ください。</p></Link>
+      </section>
+      
+      <section className="mt-40 mb-40 border px-8 py-8 rounded bg-white max-w-lg mx-auto">
+        <h2 className="text-center text-xl font-bold mb-6">Links</h2>
+        
+        <ul className="flex space-x-4 justify-center">
+          <li className="list-none">
+            <Link 
+              href="https://x.com/papox_57"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-2 hover:bg-slate-50 transition-colors rounded"
+              >
+              <Image 
+                src="/logos/logo-black.png"
+                alt="X (旧Twitter) ロゴ"
+                width={32}
+                height={32}
+                className="" 
+                />
+              <span className="text-lg font-medium text-slate-800">
+                X (Twitter)
+              </span>
+            </Link>
           </li>
-          <li>
-            <a className="text-blue-600 underline" href="https://x.com/papox_57" target="_blank" rel="noreferrer">X</a>
+          <li className="list-none">
+            <Link 
+              href="https://github.com/yabu1121"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-2 hover:bg-slate-50 transition-colors rounded"
+              >
+              <Image 
+                src="/logos/github-mark.png"
+                alt="Github ロゴ"
+                width={32}
+                height={32}
+                className="" 
+                />
+              <span className="text-lg font-medium text-slate-800">
+                Github
+              </span>
+            </Link>
           </li>
         </ul>
       </section>
 
-      <section className="mt-6">
-        <h2 className="mb-2 text-xl">Contact</h2>
-        <Link href="/contact"><p className="text-sm text-gray-700">お気軽にご連絡ください。</p></Link>
-      </section>
     </div>
   )
 }
