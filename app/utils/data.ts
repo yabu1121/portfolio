@@ -98,6 +98,16 @@ export const projects: Project[] = [
     url: "https://news-app-alpha-murex.vercel.app/",
     image: "/images/news.png",
     category: "self",
+  },
+  {
+    id: 9,
+    title: "Kinga!!",
+    description: "お年玉を振ってランキングを競うアプリ",
+    techs: ["Next.js","Tailwind css", "tRPC", "zod", "drizzle", "supabase"],
+    github: "https://github.com/yabu1121/news-app",
+    url: "https://kinga-n32year.vercel.app/",
+    image: "/images/news.png",
+    category: "self",
   }
 ]
 
