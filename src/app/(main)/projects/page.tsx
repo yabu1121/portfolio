@@ -8,7 +8,6 @@ import Link from "next/link";
 
 const ProjectsPage = () => {
   const { data: works, isLoading, error } = api.work.getAll.useQuery();
-
   if (isLoading) return <div className="text-center py-20 animate-pulse">Loading Projects...</div>;
   if (error) return <div className="text-center py-20 text-red-500">{error.message}</div>;
 
