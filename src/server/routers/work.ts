@@ -1,6 +1,6 @@
 import { createTRPCRouter, publicProcedure } from "../trpc";
 import { works, m2m_worksToTechs, techs } from "@/db/schema";
-import { desc, eq } from "drizzle-orm";
+import { desc, eq, sql } from "drizzle-orm";
 
 export const workRouter = createTRPCRouter({
   getAll: publicProcedure.query(async ({ ctx }) => {
@@ -8,14 +8,15 @@ export const workRouter = createTRPCRouter({
 
     /**
      * 学習ポイント:
-     * - Supabase (Transaction Pooler - Port 6543) 環境では、
-     *   Relational Query API (db.query) が返す複雑な結果セットを正しくパースできない問題が頻発します。
-     * - そのため、db.select() を使用して必要なカラムをフラットに取得し、
-     *   アプリケーションコード(reduce)で構造化する手法が最も確実で安全です。
+     * - Supabase (Transaction Mode) で `prepare: false` を使用する場合、
+     *   SQLの結果セットでカラム名が重複していると（例: works.id と techs.id が共に "id"）、
+     *   ドライバが値を上書きしてしまい、正しくデータを復元できません。
+     * - これを防ぐため、sql`` を使って明示的に `AS "unique_name"` というエイリアスを
+     *   SQL発行時点で付与する必要があります。
      */
     const rows = await db
       .select({
-        // Work info
+        // Work info (これらはユニークならそのままでも良いが、念のため明示するか、collisionがないものはそのままでOK)
         id: works.id,
         title: works.title,
         description: works.description,
@@ -27,12 +28,14 @@ export const workRouter = createTRPCRouter({
         category: works.category,
         createdAt: works.createdAt,
         updatedAt: works.updatedAt,
-        // Tech info (joined)
-        techId: techs.id,
-        techName: techs.name,
-        techIconUrl: techs.iconUrl,
-        // M2M info
-        techDescription: m2m_worksToTechs.description,
+
+        // Tech info (Workと名前が被る id, name等はエイリアス必須)
+        techId: sql<string>`${techs.id}`.as('tech_id'),
+        techName: sql<string>`${techs.name}`.as('tech_name'),
+        techIconUrl: sql<string | null>`${techs.iconUrl}`.as('tech_icon_url'),
+
+        // M2M info (descriptionがWorksと被るためエイリアス必須)
+        techDescription: sql<string | null>`${m2m_worksToTechs.description}`.as('tech_description'),
       })
       .from(works)
       .leftJoin(m2m_worksToTechs, eq(works.id, m2m_worksToTechs.workId))
