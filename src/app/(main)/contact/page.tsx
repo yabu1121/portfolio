@@ -2,7 +2,6 @@
 
 import ReturnTopButton from "@/app/components/ReturnTopButton"
 import { useRef } from "react"
-import FadeInSection from "@/app/components/FadeInSection"
 
 const ContactPage = () => {
   const nameRef = useRef<HTMLInputElement>(null)
@@ -19,16 +18,11 @@ const ContactPage = () => {
     };
 
     try {
-      // fetchの第一引数はエンドポイントで第二引数はデータの詳細。
       const res = await fetch('/api/contact', {
-        // 好きなメソッドを指定できる
         method: 'POST',
-        // 好きなヘッダをつけて返せる
         headers: {
           'Content-Type': 'application/json'
         },
-
-        // JavaScript のオブジェクトや値を JSON 文字列に変換する、メソッドに対応するデータを書き込む。
         body: JSON.stringify(formData)
       })
 
@@ -49,7 +43,6 @@ const ContactPage = () => {
 
   return (
     <>
-      <FadeInSection animation="fadeInUp">
         <form
           className="text-center mx-auto max-w-md px-4 py-6 sm:p-8 items-center mt-8 mb-12 md:mt-12 rounded-lg md:shadow-md md:border-2"
           onSubmit={handleSubmit}
@@ -99,7 +92,6 @@ const ContactPage = () => {
             送信
           </button>
         </form>
-      </FadeInSection>
     </>
   )
 }
