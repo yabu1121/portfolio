@@ -39,7 +39,7 @@ const ProjectsPage = () => {
               </p>
 
               <ul className="flex flex-wrap gap-2 mt-auto pt-6 mb-6">
-                {project.worksToTechs.map((wt) => (
+                {project.worksToTechs.map((wt : any) => (
                   <li 
                     key={wt.tech.id} 
                     className="bg-gray-100 text-gray-700 text-[11px] font-bold uppercase tracking-wider rounded px-2.5 py-1 border border-gray-200" 
