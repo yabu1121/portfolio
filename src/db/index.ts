@@ -13,7 +13,7 @@ import * as schema from './schema';
 const connectionString = process.env.DATABASE_URL!;
 
 // PostgreSQLクライアントの作成
-const client = postgres(connectionString);
+const client = postgres(connectionString, { prepare: false });
 
 // DrizzleのORMインスタンスを作成
 export const db = drizzle(client, { schema });
