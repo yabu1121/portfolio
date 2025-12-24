@@ -45,7 +45,13 @@ const nextConfig: NextConfig = {
         hostname: "placehold.jp",
         port: "",
         pathname: "/300x200.png",
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**', // 全てのパスを許可
+      },
     ]
   },
   allowedDevOrigins: [

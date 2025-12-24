@@ -32,8 +32,9 @@ export const works = pgTable('works', {
   githubUrl: varchar('github_url', { length: 255 }),
   lpSiteUrl: varchar('lp_site_url', { length: 255 }),
   siteUrl: varchar('site_url', { length: 255 }),
-  thumbnail: varchar('thumbnail', { length: 255 }).notNull(),
-  category: varchar('category', { length: 50 }).notNull(),
+  thumbnail: varchar('thumbnail', { length: 255 }),
+  miniThumbnail: varchar('mini_thumbnail', { length: 255 }),
+  category: varchar('category', { length: 50 }),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull().$onUpdate(() => new Date()),
 });

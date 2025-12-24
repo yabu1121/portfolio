@@ -1,0 +1,1 @@
+ALTER TABLE "works" ADD COLUMN "mini_thumbnail" varchar(255);
