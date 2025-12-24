@@ -12,7 +12,7 @@ export const myTechs = pgTable('my_techs', {
   id: uuid('id').defaultRandom().primaryKey(),
   techId: uuid('tech_id').notNull().references(() => techs.id, { onDelete: 'cascade' }),
   level: integer('level').default(0).notNull(),
-  description: text('description'), 
+  description: text('description'),
 });
 
 export const timeline = pgTable('timeline', {
@@ -42,7 +42,7 @@ export const works = pgTable('works', {
 export const m2m_worksToTechs = pgTable('m2m_works_to_techs', {
   workId: uuid('work_id').notNull().references(() => works.id, { onDelete: 'cascade' }),
   techId: uuid('tech_id').notNull().references(() => techs.id, { onDelete: 'cascade' }),
-  description: text('description'), 
+  description: text('description'),
 }, (t) => ({
   pk: primaryKey({ columns: [t.workId, t.techId] }),
 }));
