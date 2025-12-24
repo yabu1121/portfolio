@@ -1,5 +1,5 @@
 import { createTRPCRouter, publicProcedure } from "../trpc";
-import { works, m2m_worksToTechs, techs } from "@/db/schema"; // schemaからimportを追加
+import { works, m2m_worksToTechs, techs } from "@/db/schema"; 
 import { desc, eq } from "drizzle-orm";
 
 export const workRouter = createTRPCRouter({
@@ -8,9 +8,30 @@ export const workRouter = createTRPCRouter({
 
     const rows = await db
       .select({
-        work: works,
-        m2m: m2m_worksToTechs,
-        tech: techs,
+        work: {
+          id: works.id,
+          title: works.title,
+          description: works.description,
+          githubUrl: works.githubUrl,
+          lpSiteUrl: works.lpSiteUrl,
+          siteUrl: works.siteUrl,
+          thumbnail: works.thumbnail,
+          miniThumbnail: works.miniThumbnail,
+          category: works.category,
+          createdAt: works.createdAt,
+          updatedAt: works.updatedAt,
+        },
+        m2m: {
+          workId: m2m_worksToTechs.workId,
+          techId: m2m_worksToTechs.techId,
+          description: m2m_worksToTechs.description,
+        },
+        tech: {
+          id: techs.id,
+          name: techs.name,
+          description: techs.description,
+          iconUrl: techs.iconUrl,
+        },
       })
       .from(works)
       .leftJoin(m2m_worksToTechs, eq(works.id, m2m_worksToTechs.workId))
@@ -19,21 +40,24 @@ export const workRouter = createTRPCRouter({
 
     const result = rows.reduce((acc, row) => {
       const workId = row.work.id;
-      
-      let currentWork = acc.find(w => w.id === workId);
-      
+      if (!workId) return acc; 
+
+      let currentWork = acc.find((w) => w.id === workId);
+
       if (!currentWork) {
         currentWork = { ...row.work, worksToTechs: [] };
         acc.push(currentWork);
       }
 
-      if (row.tech && row.m2m) {
+      if (row.tech && row.tech.id) {
         currentWork.worksToTechs.push({
-          ...row.m2m,
+          workId: row.m2m?.workId,
+          techId: row.m2m?.techId,
+          description: row.m2m?.description,
           tech: row.tech,
         });
       }
-      
+
       return acc;
     }, [] as any[]);
 
