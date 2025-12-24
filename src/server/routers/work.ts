@@ -14,78 +14,24 @@ export const workRouter = createTRPCRouter({
      * - これを防ぐため、sql`` を使って明示的に `AS "unique_name"` というエイリアスを
      *   SQL発行時点で付与する必要があります。
      */
-    const rows = await db
-      .select({
-        // Work info (これらはユニークならそのままでも良いが、念のため明示するか、collisionがないものはそのままでOK)
-        id: works.id,
-        title: works.title,
-        description: works.description,
-        githubUrl: works.githubUrl,
-        lpSiteUrl: works.lpSiteUrl,
-        siteUrl: works.siteUrl,
-        thumbnail: works.thumbnail,
-        miniThumbnail: works.miniThumbnail,
-        category: works.category,
-        createdAt: works.createdAt,
-        updatedAt: works.updatedAt,
+    /**
+     * 【最終切り分けモード】
+     * 複雑なJOINやマッピングを全て排除し、まずは「worksテーブル単体」が取得できるか確認します。
+     * これで取得できれば、DB接続はOKで、問題はJOINやカラムの重複にあると確定します。
+     */
 
-        // Tech info (Workと名前が被る id, name等はエイリアス必須)
-        techId: sql<string>`${techs.id}`.as('tech_id'),
-        techName: sql<string>`${techs.name}`.as('tech_name'),
-        techIconUrl: sql<string | null>`${techs.iconUrl}`.as('tech_icon_url'),
-
-        // M2M info (descriptionがWorksと被るためエイリアス必須)
-        techDescription: sql<string | null>`${m2m_worksToTechs.description}`.as('tech_description'),
-      })
+    // 1. Worksテーブルだけをシンプルに取得（postgres-jsの基本的な動作確認）
+    // JOINを全て外し、Aliasも使わず、単純なSELECT * FROM worksを実行
+    const worksData = await db
+      .select()
       .from(works)
-      .leftJoin(m2m_worksToTechs, eq(works.id, m2m_worksToTechs.workId))
-      .leftJoin(techs, eq(m2m_worksToTechs.techId, techs.id))
       .orderBy(desc(works.createdAt));
 
-    // フラットな結果を構造化データに変換
-    type WorkWithTechs = typeof works.$inferSelect & {
-      worksToTechs: Array<{
-        description: string | null;
-        tech: typeof techs.$inferSelect;
-      }>;
-    };
-
-    const result = rows.reduce<WorkWithTechs[]>((acc, row) => {
-      let work = acc.find((w) => w.id === row.id);
-
-      if (!work) {
-        work = {
-          id: row.id,
-          title: row.title,
-          description: row.description,
-          githubUrl: row.githubUrl,
-          lpSiteUrl: row.lpSiteUrl,
-          siteUrl: row.siteUrl,
-          thumbnail: row.thumbnail,
-          miniThumbnail: row.miniThumbnail,
-          category: row.category,
-          createdAt: row.createdAt,
-          updatedAt: row.updatedAt,
-          worksToTechs: [],
-        };
-        acc.push(work);
-      }
-
-      if (row.techId && row.techName) {
-        work.worksToTechs.push({
-          description: row.techDescription,
-          tech: {
-            id: row.techId,
-            name: row.techName,
-            iconUrl: row.techIconUrl,
-            description: null,
-          },
-        });
-      }
-
-      return acc;
-    }, []);
-
-    return result;
+    // 2. クライアントが期待する型に合わせて整形（Techsは空配列で返す）
+    // これで動けば、原因はJOIN時のデータ構造パースにあることになります。
+    return worksData.map((work) => ({
+      ...work,
+      worksToTechs: [],
+    }));
   }),
 });
