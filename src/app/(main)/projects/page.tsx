@@ -1,70 +1,69 @@
 "use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { api } from "@/trpc/client"
-import type { RouterOutputs } from "@/trpc/shared"
+import { api } from "@/trpc/client";
 import LinkButton from "@/app/components/LinkButton";
-
-type WorkWithTechs = RouterOutputs["work"]["getAll"][number];
+import Thumbnail from "@/app/components/Thumbnail";
+import MiniThumbnail from "@/app/components/MiniThumbnail";
+import Link from "next/link";
 
 const ProjectsPage = () => {
   const { data: works, isLoading, error } = api.work.getAll.useQuery();
-  if (isLoading) return <div className="text-center py-20">Loading...</div>;
+
+  if (isLoading) return <div className="text-center py-20 animate-pulse">Loading Projects...</div>;
   if (error) return <div className="text-center py-20 text-red-500">{error.message}</div>;
 
   return (
-    <div className="md:px-50 ">
-        <h1 className="text-2xl font-bold mb-12 text-center my-20">Projects</h1>
-        <div>
-          {works?.map((project) => (
-            <div key={project.id} className="flex border">
-              {project.thumbnail 
-              ? (
-                <div className="w-full aspect-video">
-                  <Image 
-                    src={project.thumbnail} 
-                    alt={project.title} 
-                    width={500}
-                    height={500}
-                    className="object-cover" 
-                  />
-                </div>
-              )
-              : (
-                <div>
-                  <p className="w-full items-center justify-center aspect-video bg-gray-400/50 text-black flex font-bold text-2xl">
-                    No Image
-                  </p>
+    <div className="max-w-6xl mx-auto px-4 py-12">
+      <h1 className="text-4xl font-extrabold mb-16 text-center text-gray-800">Projects</h1>
+      <div className="flex flex-col gap-8">
+        {works?.map((project) => (
+          <div key={project.id} className="flex flex-col md:flex-row border border-gray-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-shadow duration-300" >
+            <div className="bg-gray-50 p-6 flex flex-col items-center gap-4 border-r-2 border-dashed border-gray-400">
+              <Thumbnail url={project.thumbnail} altText={project.title} />
+            </div>
+
+            <div className="p-8 flex flex-col flex-1">
+              <div className="flex justify-between items-start">
+                <h3 className="font-bold text-2xl text-gray-900">{project.title}</h3>
+                <span className="text-xs font-semibold px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full">
+                  {project.category || "General"}
+                </span>
+              {project.miniThumbnail && (
+                <div className="flex items-center gap-2 self-start mt-2">
+                  <MiniThumbnail url={project.miniThumbnail} altText={project.title} />
                 </div>
               )}
+              </div>
+              
+              <p className="text-gray-600 mt-4 leading-relaxed line-clamp-3">
+                {project.description}
+              </p>
 
-              <div className="p-4 flex flex-col">
-                <h3 className="font-semibold text-lg">{project.title}</h3>
-                <p className="text-sm text-gray-600 mt-2">{project.description}</p>
-                <ul className="flex flex-wrap gap-2 text-xs mt-6 mb-4">
-                  {project.worksToTechs.map((wt) => (
-                    <li 
-                      key={wt.tech.id} 
-                      className="border rounded px-2 py-0.5" 
-                    >
-                      {wt.tech.name}
-                    </li>
-                  ))}
-                </ul>
+              <ul className="flex flex-wrap gap-2 mt-auto pt-6 mb-6">
+                {project.worksToTechs.map((wt) => (
+                  <li 
+                    key={wt.tech.id} 
+                    className="bg-gray-100 text-gray-700 text-[11px] font-bold uppercase tracking-wider rounded px-2.5 py-1 border border-gray-200" 
+                  >
+                    {wt.tech.name}
+                  </li>
+                ))}
+              </ul>
 
-                <div className="flex gap-4 text-sm font-medium">
-                  <LinkButton url={project.githubUrl} text="この作品のGitHub"/>
-                  <LinkButton url={project.lpSiteUrl} text="この作品のLPサイトを見に行く"/>
-                  <LinkButton url={project.siteUrl} text="この作品を見に行く"/>
+              <div className="flex flex-wrap justify-between gap-x-6 gap-y-2 border-t border-gray-100 pt-4">
+                <div className="flex gap-4">
+                  <LinkButton url={project.githubUrl} text="view source code" />
+                  <LinkButton url={project.lpSiteUrl} text="view lp site" />
+                  <LinkButton url={project.siteUrl} text="view site" />
                 </div>
-
+                <LinkButton url={`/projects/${project.id}/detail`} text="詳細"/>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectsPage
+export default ProjectsPage;
