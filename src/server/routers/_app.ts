@@ -1,15 +1,15 @@
 import { createTRPCRouter } from '../trpc';
-import { userRouter } from './user';
+import { workRouter } from './work';
 
 /**
  * 学習ポイント:
  * - 複数のルーターを1つに統合
- * - APIの名前空間を作成(例: api.user.getAll())
+ * - APIの名前空間を作成(例: api.work.getAll())
  * - 型定義をエクスポートしてクライアントで使用
  */
 
 export const appRouter = createTRPCRouter({
-  user: userRouter,
+  work: workRouter,
   // 他のルーターをここに追加
   // post: postRouter,
   // comment: commentRouter,

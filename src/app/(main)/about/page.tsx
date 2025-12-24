@@ -3,12 +3,10 @@ import Link from "next/link"
 
 import { techs, timeline } from "@/app/utils/data"
 import Image from "next/image"
-import FadeInSection from "@/app/components/FadeInSection"
 
 const AboutPage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <FadeInSection className="mt-12 mb-12 sm:mt-24 sm:mb-24 lg:mt-40 lg:mb-40" animation="fadeInUp">
         <div className="px-5 sm:px-8 py-6 sm:py-8 rounded bg-white">
           <h1 className="mb-2 text-2xl">About me</h1>
           <div className="mt-4 space-y-2 px-3 py-3 text-sm sm:text-base leading-relaxed">
@@ -26,9 +24,7 @@ const AboutPage = () => {
             </ul>
           </section>
         </div>
-      </FadeInSection>
 
-      <FadeInSection className="mt-12 mb-12 sm:mt-24 sm:mb-24 lg:mt-40 lg:mb-40" animation="fadeInLeft">
         <section className="px-5 sm:px-8 py-6 sm:py-8 rounded bg-white">
           <div className="mb-10">
             <h2 className="text-2xl mb-2">Timeline</h2>
@@ -57,9 +53,7 @@ const AboutPage = () => {
             ))}
           </div>
         </section>
-      </FadeInSection>
 
-      <FadeInSection className="mt-12 mb-12 sm:mt-24 sm:mb-24 lg:mt-40 lg:mb-40" animation="fadeInRight">
         <section className="px-5 sm:px-8 py-6 sm:py-8 rounded bg-white">
           <h2 className="mb-2 text-2xl">Skills</h2>
           <div className="space-y-3">
@@ -83,16 +77,12 @@ const AboutPage = () => {
             ))}
           </div>
         </section>
-      </FadeInSection>
 
-      <FadeInSection className="mt-12 mb-12 sm:mt-24 sm:mb-24 lg:mt-40 lg:mb-40" animation="fadeInScale">
         <section className="px-5 sm:px-8 py-6 sm:py-8 rounded bg-white">
           <h2 className="text-center text-2xl">Contact</h2>
           <Link href="/contact"><p className="mx-auto m-4 text-white bg-blue-500 px-4 p-2 rounded w-fit hover:bg-blue-400">こちらからお気軽にご連絡ください。</p></Link>
         </section>
-      </FadeInSection>
 
-      <FadeInSection className="mt-12 mb-20 sm:mt-24 sm:mb-24 lg:mt-40 lg:mb-40" animation="fadeInDown">
         <section className="px-5 sm:px-8 py-6 sm:py-8 rounded bg-white max-w-lg mx-auto">
           <h2 className="text-center text-2xl">Links</h2>
 
@@ -137,7 +127,6 @@ const AboutPage = () => {
             </li>
           </ul>
         </section>
-      </FadeInSection>
 
     </div>
   )

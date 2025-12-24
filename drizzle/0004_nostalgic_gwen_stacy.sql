@@ -1,0 +1,1 @@
+ALTER TABLE "techs" DROP COLUMN "color";
