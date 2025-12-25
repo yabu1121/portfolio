@@ -4,7 +4,6 @@ import { api } from "@/trpc/client";
 import LinkButton from "@/app/components/LinkButton";
 import Thumbnail from "@/app/components/Thumbnail";
 import MiniThumbnail from "@/app/components/MiniThumbnail";
-import Link from "next/link";
 
 const ProjectsPage = () => {
   const { data: works, isLoading, error } = api.work.getAll.useQuery();

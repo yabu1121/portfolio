@@ -5,8 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 const TopPage = () => {
-  // 初期値を非表示にして、useEffectで初回レンダリング時にそれを変更。
-  // ふわっと表示するアニメーションに変更する。
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {

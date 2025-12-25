@@ -6,7 +6,7 @@ interface ThumbnailProps {
   altText: string;
 }
 
-const Thumbnail = ({ url, altText }: ThumbnailProps) => {
+const MiniThumbnail = ({ url, altText }: ThumbnailProps) => {
   return (
     <>
       {url ? (
@@ -28,4 +28,4 @@ const Thumbnail = ({ url, altText }: ThumbnailProps) => {
   );
 };
 
-export default Thumbnail;
+export default MiniThumbnail;
