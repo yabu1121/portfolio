@@ -4,6 +4,7 @@ import { api } from "@/trpc/client";
 import LinkButton from "@/app/components/common/LinkButton";
 import Thumbnail from "@/app/components/Thumbnail";
 import MiniThumbnail from "@/app/components/MiniThumbnail";
+import CommonButton from "@/app/components/common/CommonButton";
 
 const ProjectsPage = () => {
   const { data: works, isLoading, error } = api.work.getAll.useQuery();
@@ -50,11 +51,11 @@ const ProjectsPage = () => {
 
               <div className="flex flex-wrap justify-between gap-x-6 gap-y-2 border-t border-gray-100 pt-4">
                 <div className="flex gap-4">
-                  <LinkButton url={project.githubUrl} text="view source code" />
-                  <LinkButton url={project.lpSiteUrl} text="view lp site" />
-                  <LinkButton url={project.siteUrl} text="view site" />
+                  <CommonButton link={project.githubUrl} text="view source code" />
+                  <CommonButton link={project.lpSiteUrl} text="view lp site" />
+                  <CommonButton link={project.siteUrl} text="view site" />
                 </div>
-                <LinkButton url={`/projects/${project.id}/detail`} text="詳細"/>
+                <CommonButton link={`/projects/${project.id}/detail`} text="詳細"/>
               </div>
             </div>
           </div>

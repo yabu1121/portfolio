@@ -4,7 +4,7 @@ import Link from "next/link"
 interface CommonButtonProps {
   text: string;
   // 標準はホームへ
-  link?: string;
+  link?: string | null;
 }
 
 
