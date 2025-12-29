@@ -1,7 +1,7 @@
 "use client";
 
 import { api } from "@/trpc/client";
-import LinkButton from "@/app/components/LinkButton";
+import LinkButton from "@/app/components/common/LinkButton";
 import Thumbnail from "@/app/components/Thumbnail";
 import MiniThumbnail from "@/app/components/MiniThumbnail";
 
