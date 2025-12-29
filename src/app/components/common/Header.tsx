@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { useEffect, useState } from "react"
 import { links } from "@/app/utils/data"
+import { Sprout, X } from "lucide-react"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -37,13 +38,7 @@ const Header = () => {
           aria-expanded={isMenuOpen}
           onClick={toggleMenu}
         >
-          <span
-            className={`block h-0.5 w-5 bg-current transition-transform ${isMenuOpen ? "translate-y-1.5 rotate-45" : ""}`}
-          />
-          <span className={`block h-0.5 w-5 bg-current transition-opacity ${isMenuOpen ? "opacity-0" : "opacity-100"}`} />
-          <span
-            className={`block h-0.5 w-5 bg-current transition-transform ${isMenuOpen ? "-translate-y-1.5 -rotate-45" : ""}`}
-          />
+          <Sprout />
         </button>
 
         <nav className="hidden sm:block">
@@ -67,7 +62,7 @@ const Header = () => {
             aria-label="メニューを閉じる"
             onClick={closeMenu}
           >
-            &times;
+            <X />
           </button>
 
           <nav className="flex h-full w-full items-center justify-center">
