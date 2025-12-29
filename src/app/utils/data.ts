@@ -14,7 +14,7 @@ export const timeline: TimelineItem[] = [
   { id: 2, year: "2024", month: 6, category: "learn", title: "HTML, CSS, JavaScript", detail: "独学でフロントエンド技術を学習開始"},
   { id: 3, year: "2025", month: 8, category: "learn", title: "Next.js TS Tailwind css", detail: "Udemyを用いて学習開始"},
   { id: 4, year: "2025", month: 9, category: "learn", title: "Java", detail: "大学の講義でJavaを学習開始"},
-  { id: 5, year: "2025", month: 11, category: "learn", title: "Go", detail: "独学で簡単にGoを学習開始"},
+  { id: 5, year: "2025", month: 11, category: "learn", title: "Go", detail: "独学でGoを学習開始"},
   { id: 6, year: "2025", month: 11, category: "intern", title: "Next.js TS", detail: "合同会社ニフロでNext.js, TSを用いてアプリの作成業務"},
 ]
 
