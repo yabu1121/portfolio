@@ -24,7 +24,6 @@ const TopPage = () => {
         />
       </div>
 
-       {/* 半透明レイヤーを前面に配置することにより、背景色を薄暗くし、白い文字を目立たせる。 */}
       <div className="absolute inset-0 bg-black opacity-[0.4]" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
