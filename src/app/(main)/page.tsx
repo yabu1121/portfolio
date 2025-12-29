@@ -1,9 +1,9 @@
-import TopPage from "../components/TopPage"
+import TopPageContent from "../components/TopPageContent"
 
 const HomePage = () => {
   return (
     <main>
-      <TopPage />
+      <TopPageContent />
     </main>
   )
 }
