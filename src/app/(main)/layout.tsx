@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className="overflow-x-hidden bg-gray-300">
+      <body className="overflow-x-hidden bg-gray-150">
         <TRPCProvider>
           <Header />
           {children}

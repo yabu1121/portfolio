@@ -1,9 +1,12 @@
 'use client'
 
-import ReturnTopButton from "@/app/components/common/CommonButton"
+import CommonButton from "@/app/components/common/CommonButton"
+import { useRouter } from "next/navigation"
 import { useRef } from "react"
+import toast from "react-hot-toast"
 
 const ContactPage = () => {
+  const router = useRouter();
   const nameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
   const contentRef = useRef<HTMLTextAreaElement>(null)
@@ -27,72 +30,66 @@ const ContactPage = () => {
       })
 
       if (res.ok) {
-        alert('送信が完了しました')
+        toast('送信が完了しました')
         if (nameRef.current) nameRef.current.value = '';
         if (emailRef.current) emailRef.current.value = '';
         if (contentRef.current) contentRef.current.value = '';
+        router.push("/contact/result")
       } else {
-        alert('エラーが発生しました')
+        toast('エラーが発生しました')
       }
     } catch (e) {
-      alert('エラーが発生しました')
+      toast('エラーが発生しました')
       console.error(e)
     }
   }
 
 
   return (
-    <>
+    <div className="max-w-4xl mx-auto ">
+        <h1 className="text-2xl text-center font-bold mb-6 mt-20">お問い合わせ</h1>
         <form
-          className="text-center mx-auto max-w-md px-4 py-6 sm:p-8 items-center mt-8 mb-12 md:mt-12 rounded-lg md:shadow-md md:border-2"
+          className="space-y-4 px-8 my-20 bg-white rounded py-10 border border-gray-150 mx-4 "
           onSubmit={handleSubmit}
         >
-
-          <h1 className="text-2xl text-center font-bold mb-6">お問い合わせ</h1>
-
-          <div className="my-4 text-left">
-            <label htmlFor="name" className="block mb-2 font-medium">名前 : </label>
+          <div className="flex justify-between items-center">
+            <label htmlFor="name" className="block mb-2 font-medium w-30">名前</label>
             <input
               type="text"
               id="name"
               name='name'
               ref={nameRef}
               placeholder="お名前を入力して下さい"
-              className="bg-white rounded w-full p-2"
+              className="bg-white rounded w-full p-2 border border-black"
             />
           </div>
 
-          <div className="my-4 text-left">
-            <label htmlFor="email" className="block mb-2 font-medium">email : </label>
+          <div className="flex justify-between items-center">
+            <label htmlFor="email" className="block mb-2 font-medium w-30">email</label>
             <input
               type="email"
               id="email"
               name='email'
               ref={emailRef}
               placeholder="メールアドレスを入力してください"
-              className="bg-white rounded w-full p-2"
+              className="bg-white rounded w-full p-2 border border-black"
             />
           </div>
 
-          <div className="my-4 text-left">
-            <label htmlFor="message" className="block mb-2 font-medium">メッセージ : </label>
+          <div className="flex justify-between items-center">
+            <label htmlFor="message" className="block mb-2 font-medium w-30">メッセージ</label>
             <textarea
               name="message"
               id="message"
               ref={contentRef}
               placeholder='メッセージを入力してください。'
-              className="bg-white rounded w-full p-2"
+              className="bg-white rounded w-full p-2 border border-black resize-none"
             ></textarea>
           </div>
 
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-8 py-3 rounded hover:bg-blue-600 mt-6 font-bold"
-          >
-            送信
-          </button>
+          <button type="submit" className="bg-blue-500 hover:bg-blue-400 text-white rounded px-4 py-2 block mx-auto">送信</button>
         </form>
-    </>
+    </div>
   )
 }
 
