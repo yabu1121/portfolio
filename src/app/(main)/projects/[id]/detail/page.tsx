@@ -89,30 +89,6 @@ const ProjectDetail = () => {
             </div>
           </section>
         </div>
-
-        <aside className="space-y-8 fixed md:right-120">
-          <div className="bg-gray-900 text-white rounded-2xl p-6 shadow-lg">
-            <h3 className="font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">Project Links</h3>
-            <div className="space-y-3">
-              {work.siteUrl && (
-                <a href={work.siteUrl} target="_blank" rel="noreferrer" className="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-center font-bold transition-colors">
-                  Live Demo
-                </a>
-              )}
-              {work.githubUrl && (
-                <a href={work.githubUrl} target="_blank" rel="noreferrer" className="block w-full py-3 px-4 bg-gray-800 hover:bg-gray-700 rounded-xl text-center font-bold border border-gray-700 transition-colors">
-                  GitHub Repository
-                </a>
-              )}
-            </div>
-          </div>
-
-          {work.miniThumbnail && (
-            <div className="p-1 bg-white border flex justify-center border-gray-200 rounded-xl">
-               <MiniThumbnail url={work.miniThumbnail} altText="Sub Preview" />
-            </div>
-          )}
-        </aside>
       </div>
     </main>
   )
