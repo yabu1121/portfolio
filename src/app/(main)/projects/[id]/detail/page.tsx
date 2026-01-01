@@ -50,7 +50,8 @@ const ProjectDetail = () => {
               Technology Stack
             </h2>
             <div className="grid grid-cols-1 gap-6">
-              {work.worksToTechs?.sort().map((item) => (
+              {work.worksToTechs?.toSorted((a: any, b: any) => a.tech.name.localeCompare(b.tech.name))
+              .map((item) => (
                 <div 
                   key={item.tech.id} 
                   className="flex flex-col md:flex-row  gap-6 p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all duration-300"
