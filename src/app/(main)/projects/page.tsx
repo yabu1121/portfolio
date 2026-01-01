@@ -16,7 +16,7 @@ const ProjectsPage = () => {
       <div className="flex flex-col gap-8">
         {works?.map((project) => (
           <div key={project.id} className="flex flex-col md:flex-row md:border md:border-gray-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-shadow duration-300" >
-            <div className="bg-gray-50 p-6 flex flex-col items-center gap-4 md:border-r-2 md:border-dashed md:border-gray-400">
+            <div className="bg-gray-50 p-6 flex flex-col items-center gap-4 border-b-2 border-dotted md:border-r-2 md:border-dashed md:border-gray-400">
               <Thumbnail url={project.thumbnail} altText={project.title} />
             </div>
 
@@ -38,7 +38,7 @@ const ProjectsPage = () => {
               </p>
 
               <ul className="flex flex-wrap gap-2 mt-auto pt-6 mb-6">
-                {project.worksToTechs.map((wt : any) => (
+                {project.worksToTechs.toSorted().map((wt : any) => (
                   <li 
                     key={wt.tech.id} 
                     className="bg-gray-100 text-gray-700 text-[11px] font-bold uppercase tracking-wider rounded px-2.5 py-1 border border-gray-200" 
