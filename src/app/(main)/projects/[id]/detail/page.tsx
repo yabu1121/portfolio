@@ -30,9 +30,8 @@ const ProjectDetail = () => {
           {work.thumbnail && <Thumbnail url={work.thumbnail} altText={work.title} />}
         </div>
       </section>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 space-y-12">
-
+      <div>
+        <div className="space-y-20">
           <section>
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-blue-600 rounded-full"></span>
@@ -42,14 +41,13 @@ const ProjectDetail = () => {
               {work.description}
             </p>
           </section>
-
        
-          <section>
+          <section >
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
               <span className="w-1 h-6 bg-blue-600 rounded-full"></span>
               Technology Stack
             </h2>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {work.worksToTechs?.toSorted((a: any, b: any) => a.tech.name.localeCompare(b.tech.name))
               .map((item) => (
                 <div 
