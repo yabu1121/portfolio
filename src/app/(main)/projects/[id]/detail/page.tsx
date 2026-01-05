@@ -4,6 +4,8 @@ import Thumbnail from "@/app/components/Thumbnail";
 import { api } from "@/trpc/client";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
+import Loading from "@/app/components/common/Loading";
+import Error from "@/app/components/common/Error";
 
 const ProjectDetail = () => {
   const params = useParams();
@@ -11,8 +13,8 @@ const ProjectDetail = () => {
   
   const { data: works, isLoading, error } = api.work.getAll.useQuery();
 
-  if (isLoading) return <div className="flex justify-center items-center min-h-screen animate-pulse text-gray-400">Loading...</div>;
-  if (error) return <div className="text-center py-20 text-red-500">{error.message}</div>;
+  if (isLoading) return <Loading />;
+  if (error) return <Error error={error}/>;
 
   const work = works?.find((work) => work.id === params.id);
 
@@ -20,7 +22,7 @@ const ProjectDetail = () => {
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
-      <button onClick={() => router.push('/projects')} className="mb-8 text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-2">
+      <button onClick={() => router.push('/projects')} className="cursor-pointer mb-8 text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-2">
         ← Back to Projects
       </button>
 

@@ -4,11 +4,13 @@ import { api } from "@/trpc/client";
 import Thumbnail from "@/app/components/Thumbnail";
 import MiniThumbnail from "@/app/components/MiniThumbnail";
 import CommonButton from "@/app/components/common/CommonButton";
+import Loading from "@/app/components/common/Loading";
+import Error from "@/app/components/common/Error";
 
 const ProjectsPage = () => {
   const { data: works, isLoading, error } = api.work.getAll.useQuery();
-  if (isLoading) return <div className="text-center py-20 animate-pulse">Loading Projects...</div>;
-  if (error) return <div className="text-center py-20 text-red-500">{error.message}</div>;
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 mb-20">

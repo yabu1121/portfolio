@@ -1,28 +1,70 @@
-import { techs } from "../utils/data"
+'use client'
+import { api } from "@/trpc/client"
+import Loading from "./common/Loading";
+import Error from "./common/Error";
+import Image from "next/image";
+import { useState } from "react";
 
 const AboutSkills = () => {
+  const { data: skillData, isLoading, error } = api.skill.getAll.useQuery();
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  if (isLoading) return <Loading />;
+  if (error) return <Error error={error} />;
+
+
+  const handleToggle = (id: string) => {
+    setSelectedId((prev) => (prev === id ? null : id));
+  };
   return (
-    <section className="px-5 sm:px-8 py-6 sm:py-8 bg-white rounded my-8">
-      <h2 className="mb-2 text-2xl font-medium">Skills</h2>
-      <div className="space-y-3">
-        {techs.map((tech) => (
-          <div key={tech.id} className="relative group">
-            <div className="flex justify-between text-sm">
-              <span tabIndex={0} className="outline-none">{tech.name}</span>
-              <span className="text-gray-600">{tech.level}%</span>
-            </div>
+    <section className="px-6 py-12 bg-gray-50/50 rounded-3xl my-8">
+      <div className="max-w-4xl mx-auto">
+        <header className="mb-10 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">Technical Skills</h2>
+          <p className="text-gray-500 text-sm">これまでに少しでも触れてきた技術の習熟度です</p>
+        </header>
 
-            <div className="w-full h-2">
-              <div className="h-2 bg-blue-500 rounded" style={{ width: `${tech.level}%` }} />
-            </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          {skillData?.filter((item) => !!item.description).map((item) => {
+            const isOpen = selectedId === item.id;
+            return(
+              <div 
+                key={item.id} 
+                onClick={() => handleToggle(item.id)}
+                className="group relative bg-white p-5 rounded-2xl border border-black/30 cursor-pointer border-dashed shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center"
+              >
+                <div className="w-16 h-16 mb-4 relative p-2 bg-gray-50 rounded-xl group-hover:bg-blue-50 transition-colors">
+                  {item.iconUrl ? (
+                    <Image
+                      src={item.iconUrl}
+                      alt={item.name}
+                      fill
+                      className="object-contain p-2"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-300">No Image</div>
+                  )}
+                </div>
 
-            <div
-              className="absolute z-10 px-3 py-2 mt-2 text-xs text-gray-800 whitespace-pre-line transition scale-95 -translate-x-1/2 translate-y-1 bg-white rounded-md shadow opacity-0 pointer-events-none left-1/2 top-full group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:scale-100"
-            >
-              {tech.description}
-            </div>
-          </div>
-        ))}
+                <h3 className="font-bold text-gray-800 text-xs mb-1 truncate">{item.name}</h3>
+                
+                <div className="w-full bg-red-900 h-1 rounded-full mt-2 overflow-hidden">
+                  <div 
+                    className="bg-yellow-200 h-full rounded-full transition-all duration-1000"
+                    style={{ width: `${item.level ? item.level : 0}%` }}
+                  />
+                </div>
+
+                <div className={`
+                    absolute inset-0 z-10 transition-all duration-300 bg-white/95 rounded-2xl p-4 flex items-center justify-center text-xs text-gray-600 leading-relaxed shadow-2xl
+                    ${isOpen ? "opacity-100 z-30 pointer-events-auto rotate-y-360" : "opacity-0 pointer-events-none"}
+                  `}>
+                    {item.description}
+                  </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

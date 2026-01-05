@@ -1,4 +1,5 @@
 import { createTRPCRouter } from '../trpc';
+import { skillRouter } from './skills';
 import { workRouter } from './work';
 
 /**
@@ -10,6 +11,7 @@ import { workRouter } from './work';
 
 export const appRouter = createTRPCRouter({
   work: workRouter,
+  skill: skillRouter,
   // 他のルーターをここに追加
   // post: postRouter,
   // comment: commentRouter,

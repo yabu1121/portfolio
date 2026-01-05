@@ -58,4 +58,12 @@ export const worksRelations = relations(works, ({ many }) => ({
 
 export const techsRelations = relations(techs, ({ many }) => ({
   worksToTechs: many(m2m_worksToTechs),
+  myTechs: many(myTechs), 
+}));
+
+export const myTechsRelations = relations(myTechs, ({ one }) => ({
+  tech: one(techs, {
+    fields: [myTechs.techId],
+    references: [techs.id],
+  }),
 }));
