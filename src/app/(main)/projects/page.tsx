@@ -13,7 +13,7 @@ const ProjectsPage = () => {
   if (error) return <Error />;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12 mb-20">
+    <div className="max-w-7xl mx-auto px-4 py-12 mb-20">
       <h1 className="text-4xl font-extrabold mb-16 text-center text-gray-800">Projects</h1>
       <div className="flex flex-col gap-8">
         {works?.map((project) => (
