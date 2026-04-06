@@ -1,12 +1,14 @@
 const AboutProfile = () => {
   return (
-    <section className="mt-6 bg-white rounded p-4">
+    <section className="px-5 sm:px-8 py-6 sm:py-8 bg-white mt-8 mb-4 rounded p-4">
       <h2 className="mb-2 text-2xl font-medium">Profile</h2>
-      <ul className="pl-5 space-y-1 list-none">
-        <li>興味: フロントエンド、バックエンド</li>
-        <li>強み: 忍耐力、分野の開拓</li>
-        <li>開発環境: Next.js, TypeScript</li>
-      </ul>
+      <div className="mt-4 space-y-2 px-3 py-3 text-sm sm:text-base leading-relaxed">
+        <ul>
+          <li>興味： バックエンドのパフォーマンス向上、DBの最適化などUXに直接かかわるようなプログラミング</li>
+          <li>得意分野：Next.js TypeScript</li>
+          <li>開発環境：Next.js TypeScript Golang</li>
+        </ul>
+      </div>
     </section>
   )
 }

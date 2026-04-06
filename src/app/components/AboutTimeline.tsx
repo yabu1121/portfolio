@@ -1,4 +1,3 @@
-import React from 'react'
 import { timeline } from '../utils/data'
 
 const AboutTimeline = () => {
@@ -15,7 +14,7 @@ const AboutTimeline = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-2 w-full sm:w-auto items-start sm:items-center justify-between">
               <div className="">
                 <span className="text-sm font-bold text-blue-700">
-                  {item.year}.{item.month}
+                  {item.year}.{item.month.toLocaleString().padStart(2, '0')}
                 </span>
                 <h3 className="text-lg font-bold mb-4 border-blue-300 transition-all hover:border-b-4 hover:mb-3 text-slate-800 group-hover:text-blue-700">
                   {item.title}

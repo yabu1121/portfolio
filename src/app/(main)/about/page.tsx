@@ -4,6 +4,7 @@ import AboutTimeline from "@/app/components/AboutTimeline"
 import AboutSkills from "@/app/components/AboutSkills"
 import AboutContact from "@/app/components/AboutContact"
 import AboutLinks from "@/app/components/AboutLinks"
+import AboutEvent from "@/app/components/AboutEvent"
 
 const AboutPage = () => {
   return (
@@ -11,6 +12,7 @@ const AboutPage = () => {
         <Aboutme />
         <AboutProfile />
         <AboutTimeline />
+        <AboutEvent/>
         <AboutSkills />
         <AboutContact />
         <AboutLinks />
