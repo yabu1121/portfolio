@@ -39,6 +39,13 @@ export const works = pgTable('works', {
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull().$onUpdate(() => new Date()),
 });
 
+export const contact = pgTable('contact', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  email: varchar('email', { length: 255 }).notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+})
+
+
 export const m2m_worksToTechs = pgTable('m2m_works_to_techs', {
   workId: uuid('work_id').notNull().references(() => works.id, { onDelete: 'cascade' }),
   techId: uuid('tech_id').notNull().references(() => techs.id, { onDelete: 'cascade' }),
