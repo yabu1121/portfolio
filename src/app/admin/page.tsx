@@ -20,7 +20,7 @@ const Admin = () => {
 
   return (
     <div>
-      <p>管理画面</p>
+      <p className="text-2xl font-bold">管理画面</p>
       <div className="flex justify-between">
         <TabButton title="about" label="プロフィール" tab={tab} setTab={setTab}/>
         <TabButton title="projects" label="プロジェクト" tab={tab} setTab={setTab}/>
