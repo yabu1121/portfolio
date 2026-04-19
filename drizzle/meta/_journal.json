@@ -57,6 +57,13 @@
       "when": 1766579940737,
       "tag": "0007_unknown_rictor",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1776635930020,
+      "tag": "0008_slimy_sentinels",
+      "breakpoints": true
     }
   ]
 }

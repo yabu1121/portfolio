@@ -1,6 +1,7 @@
 import { createTRPCRouter } from '../trpc';
 import { skillRouter } from './skills';
 import { workRouter } from './work';
+import { mailRouter } from './mail';
 
 /**
  * 学習ポイント:
@@ -12,9 +13,7 @@ import { workRouter } from './work';
 export const appRouter = createTRPCRouter({
   work: workRouter,
   skill: skillRouter,
-  // 他のルーターをここに追加
-  // post: postRouter,
-  // comment: commentRouter,
+  mail: mailRouter,
 });
 
 // 型定義をエクスポート(クライアント側で使用)

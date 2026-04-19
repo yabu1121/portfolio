@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { TRPCProvider } from "@/trpc/Provider";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +28,10 @@ export default function AdminLayout({
     <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable} bg-gray-100 min-h-screen`}>
         <TRPCProvider>
-          <div className="mx-auto max-w-5xl p-6">
+          <div className="mx-auto max-w-7xl p-6">
             {children}
           </div>
+          <Toaster position="bottom-right" />
         </TRPCProvider>
       </body>
     </html>

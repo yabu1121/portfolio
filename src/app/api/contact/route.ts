@@ -1,10 +1,19 @@
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
+import { db } from "@/db";
+import { contact } from "@/db/schema";
 
 export async function POST(request: Request) {
   try {
     const data = await request.json();
     const { name, email, content } = data;
-    console.log(name, email, content);
+
+    const [config] = await db.select().from(contact).limit(1);
+    if (!config || !config.senderUser || !config.senderPassword) {
+      return Response.json({
+        success: false,
+        message: "送信設定が登録されていません",
+      }, { status: 500 });
+    }
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -12,14 +21,14 @@ export async function POST(request: Request) {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.NEXT_PUBLIC_GMAILUSER,
-        pass: process.env.NEXT_PUBLIC_GMAILPASSWORD
+        user: config.senderUser,
+        pass: config.senderPassword.replace(/\s+/g, ""),
       },
     });
 
     await transporter.sendMail({
       from: email,
-      to: "hayabusa115346@gmail.com",
+      to: config.email,
       subject: `[お問い合わせ] ${name} 様より`,
       text: `${content} (from ${email})`,
       html: `
@@ -29,16 +38,16 @@ export async function POST(request: Request) {
         <p>${content}</p>
       `,
     });
+
     return Response.json({
       success: true,
-      message: '送信が完了しました'
+      message: "送信が完了しました",
     }, { status: 200 });
   } catch (error) {
     console.error(error);
     return Response.json({
       success: false,
-      message: 'エラーが発生しました'
+      message: "エラーが発生しました",
     }, { status: 500 });
   }
 }
-

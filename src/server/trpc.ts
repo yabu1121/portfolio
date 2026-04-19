@@ -26,7 +26,7 @@ const isAdmin = t.middleware(({ctx, next}) => {
   if(!auth){
     throw new TRPCError({code: 'UNAUTHORIZED', message: 'Auth required'})
   }
-  const [user, pass] = atob(auth.split('')[1]).split(':');
+  const [user, pass] = atob(auth.split(' ')[1]).split(':');
   if(user !== process.env.ADMIN_USER || pass !== process.env.ADMIN_PASSWORD) {
     throw new TRPCError({code: 'UNAUTHORIZED', message: 'invalid credentials'})
   }

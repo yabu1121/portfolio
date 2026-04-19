@@ -42,6 +42,8 @@ export const works = pgTable('works', {
 export const contact = pgTable('contact', {
   id: uuid('id').defaultRandom().primaryKey(),
   email: varchar('email', { length: 255 }).notNull(),
+  senderUser: varchar('sender_user', { length: 255 }),
+  senderPassword: varchar('sender_password', { length: 255 }),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 })
 

@@ -89,3 +89,23 @@
     transform: scale(1);
   }
 }
+
+@keyframes hop {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-38px) rotate(6deg);
+  }
+}
+
+@keyframes hopShadow {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleX(0.55);
+    opacity: 0.15;
+  }
+}

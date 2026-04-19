@@ -13,7 +13,7 @@ export const TabButton = <T extends string>({
 }:TabButtonProps<T>) => {
   return (
     <button 
-      className={`text-black bg-blue-200 w-1/3 mx-auto h-8 rounded-md font-bold my-2 cursor-pointer ${tab == title && 'bg-blue-400 text-white'}`} 
+      className={`text-black bg-blue-200 w-5/16 mx-auto h-8 rounded-md font-bold my-2 cursor-pointer ${tab == title && 'bg-blue-400 text-white'}`} 
       onClick={() => setTab(title)}
     >
       {label}
