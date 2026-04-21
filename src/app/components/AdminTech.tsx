@@ -17,8 +17,8 @@ const AdminTech = () => {
             <p className="w-80 text-sm">{tech.id}</p>
             <p className="w-40 font-bold">{tech.name}</p>
             <p className="w-120">{tech.description}</p>
-            <button className="text-white bg-blue-400 font-semibold rounded cursor-pointer">編集</button>
-            <button className="text-white bg-red-400 font-semibold rounded cursor-pointer">削除</button>
+            <button className="text-white bg-blue-400 w-20 font-semibold rounded cursor-pointer">編集</button>
+            <button className="text-white bg-red-400 w-20 font-semibold rounded cursor-pointer">削除</button>
           </div>
         )
       })}</div>
