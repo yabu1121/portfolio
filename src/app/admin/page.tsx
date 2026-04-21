@@ -1,19 +1,21 @@
 'use client'
 
 import { useState } from "react"
+import { TabButton } from "../components/common/TabButton";
 import AdminAbout from "../components/AdminAbout";
 import AdminProject from "../components/AdminProject";
 import AdminContact from "../components/AdminContact";
-import { TabButton } from "../components/common/TabButton";
+import AdminTech from "../components/AdminTech";
 
 
 const Admin = () => {
-  const [tab, setTab] = useState<'about' | 'projects' | 'contact'>('about');
+  const [tab, setTab] = useState<'about' | 'tech' | 'projects' | 'contact'>('about');
 
   const renderTab = () => {
     switch (tab) {
       case 'about': return <AdminAbout />
       case 'projects': return <AdminProject />
+      case 'tech': return <AdminTech />
       case 'contact': return <AdminContact />
     }
   }
@@ -24,6 +26,7 @@ const Admin = () => {
       <div className="flex justify-between">
         <TabButton title="about" label="プロフィール" tab={tab} setTab={setTab}/>
         <TabButton title="projects" label="プロジェクト" tab={tab} setTab={setTab}/>
+        <TabButton title="tech" label="技術" tab={tab} setTab={setTab}/>
         <TabButton title="contact" label="メールアドレス" tab={tab} setTab={setTab}/>
       </div>
       {renderTab()}
