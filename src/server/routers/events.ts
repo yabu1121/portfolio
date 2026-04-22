@@ -1,5 +1,5 @@
 import { events } from "@/db/schema";
-import { adminProcedure, createTRPCRouter } from "../trpc";
+import { adminProcedure, createTRPCRouter, publicProcedure } from "../trpc";
 import { asc, eq } from "drizzle-orm";
 import { z } from "zod";
 
@@ -51,9 +51,12 @@ export const eventsRouter = createTRPCRouter({
       return updated;
     }),
   
-  getAll: adminProcedure.query(async ({ctx}) => {
+  getAll: publicProcedure.query(async ({ctx}) => {
     const { db } = ctx;
-    const data = await db.select().from(events).orderBy(asc(events.year),asc(events.month));
+    const data = await db
+      .select()
+      .from(events)
+      .orderBy(asc(events.year),asc(events.month));
     return data;
   }),
 
