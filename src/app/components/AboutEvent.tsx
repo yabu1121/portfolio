@@ -3,7 +3,9 @@
 import { api } from "@/trpc/client"
 
 const AboutEvent = () => {
-  const {data} = api.event.getAll.useQuery()
+  const {data, isLoading, isError} = api.event.getAll.useQuery()
+  if(isLoading)return <>loading...</>
+  if(isError)return <>error</>
   return (
     <section className="px-5 sm:px-8 py-6 sm:py-8 bg-white my-4 rounded">
       <div className="mb-10">
