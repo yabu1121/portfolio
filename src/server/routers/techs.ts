@@ -21,6 +21,24 @@ export const techsRouter = createTRPCRouter({
       .from(techs)
       .where(eq(techs.id, input.id))
       .limit(1);
-    return row ?? null; 
+    return row ?? null;
+  }),
+
+  update: adminProcedure
+  .input(z.object({
+    id: z.string().uuid(),
+    name: z.string().min(1).max(100),
+    description: z.string().nullable(),
+    iconUrl: z.string().max(255).nullable(),
+  }))
+  .mutation( async ({ctx, input}) => {
+    const { db } = ctx;
+    const { id, ...values } = input;
+    const [updated] = await db
+      .update(techs)
+      .set(values)
+      .where(eq(techs.id, id))
+      .returning();
+    return updated;
   })
 })
