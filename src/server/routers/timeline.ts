@@ -4,7 +4,22 @@ import { number, string, z } from "zod";
 import { asc, eq } from "drizzle-orm";
 
 export const timelineRouter = createTRPCRouter({
-  getAll: publicProcedure.query(async({ctx}) => {
+  getAllForPublic: publicProcedure.query(async({ctx}) => {
+    const { db } = ctx;
+    const rows = await db 
+      .select({
+        year: timeline.year,
+        month: timeline.month,
+        category: timeline.category,
+        title: timeline.title,
+        detail: timeline.detail,
+      })
+      .from(timeline)
+      .orderBy(asc(timeline.year), asc(timeline.month))
+    return rows
+  }),
+
+  getAll: adminProcedure.query(async({ctx}) => {
     const { db } = ctx;
     const rows = await db
       .select()

@@ -5,15 +5,6 @@ export type Tech = {
   description: string;
 }
 
-export type TimelineItem = {
-  id: number;
-  year: string;
-  month: number;
-  category: string;
-  title: string;
-  detail: string;
-}
-
 export type Project = {
   id: number;
   title: string;
