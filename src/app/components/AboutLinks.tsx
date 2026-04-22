@@ -19,7 +19,7 @@ const AboutLinks = () => {
               alt="Xのロゴ"
               width={32}
               height={32}
-              className=""
+              className="w-8 h-8"
             />
             <span className="text-lg font-medium text-slate-800">
               X (Twitter)
@@ -38,7 +38,7 @@ const AboutLinks = () => {
               alt="Github ロゴ"
               width={32}
               height={32}
-              className=""
+              className="w-8 h-8"
             />
             <span className="text-lg font-medium text-slate-800">
               Github
