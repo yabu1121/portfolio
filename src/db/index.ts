@@ -4,10 +4,20 @@ import * as schema from './schema';
 
 const connectionString = process.env.DATABASE_URL!;
 
-const client = postgres(connectionString, {
-  prepare: false,
-  ssl: 'require',
-  max: 1,
-});
+const globalForDb = globalThis as unknown as {
+  _pg?: ReturnType<typeof postgres>;
+};
+
+const client =
+  globalForDb._pg ??
+  postgres(connectionString, {
+    prepare: false,
+    ssl: 'require',
+    max: 10,
+  });
+
+if (process.env.NODE_ENV !== 'production') {
+  globalForDb._pg = client;
+}
 
 export const db = drizzle(client, { schema });
