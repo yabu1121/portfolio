@@ -15,6 +15,13 @@ export const myTechs = pgTable('my_techs', {
   description: text('description'),
 });
 
+export const events = pgTable('events', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  year: integer('year').notNull(),
+  month: integer('month').notNull(),
+  name: varchar('name').notNull(),
+})
+
 export const timeline = pgTable('timeline', {
   id: uuid('id').defaultRandom().primaryKey(),
   year: varchar('year', { length: 4 }).notNull(),
