@@ -3,8 +3,8 @@
 import { api } from "@/trpc/client"
 import Link from "next/link";
 import toast from "react-hot-toast";
-import Loading from "./common/AdminLoading";
-import Error from "./common/Error";
+import Loading from "../common/AdminLoading";
+import Error from "../common/Error";
 
 const AdminEvent = () => {
   const utils = api.useUtils();
@@ -44,7 +44,7 @@ const AdminEvent = () => {
             key={event.id}
             className="flex justify-between items-center my-4 rounded-2xl"
           >
-            <p className="w-20 font-bold">{event.year}年</p>
+            <p className="w-20">{event.year}年</p>
             <p className="w-16">{event.month}月</p>
             <p className="w-120">{event.name}</p>
             <Link
