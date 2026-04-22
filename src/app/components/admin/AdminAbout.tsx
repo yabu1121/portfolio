@@ -1,7 +1,10 @@
+import AdminTimeline from "./AdminTimeline"
 
 const AdminAbout = () => {
   return (
-    <div>about画面管理</div>
+    <div>about
+      <AdminTimeline />
+    </div>
   )
 }
 

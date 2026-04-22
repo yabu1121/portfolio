@@ -1,6 +1,11 @@
-import { timeline } from '../utils/data'
+'use client'
+import { api } from '@/trpc/client'
 
 const AboutTimeline = () => {
+  const { data: timeline, isLoading, isError } = api.timeline.getAllForPublic.useQuery()
+  if(isLoading)return <>loading...</>
+  if(isError)return <>error</>
+  if(!timeline)return <>internal server error</>
   return (
     <section className="px-5 sm:px-8 py-6 sm:py-8 bg-white my-4 rounded">
       <div className="mb-10">
@@ -9,7 +14,7 @@ const AboutTimeline = () => {
       </div>
       <div className="py-4 ml-2 sm:ml-3 space-y-10 sm:space-y-12 border-l-2 border-slate-200 md:ml-6">
         {timeline.map((item) => (
-          <div key={item.id} className="relative pl-8 md:pl-12 group">
+          <div key={item.title} className="relative pl-8 md:pl-12 group">
             <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full border-4 border-slate-300 group-hover:border-blue-500 transition-colors" />
             <div className="flex flex-col sm:flex-row gap-4 mb-2 w-full sm:w-auto items-start sm:items-center justify-between">
               <div className="">
