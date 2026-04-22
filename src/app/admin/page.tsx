@@ -2,11 +2,11 @@
 
 import { useState } from "react"
 import { TabButton } from "../components/common/TabButton";
-import AdminAbout from "../components/AdminAbout";
-import AdminProject from "../components/AdminProject";
-import AdminContact from "../components/AdminContact";
-import AdminTech from "../components/AdminTech";
-import AdminEvent from "../components/AdminEvent";
+import AdminAbout from "../components/admin/AdminAbout";
+import AdminProject from "../components/admin/AdminProject";
+import AdminContact from "../components/admin/AdminContact";
+import AdminTech from "../components/admin/AdminTech";
+import AdminEvent from "../components/admin/AdminEvent";
 
 
 const Admin = () => {

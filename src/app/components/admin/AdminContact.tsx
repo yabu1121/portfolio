@@ -1,7 +1,7 @@
 'use client'
 import { api } from "@/trpc/client"
-import Loading from "./common/AdminLoading";
-import Error from "./common/Error";
+import Loading from "../common/AdminLoading";
+import Error from "../common/Error";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
