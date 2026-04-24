@@ -1,30 +1,20 @@
+import { myTechs, techs } from "@/db/schema";
 import { createTRPCRouter, publicProcedure } from "../trpc";
+import { eq } from "drizzle-orm";
 
 export const skillRouter = createTRPCRouter({
   getAll: publicProcedure.query(async({ctx}) => {
     const {db} = ctx;
-    const skillData = await db.query.techs.findMany({
-      columns: {
-        id: true,
-        name: true,
-        iconUrl: true,
-        description: true,
-      },
-      // withで同時に取得できる
-      with: {
-        // withの中身はリレーションで定義した名前。
-        myTechs: true,
-      }
-    });
-      return skillData.map((tech) => {
-        const myLevel = tech.myTechs[0];
-        return {
-          id: tech.id,
-          name: tech.name,
-          iconUrl: tech.iconUrl,
-          level: myLevel?.level ?? 0,
-          description: myLevel?.description ?? "",
-        }
-      });
-    }),
+    const skillData = await db
+    .select({
+      id: techs.id,
+      name: techs.name,
+      iconUrl: techs.iconUrl,
+      level: myTechs.level,
+      description: techs.description,
+    })
+    .from(techs)
+    .innerJoin(myTechs, eq(myTechs.techId, techs.id))
+    return skillData;
   })
+})
