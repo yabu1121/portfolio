@@ -12,7 +12,7 @@ export const skillRouter = createTRPCRouter({
       name: techs.name,
       iconUrl: techs.iconUrl,
       level: myTechs.level,
-      description: techs.description,
+      description: myTechs.description,
     })
     .from(techs)
     .innerJoin(myTechs, eq(myTechs.techId, techs.id))
@@ -32,7 +32,7 @@ export const skillRouter = createTRPCRouter({
       name: techs.name,
       iconUrl: techs.iconUrl,
       level: myTechs.level,
-      description: techs.description,
+      description: myTechs.description,
     })
     .from(techs)
     .innerJoin(myTechs, eq(myTechs.techId, techs.id))
