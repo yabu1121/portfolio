@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { snsLinks, iconFor } from "@/app/utils/snsLinks"
 
@@ -13,6 +14,22 @@ const reveal = (delay: string) => ({
 const TopPageContent = () => {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-sky-50 via-white to-cyan-50">
+      {/* 写真背景（ゆっくりズーム） */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/heroimage.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          style={{ animation: "heroZoom 9s ease-out forwards" }}
+        />
+      </div>
+
+      {/* 明るい水色オーバーレイ（暗くせず写真の質感を残す） */}
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-50/88 via-white/82 to-cyan-50/90" />
+
       {/* 柔らかい水色のブロブで親しみやすい空気感 */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-sky-200/50 blur-3xl" />
