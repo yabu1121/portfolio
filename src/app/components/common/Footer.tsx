@@ -1,7 +1,15 @@
+'use client'
+
 import { ActivityIcon, Highlighter, Rabbit, Send, UserRound } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 const Footer = () => {
+  const pathname = usePathname()
+
+  // Home（ヒーロー）ではスマホ下部ナビを出さない
+  if (pathname === "/") return null
+
   return (
     <footer className='md:hidden bottom-0 fixed w-screen'>
       <ul className="bg-slate-300 flex justify-between w-full h-full">
