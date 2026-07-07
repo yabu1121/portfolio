@@ -71,17 +71,17 @@ const TopPageContent = () => {
           バックエンドが好き。作って、出して、また作る。
         </p>
 
-        {/* モバイル用ボタン（デスクトップは下部でバブルとして点在） */}
-        <div style={reveal("0.85s")} className="mt-10 flex gap-3 md:hidden">
+        {/* ボタン（全サイズ共通・中央） */}
+        <div style={reveal("0.85s")} className="mt-10 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/about"
-            className="rounded-full bg-sky-500 px-7 py-3 text-sm font-medium text-white shadow-lg shadow-sky-500/25 transition-transform duration-300 active:scale-95"
+            className="rounded-full bg-sky-500 px-8 py-3 text-sm font-medium text-white shadow-lg shadow-sky-500/25 transition-all duration-300 hover:scale-[1.03] hover:bg-sky-600"
           >
             About Me
           </Link>
           <Link
             href="/projects"
-            className="rounded-full border border-sky-200 bg-white px-7 py-3 text-sm font-medium text-sky-700 transition-transform duration-300 active:scale-95"
+            className="rounded-full border border-sky-200 bg-white px-8 py-3 text-sm font-medium text-sky-700 transition-all duration-300 hover:scale-[1.03] hover:border-sky-400 hover:bg-sky-50"
           >
             View Projects
           </Link>
@@ -116,32 +116,6 @@ const TopPageContent = () => {
           ))}
         </div>
       </div>
-
-      {/* 点在するバブルボタン（デスクトップのみ・名前を挟んで左右対称／モバイルは中央のボタン） */}
-      <div style={reveal("0.9s")} className="z-20 hidden md:absolute md:left-[8%] md:top-[44%] md:block">
-        <Link
-          href="/about"
-          style={{ animation: "float 6s ease-in-out infinite" }}
-          className="block rounded-full bg-sky-500/90 px-7 py-3.5 text-sm font-medium text-white shadow-xl shadow-sky-400/40 backdrop-blur transition-transform duration-300 hover:scale-110"
-        >
-          About&nbsp;Me
-        </Link>
-      </div>
-      <div style={reveal("1.1s")} className="z-20 hidden md:absolute md:right-[8%] md:top-[44%] md:block">
-        <Link
-          href="/projects"
-          style={{ animation: "float 6.5s ease-in-out infinite 0.8s" }}
-          className="block rounded-full border border-sky-200 bg-white/85 px-7 py-3.5 text-sm font-medium text-sky-700 shadow-xl shadow-sky-200/50 backdrop-blur transition-transform duration-300 hover:scale-110"
-        >
-          View&nbsp;Projects
-        </Link>
-      </div>
-
-      {/* 装飾バブル（四隅に均等に点在・デスクトップのみ） */}
-      <span className="pointer-events-none absolute left-[15%] top-[22%] z-10 hidden h-6 w-6 rounded-full bg-sky-300/40 md:block" style={{ animation: "float 5s ease-in-out infinite 0.4s" }} />
-      <span className="pointer-events-none absolute right-[15%] top-[22%] z-10 hidden h-8 w-8 rounded-full bg-cyan-300/40 md:block" style={{ animation: "float 4.5s ease-in-out infinite 1.2s" }} />
-      <span className="pointer-events-none absolute bottom-[22%] left-[15%] z-10 hidden h-4 w-4 rounded-full bg-blue-300/50 md:block" style={{ animation: "float 5.5s ease-in-out infinite 0.7s" }} />
-      <span className="pointer-events-none absolute bottom-[22%] right-[16%] z-10 hidden h-5 w-5 rounded-full bg-sky-400/40 md:block" style={{ animation: "float 6s ease-in-out infinite 1.5s" }} />
     </section>
   )
 }
