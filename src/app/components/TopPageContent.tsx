@@ -4,6 +4,13 @@ import Link from "next/link"
 const MONO = { fontFamily: "var(--font-geist-mono)" }
 const DISPLAY = { fontFamily: "var(--font-fraunces)" }
 
+// Home に並べる SNS。増やすときはここに { label, href, slug } を足すだけ。
+const snsLinks = [
+  { label: "X (Twitter)", href: "https://x.com/papox_57", slug: "x" },
+  { label: "GitHub", href: "https://github.com/yabu1121", slug: "github" },
+  { label: "Zenn", href: "https://zenn.dev/yabu_p", slug: "zenn" },
+]
+
 // CSS のみで段階的リビール（stateを使わない）
 const reveal = (delay: string) => ({
   animation: "fadeInUp 0.85s ease-out both",
@@ -38,7 +45,7 @@ const TopPageContent = () => {
         {/* キッカー（mono） */}
         <p
           style={{ ...MONO, ...reveal("0.1s") }}
-          className="mb-6 text-[11px] uppercase tracking-[0.45em] text-emerald-300/90"
+          className="mb-6 text-[11px] uppercase tracking-[0.45em] text-sky-300/90"
         >
           Backend&nbsp;Engineer
         </p>
@@ -81,6 +88,29 @@ const TopPageContent = () => {
           >
             View Projects
           </Link>
+        </div>
+
+        {/* SNS リンク列（データ配列から生成・水色ホバー） */}
+        <div style={reveal("1s")} className="mt-11 flex flex-wrap items-center justify-center gap-3">
+          {snsLinks.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300/70 hover:bg-white/15"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`https://cdn.simpleicons.org/${s.slug}/ffffff`}
+                alt=""
+                width={18}
+                height={18}
+                className="h-[18px] w-[18px] opacity-90"
+              />
+            </a>
+          ))}
         </div>
       </div>
 
