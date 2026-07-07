@@ -42,6 +42,16 @@
   }
 }
 
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
 @keyframes fadeInDown {
   0% {
     opacity: 0;
