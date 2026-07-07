@@ -1,39 +1,34 @@
-// SNSリンク一覧。増やすときは links 配列に { label, href, slug } を足すだけ。
-// slug は simpleicons のスラッグ（https://simpleicons.org で検索）。
-// アイコンは next/image ではなく素の <img>（外部SVGを確実に表示するため）。
-
-type LinkItem = { label: string; href: string; slug: string };
-
-const links: LinkItem[] = [
-  { label: "X (Twitter)", href: "https://x.com/papox_57", slug: "x" },
-  { label: "GitHub", href: "https://github.com/yabu1121", slug: "github" },
-  { label: "Zenn", href: "https://zenn.dev/yabu_p", slug: "zenn" },
-];
+// SNSリンク一覧（/about）。データは src/app/utils/snsLinks.ts で一元管理。
+// アイコンは next/image ではなく素の <img>（simpleicons / 自前SVG を確実に表示）。
+import { snsLinks, iconFor } from "@/app/utils/snsLinks";
 
 const AboutLinks = () => {
   return (
     <section className="px-5 sm:px-8 py-6 sm:py-8 max-w-2xl mx-auto bg-white my-4 rounded">
       <h2 className="text-center text-2xl font-medium mb-6">Links</h2>
 
-      <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        {links.map((l) => (
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {snsLinks.map((l) => (
           <li key={l.href} className="list-none">
             <a
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-3 border border-slate-100 rounded-lg hover:bg-slate-50 hover:border-slate-200 transition-colors"
+              className="group flex items-center gap-3 p-3 border border-slate-100 rounded-lg hover:bg-sky-50 hover:border-sky-200 transition-colors"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`https://cdn.simpleicons.org/${l.slug}`}
-                alt={l.label}
-                width={28}
-                height={28}
-                className="w-7 h-7 shrink-0"
-              />
-              <span className="text-sm sm:text-base font-medium text-slate-800 truncate">
-                {l.label}
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-slate-50">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={iconFor(l, "light")}
+                  alt={l.label}
+                  width={20}
+                  height={20}
+                  className="h-5 w-5"
+                />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm font-medium text-slate-800">{l.label}</span>
+                <span className="block truncate text-xs text-slate-500">{l.user}</span>
               </span>
             </a>
           </li>
