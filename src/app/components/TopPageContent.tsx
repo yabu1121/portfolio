@@ -4,11 +4,11 @@ import Link from "next/link"
 const MONO = { fontFamily: "var(--font-geist-mono)" }
 const DISPLAY = { fontFamily: "var(--font-fraunces)" }
 
-// Home に並べる SNS。増やすときはここに { label, href, slug } を足すだけ。
+// Home に並べる SNS。増やすときはここに { label, href, slug, user } を足すだけ。
 const snsLinks = [
-  { label: "X (Twitter)", href: "https://x.com/papox_57", slug: "x" },
-  { label: "GitHub", href: "https://github.com/yabu1121", slug: "github" },
-  { label: "Zenn", href: "https://zenn.dev/yabu_p", slug: "zenn" },
+  { label: "X (Twitter)", href: "https://x.com/papox_57", slug: "x", user: "@papox_57" },
+  { label: "GitHub", href: "https://github.com/yabu1121", slug: "github", user: "yabu1121" },
+  { label: "Zenn", href: "https://zenn.dev/yabu_p", slug: "zenn", user: "yabu_p" },
 ]
 
 // CSS のみで段階的リビール（stateを使わない）
@@ -90,8 +90,8 @@ const TopPageContent = () => {
           </Link>
         </div>
 
-        {/* SNS リンク列（データ配列から生成・水色ホバー） */}
-        <div style={reveal("1s")} className="mt-11 flex flex-wrap items-center justify-center gap-3">
+        {/* SNS リンク（ロゴ＋ユーザー名の踏めるブロック・データ配列から生成） */}
+        <div style={reveal("1s")} className="mt-11 flex max-w-2xl flex-wrap items-center justify-center gap-3">
           {snsLinks.map((s) => (
             <a
               key={s.href}
@@ -99,16 +99,21 @@ const TopPageContent = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300/70 hover:bg-white/15"
+              className="group flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 py-2 pl-2 pr-4 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300/60 hover:bg-white/12"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`https://cdn.simpleicons.org/${s.slug}/ffffff`}
-                alt=""
-                width={18}
-                height={18}
-                className="h-[18px] w-[18px] opacity-90"
-              />
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-sky-300/20">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://cdn.simpleicons.org/${s.slug}/ffffff`}
+                  alt=""
+                  width={15}
+                  height={15}
+                  className="h-[15px] w-[15px] opacity-90"
+                />
+              </span>
+              <span style={MONO} className="text-xs text-white/85 sm:text-sm">
+                {s.user}
+              </span>
             </a>
           ))}
         </div>
