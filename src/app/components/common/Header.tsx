@@ -3,10 +3,12 @@
 import Link from "next/link"
 
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 import { links } from "@/app/utils/data"
 import { Sprout, X } from "lucide-react"
 
 const Header = () => {
+  const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev)
@@ -23,6 +25,9 @@ const Header = () => {
       document.body.style.overflow = ""
     }
   }, [isMenuOpen])
+
+  // Home（ヒーロー）ではナビバーを出さない
+  if (pathname === "/") return null
 
   return (
     <>
