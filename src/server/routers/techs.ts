@@ -10,6 +10,21 @@ export const techsRouter = createTRPCRouter({
     return data;
   }),
 
+  create: adminProcedure
+  .input(z.object({
+    name: z.string().min(1).max(100),
+    description: z.string().nullable(),
+    iconUrl: z.string().max(255).nullable(),
+  }))
+  .mutation( async ({ctx, input}) => {
+    const { db } = ctx;
+    const [created] = await db
+      .insert(techs)
+      .values(input)
+      .returning();
+    return created;
+  }),
+
   getByID: adminProcedure
   .input(z.object({
     id: z.string().uuid()

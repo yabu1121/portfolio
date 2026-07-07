@@ -1,5 +1,5 @@
 import { adminProcedure, createTRPCRouter, publicProcedure } from "../trpc";
-import { works } from "@/db/schema";
+import { works, m2m_worksToTechs } from "@/db/schema";
 import { desc, eq } from "drizzle-orm";
 import { z } from "zod";
 
@@ -27,12 +27,42 @@ export const workRouter = createTRPCRouter({
     }))
     .query(async ({ ctx, input }) => {
       const { db } = ctx;
-      const [row] = await db
-        .select()
-        .from(works)
-        .where(eq(works.id, input.id))
-        .limit(1);
+      const row = await db.query.works.findFirst({
+        where: eq(works.id, input.id),
+        with: {
+          worksToTechs: {
+            with: {
+              tech: true,
+            },
+          },
+        },
+      });
       return row ?? null;
+    }),
+
+  setTechs: adminProcedure
+    .input(z.object({
+      workId: z.string().uuid(),
+      techs: z.array(z.object({
+        techId: z.string().uuid(),
+        description: z.string().nullable(),
+      })),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const { db } = ctx;
+      await db
+        .delete(m2m_worksToTechs)
+        .where(eq(m2m_worksToTechs.workId, input.workId));
+      if (input.techs.length > 0) {
+        await db.insert(m2m_worksToTechs).values(
+          input.techs.map((t) => ({
+            workId: input.workId,
+            techId: t.techId,
+            description: t.description,
+          }))
+        );
+      }
+      return { ok: true, count: input.techs.length };
     }),
 
   create: adminProcedure
