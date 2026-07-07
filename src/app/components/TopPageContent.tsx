@@ -12,7 +12,7 @@ const reveal = (delay: string) => ({
 
 const TopPageContent = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-gradient-to-b from-sky-50 via-white to-cyan-50">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-sky-50 via-white to-cyan-50">
       {/* 柔らかい水色のブロブで親しみやすい空気感 */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-sky-200/50 blur-3xl" />
@@ -21,7 +21,7 @@ const TopPageContent = () => {
       </div>
 
       {/* 中央コンテンツ */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-16 text-center">
         {/* キッカー（水色ピル） */}
         <p
           style={{ ...MONO, ...reveal("0.1s") }}
@@ -70,8 +70,8 @@ const TopPageContent = () => {
           </Link>
         </div>
 
-        {/* SNS リンク（ロゴ＋ユーザー名の踏めるブロック） */}
-        <div style={reveal("1s")} className="mt-11 flex max-w-2xl flex-wrap items-center justify-center gap-3">
+        {/* SNS リンク（縦並び・ロゴ＋ユーザー名の踏めるブロック） */}
+        <div style={reveal("1s")} className="mt-11 flex w-full max-w-xs flex-col gap-2.5">
           {snsLinks.map((s) => (
             <a
               key={s.href}
@@ -79,19 +79,20 @@ const TopPageContent = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="group flex items-center gap-2.5 rounded-full border border-slate-200 bg-white/80 py-2 pl-2 pr-4 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-white hover:shadow-sm"
+              className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-white/80 px-4 py-2.5 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-white hover:shadow-md hover:shadow-sky-100"
             >
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-sky-50">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-50">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={iconFor(s, "light")}
                   alt=""
-                  width={15}
-                  height={15}
-                  className="h-[15px] w-[15px]"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4"
                 />
               </span>
-              <span style={MONO} className="text-xs text-slate-600 sm:text-sm">
+              <span className="text-sm font-medium text-slate-700">{s.label}</span>
+              <span style={MONO} className="ml-auto truncate text-xs text-slate-400">
                 {s.user}
               </span>
             </a>
