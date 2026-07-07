@@ -1,15 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
+import { snsLinks, iconFor } from "@/app/utils/snsLinks"
 
 const MONO = { fontFamily: "var(--font-geist-mono)" }
 const DISPLAY = { fontFamily: "var(--font-fraunces)" }
-
-// Home に並べる SNS。増やすときはここに { label, href, slug, user } を足すだけ。
-const snsLinks = [
-  { label: "X (Twitter)", href: "https://x.com/papox_57", slug: "x", user: "@papox_57" },
-  { label: "GitHub", href: "https://github.com/yabu1121", slug: "github", user: "yabu1121" },
-  { label: "Zenn", href: "https://zenn.dev/yabu_p", slug: "zenn", user: "yabu_p" },
-]
 
 // CSS のみで段階的リビール（stateを使わない）
 const reveal = (delay: string) => ({
@@ -104,7 +98,7 @@ const TopPageContent = () => {
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-sky-300/20">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`https://cdn.simpleicons.org/${s.slug}/ffffff`}
+                  src={iconFor(s, "dark")}
                   alt=""
                   width={15}
                   height={15}
