@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* ベースフォント（未指定要素がブラウザ既定=Timesに落ちるのを防ぐ） */
+body {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
 @keyframes scroll {
   0% {
     transform: translateY(0);
