@@ -71,6 +71,22 @@ const TopPageContent = () => {
           バックエンドが好き。作って、出して、また作る。
         </p>
 
+        {/* モバイル用ボタン（デスクトップは下部でバブルとして点在） */}
+        <div style={reveal("0.85s")} className="mt-10 flex gap-3 md:hidden">
+          <Link
+            href="/about"
+            className="rounded-full bg-sky-500 px-7 py-3 text-sm font-medium text-white shadow-lg shadow-sky-500/25 transition-transform duration-300 active:scale-95"
+          >
+            About Me
+          </Link>
+          <Link
+            href="/projects"
+            className="rounded-full border border-sky-200 bg-white px-7 py-3 text-sm font-medium text-sky-700 transition-transform duration-300 active:scale-95"
+          >
+            View Projects
+          </Link>
+        </div>
+
         {/* SNS リンク（縦並び・ロゴ＋ユーザー名の踏めるブロック） */}
         <div style={reveal("1s")} className="mt-11 flex w-full max-w-xs flex-col gap-2.5">
           {snsLinks.map((s) => (
@@ -101,8 +117,8 @@ const TopPageContent = () => {
         </div>
       </div>
 
-      {/* 点在するバブルボタン */}
-      <div style={reveal("0.9s")} className="absolute left-5 top-16 z-20 sm:left-[9%] sm:top-[22%]">
+      {/* 点在するバブルボタン（デスクトップのみ／モバイルは中央のボタンを表示） */}
+      <div style={reveal("0.9s")} className="z-20 hidden md:absolute md:left-[9%] md:top-[22%] md:block">
         <Link
           href="/about"
           style={{ animation: "float 6s ease-in-out infinite" }}
@@ -111,7 +127,7 @@ const TopPageContent = () => {
           About&nbsp;Me
         </Link>
       </div>
-      <div style={reveal("1.1s")} className="absolute bottom-16 right-5 z-20 sm:bottom-[24%] sm:right-[9%]">
+      <div style={reveal("1.1s")} className="z-20 hidden md:absolute md:bottom-[24%] md:right-[9%] md:block">
         <Link
           href="/projects"
           style={{ animation: "float 6.5s ease-in-out infinite 0.8s" }}
@@ -121,11 +137,11 @@ const TopPageContent = () => {
         </Link>
       </div>
 
-      {/* 装飾バブル（点在） */}
-      <span className="pointer-events-none absolute right-[16%] top-[26%] z-10 h-8 w-8 rounded-full bg-sky-300/40" style={{ animation: "float 5s ease-in-out infinite 0.4s" }} />
-      <span className="pointer-events-none absolute bottom-[28%] left-[18%] z-10 h-5 w-5 rounded-full bg-cyan-300/40" style={{ animation: "float 4.5s ease-in-out infinite 1.2s" }} />
-      <span className="pointer-events-none absolute left-[24%] top-[32%] z-10 h-3 w-3 rounded-full bg-blue-300/50" style={{ animation: "float 5.5s ease-in-out infinite 0.7s" }} />
-      <span className="pointer-events-none absolute bottom-[20%] right-[24%] z-10 h-4 w-4 rounded-full bg-sky-400/40" style={{ animation: "float 6s ease-in-out infinite 1.5s" }} />
+      {/* 装飾バブル（点在・デスクトップのみ） */}
+      <span className="pointer-events-none absolute right-[16%] top-[26%] z-10 hidden h-8 w-8 rounded-full bg-sky-300/40 md:block" style={{ animation: "float 5s ease-in-out infinite 0.4s" }} />
+      <span className="pointer-events-none absolute bottom-[28%] left-[18%] z-10 hidden h-5 w-5 rounded-full bg-cyan-300/40 md:block" style={{ animation: "float 4.5s ease-in-out infinite 1.2s" }} />
+      <span className="pointer-events-none absolute left-[24%] top-[32%] z-10 hidden h-3 w-3 rounded-full bg-blue-300/50 md:block" style={{ animation: "float 5.5s ease-in-out infinite 0.7s" }} />
+      <span className="pointer-events-none absolute bottom-[20%] right-[24%] z-10 hidden h-4 w-4 rounded-full bg-sky-400/40 md:block" style={{ animation: "float 6s ease-in-out infinite 1.5s" }} />
     </section>
   )
 }
