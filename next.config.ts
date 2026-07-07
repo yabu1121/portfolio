@@ -7,7 +7,19 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "tsuyqcbklalcewjyiaad.supabase.co",
         port: '',
-        pathname: '/**', 
+        pathname: '/**',
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+        port: '',
+        pathname: '/**',
       },
     ]
   },
