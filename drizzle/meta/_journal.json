@@ -5,64 +5,15 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1766497294286,
-      "tag": "0000_woozy_the_professor",
+      "when": 1786640416389,
+      "tag": "0000_baseline",
       "breakpoints": true
     },
     {
       "idx": 1,
       "version": "7",
-      "when": 1766499158109,
-      "tag": "0001_charming_ricochet",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1766499296805,
-      "tag": "0002_strange_fenris",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1766499407214,
-      "tag": "0003_ambitious_cyclops",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1766500584744,
-      "tag": "0004_nostalgic_gwen_stacy",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "7",
-      "when": 1766578635172,
-      "tag": "0005_ambitious_sandman",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "7",
-      "when": 1766579226733,
-      "tag": "0006_modern_spirit",
-      "breakpoints": true
-    },
-    {
-      "idx": 7,
-      "version": "7",
-      "when": 1766579940737,
-      "tag": "0007_unknown_rictor",
-      "breakpoints": true
-    },
-    {
-      "idx": 8,
-      "version": "7",
-      "when": 1776635930020,
-      "tag": "0008_slimy_sentinels",
+      "when": 1786645702413,
+      "tag": "0001_timeline_media_and_links",
       "breakpoints": true
     }
   ]
