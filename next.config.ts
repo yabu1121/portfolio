@@ -21,6 +21,14 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      // works の "Hate AI" がリポジトリ上の画像を直接参照しているため許可。
+      // 恒久的には /api/upload で Supabase に移すのが望ましい。
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        port: '',
+        pathname: '/**',
+      },
     ]
   },
   allowedDevOrigins: [
