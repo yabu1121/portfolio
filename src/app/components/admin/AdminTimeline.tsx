@@ -5,6 +5,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import Loading from "../common/AdminLoading";
 import Error from "../common/Error";
+import { formatTimelinePeriod } from "@/app/utils/timelineDate";
 
 const AdminTimeline = () => {
   const utils = api.useUtils();
@@ -44,8 +45,7 @@ const AdminTimeline = () => {
             key={item.id}
             className="flex justify-between items-center my-4 rounded-2xl"
           >
-            <p className="w-20">{item.year}年</p>
-            <p className="w-16">{item.month}月</p>
+            <p className="w-52 tabular-nums">{formatTimelinePeriod(item)}</p>
             <p className="w-28">{item.category}</p>
             <p className="w-96">{item.title}</p>
             <Link

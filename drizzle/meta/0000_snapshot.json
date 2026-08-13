@@ -1,5 +1,5 @@
 {
-  "id": "717404bb-e80d-4c34-8eaa-8e6be37bd47b",
+  "id": "f436f7d9-df04-4e4d-bb99-412d051de6bc",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -21,12 +21,62 @@
           "primaryKey": false,
           "notNull": true
         },
+        "sender_user": {
+          "name": "sender_user",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sender_password": {
+          "name": "sender_password",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.events": {
+      "name": "events",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "year": {
+          "name": "year",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "month": {
+          "name": "month",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
         }
       },
       "indexes": {},
@@ -184,6 +234,13 @@
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false
+        },
+        "kind": {
+          "name": "kind",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'library'"
         }
       },
       "indexes": {},
@@ -224,6 +281,37 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true
+        },
+        "day": {
+          "name": "day",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "end_year": {
+          "name": "end_year",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "end_month": {
+          "name": "end_month",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "end_day": {
+          "name": "end_day",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_ongoing": {
+          "name": "is_ongoing",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
         },
         "category": {
           "name": "category",

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
+import { TECH_KINDS, TECH_KIND_LABEL, TechKind } from "@/app/utils/techKind";
 
 const Page = () => {
   const { id } = useParams<{id: string}>();
@@ -14,6 +15,7 @@ const Page = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const descRef = useRef<HTMLTextAreaElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const kindRef = useRef<HTMLSelectElement>(null);
 
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -60,6 +62,7 @@ const Page = () => {
         name: nameRef.current?.value ?? '',
         description: descRef.current?.value || null,
         iconUrl,
+        kind: (kindRef.current?.value ?? 'library') as TechKind,
       });
     } catch (err) {
       toast(err instanceof Error ? err.message : 'エラーが発生しました');
@@ -86,6 +89,19 @@ const Page = () => {
           className="border p-4"
           required
         />
+
+        <label htmlFor="kind">kind</label>
+        <select
+          id="kind"
+          ref={kindRef}
+          defaultValue={data.kind ?? 'library'}
+          className="border p-4"
+        >
+          {TECH_KINDS.map((k) => (
+            <option key={k} value={k}>{TECH_KIND_LABEL[k]}（{k}）</option>
+          ))}
+        </select>
+        <p className="text-xs text-gray-500">language を選ぶと About で理解度バーが表示される</p>
 
         <label htmlFor="desc">description</label>
         <textarea

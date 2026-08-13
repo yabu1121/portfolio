@@ -2,6 +2,7 @@ import { techs } from "@/db/schema";
 import { adminProcedure, createTRPCRouter } from "../trpc";
 import { z } from "zod";
 import { eq } from "drizzle-orm";
+import { TECH_KINDS } from "@/app/utils/techKind";
 
 export const techsRouter = createTRPCRouter({
   getAll: adminProcedure.query( async ({ctx}) => {
@@ -15,6 +16,7 @@ export const techsRouter = createTRPCRouter({
     name: z.string().min(1).max(100),
     description: z.string().nullable(),
     iconUrl: z.string().max(255).nullable(),
+    kind: z.enum(TECH_KINDS),
   }))
   .mutation( async ({ctx, input}) => {
     const { db } = ctx;
@@ -45,6 +47,7 @@ export const techsRouter = createTRPCRouter({
     name: z.string().min(1).max(100),
     description: z.string().nullable(),
     iconUrl: z.string().max(255).nullable(),
+    kind: z.enum(TECH_KINDS),
   }))
   .mutation( async ({ctx, input}) => {
     const { db } = ctx;

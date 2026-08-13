@@ -3,70 +3,74 @@ import { api } from "@/trpc/client"
 import Loading from "./common/Loading";
 import Error from "./common/Error";
 import Image from "next/image";
-import { useState } from "react";
+import Section from "./common/Section";
+import { isLanguage } from "@/app/utils/techKind";
 
+// このセクションで扱うのは言語のみ。
+// 言語は「理解度(level)」を縦断的に比較できる単位なのでバー付きで見せる。
+// フレームワーク/ライブラリ等は数値化しても情報量が無いため、
+// 「どのプロジェクトで何に使ったか」を各プロジェクトの詳細ページ側で語る。
 const AboutSkills = () => {
   const { data: skillData, isLoading, error } = api.skill.getAll.useQuery();
-  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   if (isLoading) return <Loading />;
   if (error) return <Error error={error} />;
 
+  const languages = (skillData ?? [])
+    .filter((s) => isLanguage(s.kind))
+    .toSorted((a, b) => (b.level ?? 0) - (a.level ?? 0));
 
-  const handleToggle = (id: string) => {
-    setSelectedId((prev) => (prev === id ? null : id));
-  };
   return (
-    <section className="px-6 py-12 bg-gray-50/50 rounded-3xl my-8">
-      <div className="max-w-4xl mx-auto">
+    <Section className="bg-gray-50/50 rounded-3xl">
         <header className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Technical Skills</h2>
-          <p className="text-gray-500 text-sm">これまでに少しでも触れてきた技術の習熟度です</p>
+          <p className="text-gray-500 text-sm">
+            プロのエンジニアを100としたときの自己評価です。実装ではAIを併用しています（AIを使わずに書いたものは個別に明記）。
+          </p>
         </header>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-          {skillData?.filter((item) => !!item.description).map((item) => {
-            const isOpen = selectedId === item.id;
-            return(
-              <div 
-                key={item.id} 
-                onClick={() => handleToggle(item.id)}
-                className="group relative bg-white p-5 rounded-2xl border border-black/30 cursor-pointer border-dashed shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center"
-              >
-                <div className="w-16 h-16 mb-4 relative p-2 bg-gray-50 rounded-xl group-hover:bg-blue-50 transition-colors">
-                  {item.iconUrl ? (
-                    <Image
-                      src={item.iconUrl}
-                      alt={item.name}
-                      fill
-                      className="object-contain p-2"
+        {languages.length === 0 ? (
+          <p className="text-center text-sm text-slate-400">準備中です</p>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2">
+              {languages.map((item) => (
+                <div
+                  key={item.id}
+                  className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="relative h-10 w-10 shrink-0 rounded-lg bg-slate-50">
+                      {item.iconUrl ? (
+                        <Image src={item.iconUrl} alt={item.name} fill className="object-contain p-1.5" />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center text-[9px] text-slate-300">
+                          No Image
+                        </div>
+                      )}
+                    </div>
+                    <h4 className="font-bold text-slate-800">{item.name}</h4>
+                    <span className="ml-auto font-mono text-xs text-slate-400">{item.level ?? 0}</span>
+                  </div>
+
+                  {/* width ではなく scaleX で伸ばす。width はレイアウトプロパティなので
+                      変化のたびに再レイアウトが走るが、transform はコンポジタだけで済む。 */}
+                  <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      className="h-full origin-left rounded-full bg-sky-500"
+                      style={{ transform: `scaleX(${(item.level ?? 0) / 100})` }}
                     />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-300">No Image</div>
+                  </div>
+
+                  {item.description && (
+                    <p className="mt-3 whitespace-pre-line text-xs leading-relaxed text-slate-600">
+                      {item.description}
+                    </p>
                   )}
                 </div>
-
-                <h3 className="font-bold text-gray-800 text-xs mb-1 truncate">{item.name}</h3>
-                
-                <div className="w-full bg-red-900 h-1 rounded-full mt-2 overflow-hidden">
-                  <div 
-                    className="bg-yellow-200 h-full rounded-full transition-all duration-1000"
-                    style={{ width: `${item.level ? item.level : 0}%` }}
-                  />
-                </div>
-
-                <div className={`
-                    absolute inset-0 z-10 transition-all duration-300 bg-white/95 rounded-2xl p-4 flex items-center justify-center text-xs text-gray-600 leading-relaxed shadow-2xl
-                    ${isOpen ? "opacity-100 z-30 pointer-events-auto rotate-y-360" : "opacity-0 pointer-events-none"}
-                  `}>
-                    {item.description}
-                  </div>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-    </section>
+              ))}
+          </div>
+        )}
+    </Section>
   )
 }
 
