@@ -1,5 +1,6 @@
 'use client'
 import { api } from '@/trpc/client'
+import Section from './common/Section'
 
 const AboutTimeline = () => {
   const { data: timeline, isLoading, isError } = api.timeline.getAllForPublic.useQuery()
@@ -7,7 +8,7 @@ const AboutTimeline = () => {
   if(isError)return <>error</>
   if(!timeline)return <>internal server error</>
   return (
-    <section className="max-w-4xl mx-auto px-5 sm:px-8 py-6 sm:py-8 bg-white my-4 rounded">
+    <Section className="bg-white rounded">
       <div className="mb-10">
         <h2 className="text-2xl mb-2 font-medium">Timeline</h2>
         <p className="mt-1 text-sm font-medium tracking-wider uppercase text-slate-500">これまでの経歴</p>
@@ -33,7 +34,7 @@ const AboutTimeline = () => {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }
 

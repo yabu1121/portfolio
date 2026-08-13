@@ -1,8 +1,9 @@
 import React from 'react'
+import Section from './common/Section'
 
 const Aboutme = () => {
   return (
-    <div className="px-5 sm:px-8 py-6 sm:py-8 bg-white mt-8 mb-4 rounded p-4">
+    <Section className="bg-white rounded">
       <h1 className="mb-2 text-2xl font-bold">About me</h1>
       <div className="mt-4 space-y-3 px-3 py-3 text-sm sm:text-base leading-relaxed">
         <p>芝浦工業大学 情報工学コース在籍（木村研究室）。大学からプログラミングを始め、いまはバックエンド領域に強く惹かれています。</p>
@@ -11,7 +12,7 @@ const Aboutme = () => {
         <p>月に一本のデプロイを目標に、個人開発と長期インターン（受託・自社開発）を並行。勉強会・ハッカソン・登壇にも積極的に参加しています。</p>
         <p>一緒に学ぶ人・作る人を探しています！</p>
       </div>
-    </div>
+    </Section>
   )
 }
 

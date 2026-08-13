@@ -1,10 +1,11 @@
 // SNSリンク一覧（/about）。データは src/app/utils/snsLinks.ts で一元管理。
 // アイコンは next/image ではなく素の <img>（simpleicons / 自前SVG を確実に表示）。
 import { snsLinks, iconFor } from "@/app/utils/snsLinks";
+import Section from "./common/Section";
 
 const AboutLinks = () => {
   return (
-    <section className="px-5 sm:px-8 py-6 sm:py-8 max-w-2xl mx-auto bg-white my-4 rounded">
+    <Section className="bg-white rounded">
       <h2 className="text-center text-2xl font-medium mb-6">Links</h2>
 
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -34,7 +35,7 @@ const AboutLinks = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </Section>
   );
 };
 

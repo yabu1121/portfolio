@@ -4,6 +4,7 @@ import Loading from "./common/Loading";
 import Error from "./common/Error";
 import Image from "next/image";
 import { useState } from "react";
+import Section from "./common/Section";
 
 const AboutSkills = () => {
   const { data: skillData, isLoading, error } = api.skill.getAll.useQuery();
@@ -17,15 +18,14 @@ const AboutSkills = () => {
     setSelectedId((prev) => (prev === id ? null : id));
   };
   return (
-    <section className="px-6 py-12 bg-gray-50/50 rounded-3xl my-8">
-      <div className="max-w-4xl mx-auto">
-        <header className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Technical Skills</h2>
-          <p className="text-gray-500 text-sm">これまでに少しでも触れてきた技術の習熟度です</p>
-        </header>
+    <Section className="bg-gray-50/50 rounded-3xl">
+      <header className="mb-10 text-center">
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">Technical Skills</h2>
+        <p className="text-gray-500 text-sm">これまでに少しでも触れてきた技術の習熟度です</p>
+      </header>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-          {skillData?.filter((item) => !!item.description).map((item) => {
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+        {skillData?.filter((item) => !!item.description).map((item) => {
             const isOpen = selectedId === item.id;
             return(
               <div 
@@ -64,9 +64,8 @@ const AboutSkills = () => {
               </div>
             )
           })}
-        </div>
       </div>
-    </section>
+    </Section>
   )
 }
 

@@ -1,13 +1,14 @@
 'use client'
 
 import { api } from "@/trpc/client"
+import Section from "./common/Section"
 
 const AboutEvent = () => {
   const {data, isLoading, isError} = api.event.getAll.useQuery()
   if(isLoading)return <>loading...</>
   if(isError)return <>error</>
   return (
-    <section className="px-5 sm:px-8 py-6 sm:py-8 bg-white my-4 rounded">
+    <Section className="bg-white rounded">
       <div className="mb-10">
         <h2 className="text-2xl mb-2 font-medium">Event</h2>
         <p className="text-xs">参加してきたイベントなど</p>
@@ -19,7 +20,7 @@ const AboutEvent = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 

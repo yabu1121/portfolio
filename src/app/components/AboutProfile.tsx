@@ -1,6 +1,8 @@
+import Section from './common/Section'
+
 const AboutProfile = () => {
   return (
-    <section className="px-5 sm:px-8 py-6 sm:py-8 bg-white mt-8 mb-4 rounded p-4">
+    <Section className="bg-white rounded">
       <h2 className="mb-2 text-2xl font-medium">Profile</h2>
       <div className="mt-4 space-y-2 px-3 py-3 text-sm sm:text-base leading-relaxed">
         <ul className="space-y-1">
@@ -17,7 +19,7 @@ const AboutProfile = () => {
           <li>基盤・品質：Docker / Supabase / k6 / Playwright</li>
         </ul>
       </div>
-    </section>
+    </Section>
   )
 }
 
