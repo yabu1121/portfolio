@@ -5,6 +5,7 @@ import { mailRouter } from './mail';
 import { techsRouter } from './techs';
 import { eventsRouter } from './events';
 import { timelineRouter } from './timeline';
+import { linkRouter } from './link';
 
 /**
  * 学習ポイント:
@@ -20,6 +21,7 @@ export const appRouter = createTRPCRouter({
   tech: techsRouter,
   event: eventsRouter,
   timeline: timelineRouter,
+  link: linkRouter,
 });
 
 // 型定義をエクスポート(クライアント側で使用)

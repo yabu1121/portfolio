@@ -4,6 +4,7 @@ import { api } from "@/trpc/client"
 import { useParams, useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
+import { TECH_KINDS, TECH_KIND_LABEL, TechKind } from "@/app/utils/techKind";
 
 const Page = () => {
   const { id } = useParams<{ id: string }>();
@@ -59,12 +60,12 @@ const Page = () => {
     onError: (e) => toast.error(`保存失敗: ${e.message}`),
   });
 
-  const [newTech, setNewTech] = useState({ name: '', description: '', iconUrl: '' });
+  const [newTech, setNewTech] = useState({ name: '', description: '', iconUrl: '', kind: 'library' as TechKind });
   const createTech = api.tech.create.useMutation({
     onSuccess: async () => {
       toast.success("技術を追加しました");
       await utils.tech.getAll.invalidate();
-      setNewTech({ name: '', description: '', iconUrl: '' });
+      setNewTech({ name: '', description: '', iconUrl: '', kind: 'library' });
     },
     onError: (e) => toast.error(`追加失敗: ${e.message}`),
   });
@@ -183,6 +184,15 @@ const Page = () => {
               type="text" placeholder="アイコンURL（任意）" value={newTech.iconUrl}
               onChange={(e) => setNewTech({ ...newTech, iconUrl: e.target.value })} className="border p-2 rounded"
             />
+            <select
+              value={newTech.kind}
+              onChange={(e) => setNewTech({ ...newTech, kind: e.target.value as TechKind })}
+              className="border p-2 rounded"
+            >
+              {TECH_KINDS.map((k) => (
+                <option key={k} value={k}>{TECH_KIND_LABEL[k]}（{k}）</option>
+              ))}
+            </select>
             <button
               type="button"
               disabled={createTech.isPending || !newTech.name}
@@ -190,6 +200,7 @@ const Page = () => {
                 name: newTech.name,
                 description: newTech.description || null,
                 iconUrl: newTech.iconUrl || null,
+                kind: newTech.kind,
               })}
               className="bg-gray-700 disabled:bg-gray-400 cursor-pointer text-white rounded-xl w-40 py-2"
             >{createTech.isPending ? '追加中...' : '技術を追加'}</button>

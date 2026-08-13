@@ -11,6 +11,7 @@ export const skillRouter = createTRPCRouter({
       id: myTechs.id,
       name: techs.name,
       iconUrl: techs.iconUrl,
+      kind: techs.kind,
       level: myTechs.level,
       description: myTechs.description,
     })
@@ -31,6 +32,7 @@ export const skillRouter = createTRPCRouter({
       id: myTechs.id,
       name: techs.name,
       iconUrl: techs.iconUrl,
+      kind: techs.kind,
       level: myTechs.level,
       description: myTechs.description,
     })

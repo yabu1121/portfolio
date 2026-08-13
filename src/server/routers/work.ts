@@ -12,7 +12,12 @@ export const workRouter = createTRPCRouter({
       with: {
         worksToTechs: {
           with: {
-            tech: true,
+            // tech.kind で言語/それ以外を出し分け、language は myTechs.level で理解度バーを出す
+            tech: {
+              with: {
+                myTechs: true,
+              },
+            },
           },
         },
       },
