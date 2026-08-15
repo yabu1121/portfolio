@@ -3,11 +3,27 @@
 import { api } from "@/trpc/client"
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Separator } from "@/components/ui/separator";
+import {
+  FormActions,
+  FormPage,
+  FormRow,
+} from "@/app/components/admin/ui/FormPage";
+
+const BACK = "/admin?tab=projects";
 
 const Page = () => {
   const router = useRouter();
   const utils = api.useUtils();
+
+  /* 既存の分類を候補に出して、表記のばらつきを防ぐ */
+  const { data: works } = api.work.getAll.useQuery();
+  const categories = [
+    ...new Set((works ?? []).map((w) => w.category).filter(Boolean)),
+  ] as string[];
 
   const titleRef = useRef<HTMLInputElement>(null);
   const descRef = useRef<HTMLTextAreaElement>(null);
@@ -22,16 +38,16 @@ const Page = () => {
     onSuccess: async () => {
       toast.success("登録しました");
       await utils.work.getAll.invalidate();
-      router.push('/admin');
+      router.push(BACK);
     },
-    onError: (e) => toast.error(`登録失敗: ${e.message}`),
+    onError: (e) => toast.error("登録に失敗しました", { description: e.message }),
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     createMutation.mutate({
-      title: titleRef.current?.value ?? '',
-      description: descRef.current?.value ?? '',
+      title: titleRef.current?.value ?? "",
+      description: descRef.current?.value ?? "",
       category: categoryRef.current?.value || null,
       githubUrl: githubUrlRef.current?.value || null,
       lpSiteUrl: lpSiteUrlRef.current?.value || null,
@@ -42,44 +58,75 @@ const Page = () => {
   };
 
   return (
-    <div>
-      <div className="flex gap-4">
-        <button type="button" onClick={() => router.back()}>戻る</button>
-        <h1>プロジェクト新規作成</h1>
-      </div>
-      <form onSubmit={handleSubmit} className="flex flex-col my-4 space-y-4 max-w-5xl mx-auto">
-        <label htmlFor="title">タイトル</label>
-        <input id="title" type="text" ref={titleRef} className="border p-4" required />
+    <FormPage
+      title="プロジェクトを追加"
+      backHref={BACK}
+      description="登録後、編集画面で使用技術を紐付けられます"
+    >
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <FormRow id="title" label="タイトル" required>
+          <Input id="title" type="text" ref={titleRef} required />
+        </FormRow>
 
-        <label htmlFor="description">説明</label>
-        <textarea id="description" ref={descRef} rows={6} className="border p-4" required />
+        <FormRow
+          id="description"
+          label="説明"
+          hint="Markdown 可（## 見出し / - 箇条書き / **強調**）"
+          required
+        >
+          <Textarea id="description" ref={descRef} rows={8} required />
+        </FormRow>
 
-        <label htmlFor="category">カテゴリ</label>
-        <input id="category" type="text" ref={categoryRef} className="border p-4" placeholder="例: self / udemy / ai" />
+        <FormRow id="category" label="分類" hint="既存の分類から選ぶか、新しく入力します">
+          <Input
+            id="category"
+            type="text"
+            ref={categoryRef}
+            list="work-categories"
+            placeholder="例: self / web game"
+            className="sm:w-72"
+          />
+          <datalist id="work-categories">
+            {categories.map((c) => (
+              <option key={c} value={c} />
+            ))}
+          </datalist>
+        </FormRow>
 
-        <label htmlFor="githubUrl">GitHub URL</label>
-        <input id="githubUrl" type="text" ref={githubUrlRef} className="border p-4" />
+        <Separator />
 
-        <label htmlFor="lpSiteUrl">LP URL</label>
-        <input id="lpSiteUrl" type="text" ref={lpSiteUrlRef} className="border p-4" />
+        <div className="space-y-4">
+          <FormRow id="githubUrl" label="GitHub URL">
+            <Input id="githubUrl" type="url" ref={githubUrlRef} className="font-mono text-xs" />
+          </FormRow>
+          <FormRow id="siteUrl" label="サイト URL">
+            <Input id="siteUrl" type="url" ref={siteUrlRef} className="font-mono text-xs" />
+          </FormRow>
+          <FormRow id="lpSiteUrl" label="LP URL">
+            <Input id="lpSiteUrl" type="url" ref={lpSiteUrlRef} className="font-mono text-xs" />
+          </FormRow>
+          <FormRow id="thumbnail" label="サムネイル URL">
+            <Input id="thumbnail" type="url" ref={thumbnailRef} className="font-mono text-xs" />
+          </FormRow>
+          <FormRow id="miniThumbnail" label="ミニサムネイル URL">
+            <Input
+              id="miniThumbnail"
+              type="url"
+              ref={miniThumbnailRef}
+              className="font-mono text-xs"
+            />
+          </FormRow>
+        </div>
 
-        <label htmlFor="siteUrl">サイト URL</label>
-        <input id="siteUrl" type="text" ref={siteUrlRef} className="border p-4" />
-
-        <label htmlFor="thumbnail">サムネイル URL</label>
-        <input id="thumbnail" type="text" ref={thumbnailRef} className="border p-4" />
-
-        <label htmlFor="miniThumbnail">ミニサムネイル URL</label>
-        <input id="miniThumbnail" type="text" ref={miniThumbnailRef} className="border p-4" />
-
-        <button
-          type="submit"
-          disabled={createMutation.isPending}
-          className="bg-blue-400 disabled:bg-gray-400 cursor-pointer text-white rounded-2xl w-40 mx-auto py-2"
-        >{createMutation.isPending ? '登録中...' : '登録'}</button>
+        <FormActions
+          pending={createMutation.isPending}
+          submitLabel="登録する"
+          pendingLabel="登録中..."
+          backHref={BACK}
+        />
       </form>
-    </div>
-  )
-}
+    </FormPage>
+  );
+};
 
-export default Page
+export default Page;

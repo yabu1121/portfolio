@@ -2,8 +2,17 @@
 
 import { api } from "@/trpc/client"
 import { useParams, useRouter } from "next/navigation";
-import { useRef, useState } from "react";
-import toast from "react-hot-toast";
+import { useRef } from "react";
+import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  FormActions,
+  FormPage,
+  FormRow,
+} from "@/app/components/admin/ui/FormPage";
+
+const BACK = "/admin?tab=event";
 
 const Page = () => {
   const { id } = useParams<{ id: string }>();
@@ -16,85 +25,83 @@ const Page = () => {
   const monthRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
 
-  const [submitting, setSubmitting] = useState(false);
-
   const updateMutation = api.event.update.useMutation({
     onSuccess: async () => {
       toast.success("更新しました");
       await utils.event.getAll.invalidate();
       await utils.event.getByID.invalidate({ id });
-      router.push('/admin');
+      router.push(BACK);
     },
-    onError: (e) => toast.error(`更新失敗: ${e.message}`),
+    onError: (e) => toast.error("更新に失敗しました", { description: e.message }),
   });
 
-  if (isLoading) return <>loading...</>
-  if (!data) return <>見つかりません</>
+  if (isLoading) return <Skeleton className="h-72 w-full max-w-3xl" />;
+  if (!data)
+    return (
+      <FormPage title="参加履歴を編集" backHref={BACK}>
+        <p className="text-sm text-muted-foreground">
+          この参加履歴は見つかりませんでした。削除された可能性があります。
+        </p>
+      </FormPage>
+    );
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    try {
-      await updateMutation.mutateAsync({
-        id,
-        year: Number(yearRef.current?.value ?? 0),
-        month: Number(monthRef.current?.value ?? 0),
-        name: nameRef.current?.value ?? '',
-      });
-    } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'エラーが発生しました');
-    } finally {
-      setSubmitting(false);
-    }
+    updateMutation.mutate({
+      id,
+      year: Number(yearRef.current?.value ?? 0),
+      month: Number(monthRef.current?.value ?? 0),
+      name: nameRef.current?.value ?? "",
+    });
   };
 
   return (
-    <div>
-      <div className="flex gap-4">
-        <button type="button" onClick={() => router.back()}>戻る</button>
-        <h1>イベント編集</h1>
-      </div>
-      <form onSubmit={handleSubmit} className="flex flex-col my-4 space-y-4 max-w-5xl mx-auto">
-        <label htmlFor="year">年</label>
-        <input
-          id="year"
-          type="number"
-          ref={yearRef}
-          defaultValue={data.year}
-          className="border p-4"
-          required
-        />
+    <FormPage title="参加履歴を編集" backHref={BACK} description={data.name}>
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-2 gap-4 sm:max-w-xs">
+          <FormRow id="year" label="年" required>
+            <Input
+              id="year"
+              type="number"
+              ref={yearRef}
+              defaultValue={data.year}
+              className="font-mono tabular-nums"
+              required
+            />
+          </FormRow>
+          <FormRow id="month" label="月" required>
+            <Input
+              id="month"
+              type="number"
+              ref={monthRef}
+              min={1}
+              max={12}
+              defaultValue={data.month}
+              className="font-mono tabular-nums"
+              required
+            />
+          </FormRow>
+        </div>
 
-        <label htmlFor="month">月</label>
-        <input
-          id="month"
-          type="number"
-          ref={monthRef}
-          min={1}
-          max={12}
-          defaultValue={data.month}
-          className="border p-4"
-          required
-        />
+        <FormRow id="name" label="イベント名" required>
+          <Input
+            id="name"
+            type="text"
+            ref={nameRef}
+            defaultValue={data.name}
+            required
+          />
+        </FormRow>
 
-        <label htmlFor="name">イベント名</label>
-        <input
-          id="name"
-          type="text"
-          ref={nameRef}
-          defaultValue={data.name}
-          className="border p-4"
-          required
+        <FormActions
+          pending={updateMutation.isPending}
+          submitLabel="更新する"
+          pendingLabel="更新中..."
+          backHref={BACK}
         />
-
-        <button
-          type="submit"
-          disabled={submitting}
-          className="bg-blue-400 disabled:bg-gray-400 cursor-pointer text-white rounded-2xl w-40 mx-auto py-2"
-        >{submitting ? '更新中...' : '更新'}</button>
       </form>
-    </div>
-  )
-}
+    </FormPage>
+  );
+};
 
-export default Page
+export default Page;

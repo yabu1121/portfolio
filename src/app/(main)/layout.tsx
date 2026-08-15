@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "../globals.css";
 import Header from "../components/common/Header";
 import { TRPCProvider } from "@/trpc/Provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,8 @@ export default function RootLayout({
         <TRPCProvider>
           <Header />
           {children}
+          {/* Toaster が無く、お問い合わせフォームのトーストが表示されていなかった */}
+          <Toaster position="bottom-right" richColors />
         </TRPCProvider>
       </body>
     </html>

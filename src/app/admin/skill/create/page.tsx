@@ -2,8 +2,20 @@
 
 import { api } from "@/trpc/client"
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
-import toast from "react-hot-toast";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  FormActions,
+  FormPage,
+  FormRow,
+} from "@/app/components/admin/ui/FormPage";
+import { TechSelect } from "@/app/components/admin/ui/TechSelect";
+import { LevelBar } from "@/app/components/admin/ui/display";
+
+const BACK = "/admin?tab=skill";
 
 const Page = () => {
   const router = useRouter();
@@ -11,80 +23,86 @@ const Page = () => {
 
   const { data: techs, isLoading } = api.tech.getAll.useQuery();
 
-  const techIdRef = useRef<HTMLSelectElement>(null);
-  const levelRef = useRef<HTMLInputElement>(null);
-  const descRef = useRef<HTMLTextAreaElement>(null);
+  const [techId, setTechId] = useState("");
+  const [level, setLevel] = useState(30);
+  const [description, setDescription] = useState("");
 
   const createMutation = api.skill.create.useMutation({
     onSuccess: async () => {
       toast.success("登録しました");
       await utils.skill.getAll.invalidate();
-      router.push('/admin');
+      router.push(BACK);
     },
-    onError: (e) => toast.error(`登録失敗: ${e.message}`),
+    onError: (e) => toast.error("登録に失敗しました", { description: e.message }),
   });
 
-  if (isLoading) return <>loading...</>
+  if (isLoading) return <Skeleton className="h-96 w-full max-w-3xl" />;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    createMutation.mutate({
-      techId: techIdRef.current?.value ?? '',
-      level: Number(levelRef.current?.value ?? 0),
-      description: descRef.current?.value ?? '',
-    });
+    if (!techId) {
+      toast.error("技術を選択してください");
+      return;
+    }
+    createMutation.mutate({ techId, level, description });
   };
 
   return (
-    <div>
-      <div className="flex gap-4">
-        <button type="button" onClick={() => router.back()}>戻る</button>
-        <h1>スキル新規作成</h1>
-      </div>
-      <form onSubmit={handleSubmit} className="flex flex-col my-4 space-y-4 max-w-5xl mx-auto">
-        <label htmlFor="techId">技術</label>
-        <select
-          id="techId"
-          ref={techIdRef}
-          className="border p-4"
-          required
-          defaultValue=""
-        >
-          <option value="" disabled>選択してください</option>
-          {techs?.map((tech) => (
-            <option key={tech.id} value={tech.id}>{tech.name}</option>
-          ))}
-        </select>
+    <FormPage
+      title="スキルを追加"
+      backHref={BACK}
+      description="登録済みの技術に、自分の理解度と補足を紐付けます"
+    >
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <FormRow id="techId" label="技術" required>
+          <TechSelect
+            id="techId"
+            techs={techs ?? []}
+            value={techId}
+            onChange={setTechId}
+          />
+        </FormRow>
 
-        <label htmlFor="level">レベル (1-100)</label>
-        <input
-          id="level"
-          type="number"
-          ref={levelRef}
-          min={1}
-          max={100}
-          defaultValue={30}
-          className="border p-4"
-          required
-        />
+        <FormRow id="level" label="理解度" hint="1〜100" required>
+          <div className="flex items-center gap-4">
+            <Input
+              id="level"
+              type="number"
+              min={1}
+              max={100}
+              value={level}
+              onChange={(e) => setLevel(Number(e.target.value))}
+              className="w-24 font-mono tabular-nums"
+              required
+            />
+            <LevelBar level={level} />
+          </div>
+        </FormRow>
 
-        <label htmlFor="description">詳細</label>
-        <textarea
+        <FormRow
           id="description"
-          ref={descRef}
-          rows={4}
-          className="border p-4"
+          label="補足"
+          hint="どこで何に使ったか。About ページに表示されます"
           required
+        >
+          <Textarea
+            id="description"
+            rows={4}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </FormRow>
+
+        <FormActions
+          pending={createMutation.isPending}
+          submitLabel="登録する"
+          pendingLabel="登録中..."
+          backHref={BACK}
         />
-
-        <button
-          type="submit"
-          disabled={createMutation.isPending}
-          className="bg-blue-400 disabled:bg-gray-400 cursor-pointer text-white rounded-2xl w-40 mx-auto py-2"
-        >{createMutation.isPending ? '登録中...' : '登録'}</button>
       </form>
-    </div>
-  )
-}
+    </FormPage>
+  );
+};
 
-export default Page
+export default Page;

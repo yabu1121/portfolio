@@ -3,7 +3,7 @@
 import CommonButton from "@/app/components/common/CommonButton"
 import { useRouter } from "next/navigation"
 import { useRef } from "react"
-import toast from "react-hot-toast"
+import { toast } from "sonner"
 
 const ContactPage = () => {
   const router = useRouter();
@@ -30,16 +30,16 @@ const ContactPage = () => {
       })
 
       if (res.ok) {
-        toast('送信が完了しました')
+        toast.success('送信が完了しました')
         if (nameRef.current) nameRef.current.value = '';
         if (emailRef.current) emailRef.current.value = '';
         if (contentRef.current) contentRef.current.value = '';
         router.push("/contact/result")
       } else {
-        toast('エラーが発生しました')
+        toast.error('送信できませんでした', { description: '時間をおいて再度お試しください' })
       }
     } catch (e) {
-      toast('エラーが発生しました')
+      toast.error('送信できませんでした', { description: '時間をおいて再度お試しください' })
       console.error(e)
     }
   }

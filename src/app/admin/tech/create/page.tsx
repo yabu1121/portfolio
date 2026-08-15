@@ -2,11 +2,10 @@
 
 import { api } from "@/trpc/client"
 import Image from "next/image";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
@@ -29,45 +28,25 @@ import {
 const BACK = "/admin?tab=tech";
 
 const Page = () => {
-  const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const utils = api.useUtils();
-  const { data, isLoading } = api.tech.getByID.useQuery({ id });
 
   const nameRef = useRef<HTMLInputElement>(null);
   const descRef = useRef<HTMLTextAreaElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const [kind, setKind] = useState<string | null>(null);
+  const [kind, setKind] = useState<TechKind>("library");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const updateMutation = api.tech.update.useMutation({
+  const createMutation = api.tech.create.useMutation({
     onSuccess: async () => {
-      toast.success("更新しました");
+      toast.success("技術を追加しました");
       await utils.tech.getAll.invalidate();
-      await utils.tech.getByID.invalidate({ id });
       router.push(BACK);
     },
-    onError: (e) => toast.error("更新に失敗しました", { description: e.message }),
+    onError: (e) => toast.error("追加に失敗しました", { description: e.message }),
   });
-
-  if (isLoading) return <Skeleton className="h-[32rem] w-full max-w-3xl" />;
-  if (!data)
-    return (
-      <FormPage title="技術を編集" backHref={BACK}>
-        <p className="text-sm text-muted-foreground">
-          この技術は見つかりませんでした。削除された可能性があります。
-        </p>
-      </FormPage>
-    );
-
-  const kindValue = kind ?? data.kind ?? "library";
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    setPreviewUrl(file ? URL.createObjectURL(file) : null);
-  };
 
   const uploadImage = async (file: File): Promise<string> => {
     const fd = new FormData();
@@ -83,15 +62,12 @@ const Page = () => {
     setSubmitting(true);
     try {
       const file = fileRef.current?.files?.[0];
-      let iconUrl: string | null = data.iconUrl ?? null;
-      if (file) iconUrl = await uploadImage(file);
-
-      await updateMutation.mutateAsync({
-        id,
+      const iconUrl = file ? await uploadImage(file) : null;
+      await createMutation.mutateAsync({
         name: nameRef.current?.value ?? "",
         description: descRef.current?.value || null,
         iconUrl,
-        kind: kindValue as TechKind,
+        kind,
       });
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "エラーが発生しました");
@@ -100,13 +76,15 @@ const Page = () => {
     }
   };
 
-  const displayIcon = previewUrl ?? data.iconUrl;
-
   return (
-    <FormPage title="技術を編集" backHref={BACK} description={data.name}>
+    <FormPage
+      title="技術を追加"
+      backHref={BACK}
+      description="ここで追加した技術を、プロジェクトやスキルに紐付けられます"
+    >
       <form onSubmit={handleSubmit} className="space-y-5">
         <FormRow id="name" label="技術名" required>
-          <Input id="name" type="text" ref={nameRef} defaultValue={data.name} required />
+          <Input id="name" type="text" ref={nameRef} placeholder="例: Go" required />
         </FormRow>
 
         <FormRow
@@ -115,7 +93,7 @@ const Page = () => {
           hint="「言語」を選ぶと About ページで理解度バーが表示されます"
           required
         >
-          <Select value={kindValue} onValueChange={setKind}>
+          <Select value={kind} onValueChange={(v) => setKind(v as TechKind)}>
             <SelectTrigger id="kind" className="w-full sm:w-72">
               <SelectValue />
             </SelectTrigger>
@@ -132,25 +110,25 @@ const Page = () => {
           </Select>
         </FormRow>
 
-        <FormRow id="desc" label="説明">
+        <FormRow id="desc" label="説明" hint="一覧に表示される短い説明">
           <Textarea
             id="desc"
             ref={descRef}
             rows={3}
-            defaultValue={data.description ?? ""}
+            placeholder="例: Googleが開発した言語。シンプルで習得しやすく、並行処理が得意"
           />
         </FormRow>
 
         <FormRow
           id="icon"
           label="アイコン"
-          hint="未選択なら現在の画像のまま（png / jpeg / webp / svg、2MB以下）"
+          hint="任意。png / jpeg / webp / svg、2MB以下"
         >
           <div className="flex items-center gap-4">
             <span className="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded border bg-muted">
-              {displayIcon ? (
+              {previewUrl ? (
                 <Image
-                  src={displayIcon}
+                  src={previewUrl}
                   alt=""
                   width={48}
                   height={48}
@@ -158,8 +136,8 @@ const Page = () => {
                   unoptimized
                 />
               ) : (
-                <span aria-hidden className="font-mono text-sm text-muted-foreground">
-                  {data.name.slice(0, 1).toUpperCase()}
+                <span aria-hidden className="font-mono text-xs text-muted-foreground">
+                  ―
                 </span>
               )}
             </span>
@@ -168,7 +146,10 @@ const Page = () => {
               type="file"
               ref={fileRef}
               accept="image/png,image/jpeg,image/webp,image/svg+xml"
-              onChange={handleFileChange}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                setPreviewUrl(file ? URL.createObjectURL(file) : null);
+              }}
               className="cursor-pointer file:mr-3 file:cursor-pointer file:text-xs"
             />
           </div>
@@ -176,8 +157,8 @@ const Page = () => {
 
         <FormActions
           pending={submitting}
-          submitLabel="更新する"
-          pendingLabel="更新中..."
+          submitLabel="追加する"
+          pendingLabel="追加中..."
           backHref={BACK}
         />
       </form>

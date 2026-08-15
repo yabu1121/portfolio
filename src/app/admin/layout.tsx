@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { TRPCProvider } from "@/trpc/Provider";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "@/components/ui/sonner";
+import { AdminShell } from "../components/admin/ui/AdminShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +28,15 @@ export default function AdminLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-gray-100 min-h-screen`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} h-svh overflow-hidden antialiased`}
+      >
         <TRPCProvider>
-          <div className="mx-auto max-w-7xl p-6">
-            {children}
-          </div>
-          <Toaster position="bottom-right" />
+          {/* AdminShell は useSearchParams を使うので Suspense で包む */}
+          <Suspense fallback={null}>
+            <AdminShell>{children}</AdminShell>
+          </Suspense>
+          <Toaster position="bottom-right" richColors />
         </TRPCProvider>
       </body>
     </html>

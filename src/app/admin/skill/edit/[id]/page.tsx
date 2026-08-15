@@ -2,8 +2,20 @@
 
 import { api } from "@/trpc/client"
 import { useParams, useRouter } from "next/navigation";
-import { useRef } from "react";
-import toast from "react-hot-toast";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  FormActions,
+  FormPage,
+  FormRow,
+} from "@/app/components/admin/ui/FormPage";
+import { TechSelect } from "@/app/components/admin/ui/TechSelect";
+import { LevelBar } from "@/app/components/admin/ui/display";
+
+const BACK = "/admin?tab=skill";
 
 const Page = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,86 +25,105 @@ const Page = () => {
   const { data, isLoading } = api.skill.getByID.useQuery({ id });
   const { data: techs, isLoading: isTechsLoading } = api.tech.getAll.useQuery();
 
-  const techIdRef = useRef<HTMLSelectElement>(null);
-  const levelRef = useRef<HTMLInputElement>(null);
-  const descRef = useRef<HTMLTextAreaElement>(null);
+  /* getByID は join 済みの name を返し techId を持たないので、名前で突き合わせる */
+  const currentTechId = techs?.find((t) => t.name === data?.name)?.id ?? "";
+
+  const [techId, setTechId] = useState<string | null>(null);
+  const [level, setLevel] = useState<number | null>(null);
+  const [description, setDescription] = useState<string | null>(null);
 
   const updateMutation = api.skill.update.useMutation({
     onSuccess: async () => {
       toast.success("更新しました");
       await utils.skill.getAll.invalidate();
       await utils.skill.getByID.invalidate({ id });
-      router.push('/admin');
+      router.push(BACK);
     },
-    onError: (e) => toast.error(`更新失敗: ${e.message}`),
+    onError: (e) => toast.error("更新に失敗しました", { description: e.message }),
   });
 
-  if (isLoading || isTechsLoading) return <>loading...</>
-  if (!data) return <>見つかりません</>
+  if (isLoading || isTechsLoading)
+    return <Skeleton className="h-96 w-full max-w-3xl" />;
+  if (!data)
+    return (
+      <FormPage title="スキルを編集" backHref={BACK}>
+        <p className="text-sm text-muted-foreground">
+          このスキルは見つかりませんでした。削除された可能性があります。
+        </p>
+      </FormPage>
+    );
 
-  const currentTech = techs?.find((t) => t.name === data.name);
+  // 未編集のフィールドは取得値をそのまま使う
+  const techValue = techId ?? currentTechId;
+  const levelValue = level ?? data.level;
+  const descValue = description ?? data.description ?? "";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!techValue) {
+      toast.error("技術を選択してください");
+      return;
+    }
     updateMutation.mutate({
       id,
-      techId: techIdRef.current?.value ?? '',
-      level: Number(levelRef.current?.value ?? 0),
-      description: descRef.current?.value ?? '',
+      techId: techValue,
+      level: levelValue,
+      description: descValue,
     });
   };
 
   return (
-    <div>
-      <div className="flex gap-4">
-        <button type="button" onClick={() => router.back()}>戻る</button>
-        <h1>スキル編集</h1>
-      </div>
-      <form onSubmit={handleSubmit} className="flex flex-col my-4 space-y-4 max-w-5xl mx-auto">
-        <label htmlFor="techId">技術</label>
-        <select
-          id="techId"
-          ref={techIdRef}
-          className="border p-4"
-          required
-          defaultValue={currentTech?.id ?? ''}
-        >
-          <option value="" disabled>選択してください</option>
-          {techs?.map((tech) => (
-            <option key={tech.id} value={tech.id}>{tech.name}</option>
-          ))}
-        </select>
+    <FormPage title="スキルを編集" backHref={BACK} description={data.name}>
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <FormRow id="techId" label="技術" required>
+          <TechSelect
+            id="techId"
+            techs={techs ?? []}
+            value={techValue}
+            onChange={setTechId}
+          />
+        </FormRow>
 
-        <label htmlFor="level">レベル (1-100)</label>
-        <input
-          id="level"
-          type="number"
-          ref={levelRef}
-          min={1}
-          max={100}
-          defaultValue={data.level}
-          className="border p-4"
-          required
-        />
+        <FormRow id="level" label="理解度" hint="1〜100" required>
+          <div className="flex items-center gap-4">
+            <Input
+              id="level"
+              type="number"
+              min={1}
+              max={100}
+              value={levelValue}
+              onChange={(e) => setLevel(Number(e.target.value))}
+              className="w-24 font-mono tabular-nums"
+              required
+            />
+            <LevelBar level={levelValue} />
+          </div>
+        </FormRow>
 
-        <label htmlFor="description">詳細</label>
-        <textarea
+        <FormRow
           id="description"
-          ref={descRef}
-          rows={4}
-          defaultValue={data.description ?? ''}
-          className="border p-4"
+          label="補足"
+          hint="どこで何に使ったか。About ページに表示されます"
           required
+        >
+          <Textarea
+            id="description"
+            rows={4}
+            value={descValue}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </FormRow>
+
+        <FormActions
+          pending={updateMutation.isPending}
+          submitLabel="更新する"
+          pendingLabel="更新中..."
+          backHref={BACK}
         />
-
-        <button
-          type="submit"
-          disabled={updateMutation.isPending}
-          className="bg-blue-400 disabled:bg-gray-400 cursor-pointer text-white rounded-2xl w-40 mx-auto py-2"
-        >{updateMutation.isPending ? '更新中...' : '更新'}</button>
       </form>
-    </div>
-  )
-}
+    </FormPage>
+  );
+};
 
-export default Page
+export default Page;

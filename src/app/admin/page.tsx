@@ -1,40 +1,39 @@
 'use client'
 
-import { useState } from "react"
-import { TabButton } from "../components/common/TabButton";
-import AdminAbout from "../components/admin/AdminAbout";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { Skeleton } from "@/components/ui/skeleton";
+import { isAdminTab, type AdminTab } from "../components/admin/ui/AdminShell";
 import AdminProject from "../components/admin/AdminProject";
-import AdminContact from "../components/admin/AdminContact";
 import AdminTech from "../components/admin/AdminTech";
+import AdminTimeline from "../components/admin/AdminTimeline";
+import AdminSkill from "../components/admin/AdminSkill";
 import AdminEvent from "../components/admin/AdminEvent";
+import AdminContact from "../components/admin/AdminContact";
 
+const PANELS: Record<AdminTab, React.ComponentType> = {
+  projects: AdminProject,
+  tech: AdminTech,
+  timeline: AdminTimeline,
+  skill: AdminSkill,
+  event: AdminEvent,
+  contact: AdminContact,
+};
 
-const Admin = () => {
-  const [tab, setTab] = useState<'about' | 'tech' | 'event' | 'projects' | 'contact'>('about');
+const AdminPanel = () => {
+  /* 表示中のセクションを URL に持たせる。
+     以前は useState だったため、編集ページから戻るとタブが先頭に戻り、
+     リロードでも選択が失われていた。 */
+  const raw = useSearchParams().get("tab");
+  const tab: AdminTab = isAdminTab(raw) ? raw : "projects";
+  const Panel = PANELS[tab];
+  return <Panel />;
+};
 
-  const renderTab = () => {
-    switch (tab) {
-      case 'about': return <AdminAbout />
-      case 'projects': return <AdminProject />
-      case 'tech': return <AdminTech />
-      case 'event': return <AdminEvent />
-      case 'contact': return <AdminContact />
-    }
-  }
+const Admin = () => (
+  <Suspense fallback={<Skeleton className="h-64 w-full" />}>
+    <AdminPanel />
+  </Suspense>
+);
 
-  return (
-    <div>
-      <p className="text-2xl font-bold">管理画面</p>
-      <div className="flex justify-between">
-        <TabButton title="about" label="プロフィール" tab={tab} setTab={setTab}/>
-        <TabButton title="projects" label="プロジェクト" tab={tab} setTab={setTab}/>
-        <TabButton title="tech" label="技術" tab={tab} setTab={setTab}/>
-        <TabButton title="event" label="参加履歴" tab={tab} setTab={setTab}/>
-        <TabButton title="contact" label="メールアドレス" tab={tab} setTab={setTab}/>
-      </div>
-      {renderTab()}
-    </div>
-  )
-}
-
-export default Admin
+export default Admin;
