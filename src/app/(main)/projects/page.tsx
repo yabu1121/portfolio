@@ -6,17 +6,20 @@ import MiniThumbnail from "@/app/components/MiniThumbnail";
 import CommonButton from "@/app/components/common/CommonButton";
 import Loading from "@/app/components/common/Loading";
 import Error from "@/app/components/common/Error";
+import { sortProjectsForPortfolio } from "@/app/utils/projectOrder";
 
 const ProjectsPage = () => {
   const { data: works, isLoading, error } = api.work.getAll.useQuery();
   if (isLoading) return <Loading />;
   if (error) return <Error />;
 
+  const orderedWorks = sortProjectsForPortfolio(works ?? []);
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 mb-20">
       <h1 className="text-4xl font-extrabold mb-16 text-center text-gray-800">Projects</h1>
       <div className="flex flex-col gap-8">
-        {works?.map((project) => (
+        {orderedWorks.map((project) => (
           <div key={project.id} className="flex flex-col md:flex-row md:border md:border-gray-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-shadow duration-300" >
             <div className="bg-gray-50 p-6 flex flex-col items-center gap-4 border-b-2 md:border-b-0 md:border-dashed border-dotted md:border-r-2 md:border-gray-400">
               <Thumbnail url={project.thumbnail} altText={project.title} />
@@ -41,8 +44,8 @@ const ProjectsPage = () => {
 
               <ul className="flex flex-wrap gap-2 mt-auto pt-6 mb-6">
                 {project.worksToTechs
-                .toSorted((a: any, b: any) => a.tech.name.localeCompare(b.tech.name))
-                .map((wt : any) => (
+                .toSorted((a, b) => a.tech.name.localeCompare(b.tech.name))
+                .map((wt) => (
                   <li 
                     key={wt.tech.id} 
                     className="bg-gray-100 text-gray-700 text-[11px] font-bold uppercase tracking-wider rounded px-2.5 py-1 border border-gray-200" 
