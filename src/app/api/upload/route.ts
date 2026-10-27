@@ -1,6 +1,7 @@
 import path from "path";
 import { randomUUID } from "crypto";
 import { supabaseAdmin } from "@/lib/supabase/server";
+import { verifyBasicAuth } from "@/lib/auth";
 
 const BUCKET = "skill_images";
 const ALLOWED = new Set(["image/png", "image/jpeg", "image/webp", "image/svg+xml"]);
@@ -8,6 +9,11 @@ const MAX_BYTES = 2 * 1024 * 1024;
 
 export async function POST(request: Request) {
   try {
+    // middleware でも弾いているが、matcher の設定漏れで素通りしないよう二重に確認する
+    if (!verifyBasicAuth(request.headers.get("authorization"))) {
+      return Response.json({ success: false, message: "Unauthorized" }, { status: 401 });
+    }
+
     const form = await request.formData();
     const file = form.get("file");
 

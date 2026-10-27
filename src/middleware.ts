@@ -1,15 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
+import { verifyBasicAuth } from "@/lib/auth";
 
-export const middleware = (req: NextRequest) => { 
-  const auth = req.headers.get("authorization")
-  if(!auth) return new NextResponse('Auth required', {
-    status: 401,
-    headers: {'WWW-Authenticate': 'Basic realm="admin"'}
-  })
-  const [user, pass] = atob(auth.split(' ')[1]).split(':')
-  if(user !== process.env.ADMIN_USER || pass !== process.env.ADMIN_PASSWORD) {
-    return new NextResponse('Unauthorized', {status: 401})
+export const middleware = (req: NextRequest) => {
+  if (verifyBasicAuth(req.headers.get("authorization"))) {
+    return NextResponse.next();
   }
-}
 
-export const config = { matcher: ['/admin/:path*']}
+  // API は fetch から呼ばれるので認証ダイアログは出さず JSON で返す
+  if (req.nextUrl.pathname.startsWith("/api/")) {
+    return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
+  }
+
+  return new NextResponse("Auth required", {
+    status: 401,
+    headers: { "WWW-Authenticate": 'Basic realm="admin"' },
+  });
+};
+
+export const config = { matcher: ["/admin/:path*", "/api/upload"] };

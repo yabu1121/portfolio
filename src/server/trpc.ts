@@ -1,5 +1,6 @@
 import { initTRPC, TRPCError } from '@trpc/server';
 import { db } from '@/db';
+import { verifyBasicAuth } from '@/lib/auth';
 
 /**
  * 学習ポイント:
@@ -22,13 +23,8 @@ export const createTRPCContext = async (opts: { headers: Headers }) => {
 const t = initTRPC.context<Awaited<ReturnType<typeof createTRPCContext>>>().create();
 
 const isAdmin = t.middleware(({ctx, next}) => {
-  const auth = ctx.headers.get('authorization');
-  if(!auth){
+  if(!verifyBasicAuth(ctx.headers.get('authorization'))) {
     throw new TRPCError({code: 'UNAUTHORIZED', message: 'Auth required'})
-  }
-  const [user, pass] = atob(auth.split(' ')[1]).split(':');
-  if(user !== process.env.ADMIN_USER || pass !== process.env.ADMIN_PASSWORD) {
-    throw new TRPCError({code: 'UNAUTHORIZED', message: 'invalid credentials'})
   }
 
   return next({ctx})
