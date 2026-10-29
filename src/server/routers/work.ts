@@ -1,6 +1,6 @@
 import { adminProcedure, createTRPCRouter, publicProcedure } from "../trpc";
-import { works, m2m_worksToTechs } from "@/db/schema";
-import { desc, eq } from "drizzle-orm";
+import { works, m2m_worksToTechs, workMedia } from "@/db/schema";
+import { asc, desc, eq } from "drizzle-orm";
 import { z } from "zod";
 
 export const workRouter = createTRPCRouter({
@@ -10,6 +10,8 @@ export const workRouter = createTRPCRouter({
     const worksData = await db.query.works.findMany({
       orderBy: [desc(works.createdAt)],
       with: {
+        // 詳細ページのスライドショー。並びは admin が振った sort に従う
+        media: { orderBy: [asc(workMedia.sort), asc(workMedia.createdAt)] },
         worksToTechs: {
           with: {
             // tech.kind で言語/それ以外を出し分け、language は myTechs.level で理解度バーを出す

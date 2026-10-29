@@ -10,7 +10,7 @@ const MiniThumbnail = ({ url, altText }: ThumbnailProps) => {
   return (
     <>
       {url ? (
-        <div className="relative w-30 h-30 overflow-hidden rounded-2xl">
+        <div className="relative w-30 h-30 overflow-hidden border border-line">
           <Image
             src={url}
             alt={altText}
@@ -20,8 +20,8 @@ const MiniThumbnail = ({ url, altText }: ThumbnailProps) => {
           />
         </div>
       ) : (
-        <div className="w-30 h-30 flex items-center justify-center bg-gray-400/50 rounded-2xl">
-          <p className="text-black font-bold text-2xl">No Image</p>
+        <div className="w-30 h-30 flex items-center justify-center border border-dashed border-line bg-surface">
+          <p className="font-mono text-[11px] tracking-wider text-ink-3">NO IMAGE</p>
         </div>
       )}
     </>

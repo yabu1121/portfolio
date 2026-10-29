@@ -1,3 +1,7 @@
+'use client'
+
+import Image from 'next/image'
+
 interface ErrorProps {
   error?: {
     message?: string;
@@ -8,19 +12,26 @@ const Error = ({ error }: ErrorProps) => {
   const errorMessage = error?.message || "予期せぬエラーが発生しました。";
 
   return (
-    <div className="flex flex-col items-center justify-center py-20 px-4">
-      <div className="bg-red-50 border border-red-200 rounded-2xl p-8 max-w-md w-full text-center">
-        <div className="text-red-500 text-5xl mb-4">⚠️</div>
-        <h2 className="text-red-800 font-bold text-lg mb-2">Error Occurred</h2>
-        <p className="text-red-600 text-sm leading-relaxed">
+    <div className="paper flex min-h-dvh items-center justify-center px-5">
+      <div className="w-full max-w-md border border-line bg-white p-7">
+        <Image src="/mascot/pose-thinking.webp" alt="" width={96} height={96} className="mb-4 size-24" />
+
+        <p className="font-mono text-[11px] tracking-widest text-[#b91c1c]">ERROR</p>
+
+        <h2 className="mt-3 font-display text-xl font-black tracking-tight text-ink">
+          読み込めませんでした
+        </h2>
+
+        {/* サーバの文面はそのまま出す。原因が分からないと直せない */}
+        <p className="mt-3 font-mono text-[12px] leading-relaxed break-words text-ink-2">
           {errorMessage}
         </p>
-        
-        <button 
+
+        <button
           onClick={() => window.location.reload()}
-          className="mt-6 px-4 py-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg text-sm font-medium transition-colors"
+          className="mt-7 border border-line bg-white px-4 py-2 font-mono text-[11px] tracking-wider text-ink-2 transition-colors hover:border-sky hover:text-sky-ink"
         >
-          ページを再読み込みする
+          再読み込み
         </button>
       </div>
     </div>

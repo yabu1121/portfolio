@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-10-28",
+  "total": 1061,
+  "summary": {
+    "MIT": 907,
+    "Apache-2.0": 30,
+    "BSD-3-Clause": 17,
+    "LGPL-3.0-or-later": 2,
+    "ISC": 69,
+    "Python-2.0": 1,
+    "PSF-2.0": 1,
+    "CC-BY-4.0": 2,
+    "BSD-2-Clause": 11,
+    "(MPL-2.0 OR Apache-2.0)": 2,
+    "EPL-2.0": 1,
+    "BlueOak-1.0.0": 3,
+    "(MIT OR GPL-3.0-or-later)": 1,
+    "MIT*": 2,
+    "MPL-2.0": 2,
+    "CC0-1.0": 1,
+    "MIT-0": 1,
+    "(MIT AND Zlib)": 1,
+    "Unlicense": 3,
+    "0BSD": 4
+  }
+}

@@ -1,0 +1,5044 @@
+y4bu.net が使っているソフトウェアの表記
+
+生成日: 2026-10-28
+対象: portfolio / blog / slides（本番の依存のみ）
+件数: 1061
+
+どれも著作権表示を残すことが条件のライセンスです。
+各パッケージの本文は repository のリポジトリにあります。
+
+========================================================================
+
+@antfu/install-pkg@1.1.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/install-pkg
+  used by: slides
+@antfu/install-pkg@2.1.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/install-pkg
+  used by: slides
+@antfu/ni@30.6.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/ni
+  used by: slides
+@antfu/utils@9.3.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/utils
+  used by: slides
+@babel/code-frame@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/compat-data@7.28.5
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/compat-data@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/core@7.28.5
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/core@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/generator@7.29.8
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-annotate-as-pure@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-compilation-targets@7.27.2
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/helper-compilation-targets@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/helper-create-class-features-plugin@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-globals@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-member-expression-to-functions@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-module-imports@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-module-transforms@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-optimise-call-expression@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-plugin-utils@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-replace-supers@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-skip-transparent-expression-wrappers@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-string-parser@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/helper-string-parser@7.29.11
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/helper-string-parser@8.0.8
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/helper-validator-identifier@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helper-validator-identifier@8.0.6
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/helper-validator-option@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/helpers@7.28.4
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/helpers@7.29.10
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/parser@7.29.8
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/parser@7.29.11
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/parser@8.0.8
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/plugin-syntax-jsx@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/plugin-syntax-typescript@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/plugin-transform-modules-commonjs@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/plugin-transform-typescript@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/plugin-transform-typescript@7.29.9
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/preset-typescript@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/template@7.29.7
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio, slides
+@babel/traverse@7.29.8
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/traverse@7.29.10
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/types@7.29.8
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: portfolio
+@babel/types@7.29.11
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@babel/types@8.0.8
+  license: MIT
+  author:  The Babel Team
+  source:  https://github.com/babel/babel
+  used by: slides
+@braintree/sanitize-url@7.1.2
+  license: MIT
+  source:  https://github.com/braintree/sanitize-url
+  used by: slides
+@chevrotain/cst-dts-gen@13.2.0
+  license: Apache-2.0
+  source:  https://github.com/Chevrotain/chevrotain
+  used by: slides
+@chevrotain/gast@13.2.0
+  license: Apache-2.0
+  source:  https://github.com/Chevrotain/chevrotain
+  used by: slides
+@chevrotain/regexp-to-ast@13.2.0
+  license: Apache-2.0
+  source:  https://github.com/Chevrotain/chevrotain
+  used by: slides
+@chevrotain/types@13.2.0
+  license: Apache-2.0
+  author:  Shahar Soel
+  source:  https://github.com/Chevrotain/chevrotain
+  used by: slides
+@chevrotain/utils@13.2.0
+  license: Apache-2.0
+  author:  Shahar Soel
+  source:  https://github.com/Chevrotain/chevrotain
+  used by: slides
+@colordx/core@7.3.0
+  license: MIT
+  author:  Dmitrii Kriaklin
+  source:  https://github.com/dkryaklin/colordx
+  used by: slides
+@comark/markdown-it@0.3.4
+  license: MIT
+  source:  https://github.com/comarkdown/markdown-it-comark
+  used by: slides
+@devframes/hub@1.2.6
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/devframes/devframe
+  used by: slides
+@devframes/json-render@1.2.6
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/devframes/devframe
+  used by: slides
+@dotenvx/dotenvx@1.75.1
+  license: BSD-3-Clause
+  author:  @motdotla
+  source:  https://github.com/dotenvx/dotenvx
+  used by: portfolio
+@dotenvx/primitives@0.8.0
+  license: BSD-3-Clause
+  author:  @motdotla
+  source:  https://github.com/dotenvx/dotenvx
+  used by: portfolio
+@drauu/core@1.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/drauu
+  used by: slides
+@fix-webm-duration/fix@1.0.1
+  license: MIT
+  author:  Yuri Sitnikov
+  source:  https://github.com/yusitnikov/fix-webm-duration
+  used by: slides
+@fix-webm-duration/parser@1.0.1
+  license: MIT
+  author:  Yuri Sitnikov
+  source:  https://github.com/yusitnikov/fix-webm-duration
+  used by: slides
+@floating-ui/core@1.8.0
+  license: MIT
+  author:  atomiks
+  source:  https://github.com/floating-ui/floating-ui
+  used by: portfolio, slides
+@floating-ui/dom@1.8.0
+  license: MIT
+  author:  atomiks
+  source:  https://github.com/floating-ui/floating-ui
+  used by: portfolio, slides
+@floating-ui/react-dom@2.1.9
+  license: MIT
+  author:  atomiks
+  source:  https://github.com/floating-ui/floating-ui
+  used by: portfolio
+@floating-ui/utils@0.2.12
+  license: MIT
+  author:  atomiks
+  source:  https://github.com/floating-ui/floating-ui
+  used by: portfolio, slides
+@hono/node-server@2.1.1
+  license: MIT
+  author:  Yusuke Wada
+  source:  https://github.com/honojs/node-server
+  used by: portfolio
+@hono/node-server@2.1.5
+  license: MIT
+  author:  Yusuke Wada
+  source:  https://github.com/honojs/node-server
+  used by: slides
+@iconify-json/carbon@1.2.29
+  license: Apache-2.0
+  used by: slides
+@iconify-json/ph@1.2.2
+  license: MIT
+  used by: slides
+@iconify-json/svg-spinners@1.2.4
+  license: MIT
+  used by: slides
+@iconify/types@2.0.0
+  license: MIT
+  author:  Vjacheslav Trushkin
+  source:  https://github.com/iconify/iconify
+  used by: slides
+@iconify/utils@3.1.7
+  license: MIT
+  author:  Vjacheslav Trushkin
+  source:  https://github.com/iconify/iconify
+  used by: slides
+@img/colour@1.1.0
+  license: MIT
+  source:  https://github.com/lovell/colour
+  used by: portfolio, blog
+@img/sharp-darwin-arm64@0.34.5
+  license: Apache-2.0
+  author:  Lovell Fuller
+  source:  https://github.com/lovell/sharp
+  used by: portfolio
+@img/sharp-darwin-arm64@0.35.5
+  license: Apache-2.0
+  author:  Lovell Fuller
+  source:  https://github.com/lovell/sharp
+  used by: blog
+@img/sharp-libvips-darwin-arm64@1.2.4
+  license: LGPL-3.0-or-later
+  author:  Lovell Fuller
+  source:  https://github.com/lovell/sharp-libvips
+  used by: portfolio
+@img/sharp-libvips-darwin-arm64@1.3.4
+  license: LGPL-3.0-or-later
+  author:  Lovell Fuller
+  source:  https://github.com/lovell/sharp-libvips
+  used by: blog
+@jridgewell/gen-mapping@0.3.13
+  license: MIT
+  author:  Justin Ridgewell
+  source:  https://github.com/jridgewell/sourcemaps
+  used by: portfolio, slides
+@jridgewell/remapping@2.3.5
+  license: MIT
+  author:  Justin Ridgewell
+  source:  https://github.com/jridgewell/sourcemaps
+  used by: portfolio, slides
+@jridgewell/resolve-uri@3.1.2
+  license: MIT
+  author:  Justin Ridgewell
+  source:  https://github.com/jridgewell/resolve-uri
+  used by: portfolio, slides
+@jridgewell/sourcemap-codec@1.5.5
+  license: MIT
+  author:  Justin Ridgewell
+  source:  https://github.com/jridgewell/sourcemaps
+  used by: portfolio
+@jridgewell/sourcemap-codec@1.6.0
+  license: MIT
+  author:  Justin Ridgewell
+  source:  https://github.com/jridgewell/sourcemaps
+  used by: slides
+@jridgewell/trace-mapping@0.3.31
+  license: MIT
+  author:  Justin Ridgewell
+  source:  https://github.com/jridgewell/sourcemaps
+  used by: portfolio, slides
+@json-render/core@0.21.3
+  license: Apache-2.0
+  source:  https://github.com/vercel-labs/json-render
+  used by: slides
+@leichtgewicht/ip-codec@2.0.5
+  license: MIT
+  author:  Martin Heidegger
+  source:  https://github.com/martinheidegger/ip-codec
+  used by: slides
+@lillallol/outline-pdf@4.0.0
+  license: MIT
+  author:  lillallol
+  source:  https://github.com/lillallol/outline-pdf
+  used by: slides
+@lillallol/outline-pdf-data-structure@1.0.3
+  license: MIT
+  author:  lillallol
+  source:  https://github.com/lillallol/outline-pdf-data-structure
+  used by: slides
+@mdit-vue/plugin-component@3.0.2
+  license: MIT
+  author:  meteorlxy
+  source:  https://github.com/mdit-vue/mdit-vue
+  used by: slides
+@mdit-vue/plugin-frontmatter@3.0.2
+  license: MIT
+  author:  meteorlxy
+  source:  https://github.com/mdit-vue/mdit-vue
+  used by: slides
+@mdit-vue/types@3.0.2
+  license: MIT
+  author:  meteorlxy
+  source:  https://github.com/mdit-vue/mdit-vue
+  used by: slides
+@mermaid-js/parser@2.0.1
+  license: MIT
+  author:  Yokozuna59
+  source:  https://github.com/mermaid-js/mermaid
+  used by: slides
+@modelcontextprotocol/core@2.4.0
+  license: Apache-2.0
+  author:  Anthropic, PBC
+  source:  https://github.com/modelcontextprotocol/typescript-sdk
+  used by: slides
+@modelcontextprotocol/node@2.1.2
+  license: Apache-2.0
+  author:  Anthropic, PBC
+  source:  https://github.com/modelcontextprotocol/typescript-sdk
+  used by: slides
+@modelcontextprotocol/sdk@1.30.0
+  license: MIT
+  author:  Anthropic, PBC
+  source:  https://github.com/modelcontextprotocol/typescript-sdk
+  used by: portfolio
+@modelcontextprotocol/server@2.4.0
+  license: Apache-2.0
+  author:  Anthropic, PBC
+  source:  https://github.com/modelcontextprotocol/typescript-sdk
+  used by: slides
+@next/env@16.2.4
+  license: MIT
+  author:  Next.js Team
+  source:  https://github.com/vercel/next.js
+  used by: portfolio
+@next/env@16.4.3
+  license: MIT
+  author:  Next.js Team
+  source:  https://github.com/vercel/next.js
+  used by: blog
+@next/swc-darwin-arm64@16.2.4
+  license: MIT
+  source:  https://github.com/vercel/next.js
+  used by: portfolio
+@next/swc-darwin-arm64@16.4.3
+  license: MIT
+  source:  https://github.com/vercel/next.js
+  used by: blog
+@nodelib/fs.scandir@2.1.5
+  license: MIT
+  source:  https://github.com/nodelib/nodelib.git#master
+  used by: portfolio, slides
+@nodelib/fs.stat@2.0.5
+  license: MIT
+  source:  https://github.com/nodelib/nodelib.git#master
+  used by: portfolio, slides
+@nodelib/fs.walk@1.2.8
+  license: MIT
+  source:  https://github.com/nodelib/nodelib.git#master
+  used by: portfolio, slides
+@nuxt/kit@3.21.11
+  license: MIT
+  source:  https://github.com/nuxt/nuxt
+  used by: slides
+@oxc-parser/binding-darwin-arm64@0.153.0
+  license: MIT
+  author:  Boshen and oxc contributors
+  source:  https://github.com/oxc-project/oxc
+  used by: slides
+@oxc-project/types@0.153.0
+  license: MIT
+  author:  Boshen and oxc contributors
+  source:  https://github.com/oxc-project/oxc
+  used by: slides
+@oxc-project/types@0.155.0
+  license: MIT
+  author:  Boshen and oxc contributors
+  source:  https://github.com/oxc-project/oxc
+  used by: slides
+@pdf-lib/standard-fonts@1.0.0
+  license: MIT
+  author:  Andrew Dillon
+  source:  https://github.com/Hopding/standard-fonts
+  used by: slides
+@pdf-lib/upng@1.0.1
+  license: MIT
+  author:  photopea
+  source:  https://github.com/Hopding/upng
+  used by: slides
+@polka/url@1.0.0-next.29
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/polka
+  used by: slides
+@quansync/fs@1.1.0
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/quansync-dev/fs
+  used by: slides
+@radix-ui/number@1.1.3
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/primitive@1.1.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-accessible-icon@1.1.15
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-accordion@1.2.20
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-alert-dialog@1.1.23
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-arrow@1.1.15
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-aspect-ratio@1.1.15
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-avatar@1.2.6
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-checkbox@1.3.11
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-collapsible@1.1.20
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-collection@1.1.15
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-compose-refs@1.1.5
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-context@1.2.2
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-context-menu@2.3.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-dialog@1.1.23
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-direction@1.1.4
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-dismissable-layer@1.1.19
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-dropdown-menu@2.1.24
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-focus-guards@1.1.6
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-focus-scope@1.1.16
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-form@0.1.16
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-hover-card@1.1.23
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-id@1.1.4
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-label@2.1.15
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-menu@2.1.24
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-menubar@1.1.24
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-navigation-menu@1.2.22
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-one-time-password-field@0.1.16
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-password-toggle-field@0.1.11
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-popover@1.1.23
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-popper@1.3.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-portal@1.1.17
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-presence@1.1.10
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-primitive@2.1.10
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-progress@1.1.16
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-radio-group@1.4.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-roving-focus@1.1.19
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-scroll-area@1.2.18
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-select@2.3.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-separator@1.1.15
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-slider@1.4.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-slot@1.3.3
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-switch@1.3.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-tabs@1.1.21
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-toast@1.2.23
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-toggle@1.1.18
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-toggle-group@1.1.19
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-toolbar@1.1.19
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-tooltip@1.2.16
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-callback-ref@1.1.4
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-controllable-state@1.2.6
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-effect-event@0.0.5
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-escape-keydown@1.1.5
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-is-hydrated@0.1.3
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-layout-effect@1.1.4
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-previous@1.1.4
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-rect@1.1.4
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-use-size@1.1.4
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/react-visually-hidden@1.2.11
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@radix-ui/rect@1.1.3
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+@rolldown/binding-darwin-arm64@1.2.15
+  license: MIT
+  source:  https://github.com/rolldown/rolldown
+  used by: slides
+@rolldown/pluginutils@1.0.1
+  license: MIT
+  source:  https://github.com/rolldown/plugins
+  used by: slides
+@sec-ant/readable-stream@0.4.1
+  license: MIT
+  author:  Ze-Zheng Wu
+  source:  https://github.com/Sec-ant/readable-stream
+  used by: portfolio
+@shikijs/core@4.5.0
+  license: MIT
+  author:  Pine Wu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/engine-javascript@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/engine-oniguruma@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/langs@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/magic-move@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/markdown-it@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/monaco@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/primitive@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/themes@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/twoslash@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/types@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/vitepress-twoslash@4.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+@shikijs/vscode-textmate@10.1.0
+  license: MIT
+  author:  Microsoft Corporation
+  source:  https://github.com/shikijs/vscode-textmate
+  used by: slides
+@sindresorhus/merge-streams@4.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/merge-streams
+  used by: portfolio
+@slidev/cli@53.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/slidevjs/slidev
+  used by: slides
+@slidev/client@53.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/slidevjs/slidev
+  used by: slides
+@slidev/parser@53.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/slidevjs/slidev
+  used by: slides
+@slidev/rough-notation@0.1.0
+  license: MIT
+  author:  Preet Shihn
+  source:  https://github.com/slidevjs/rough-notation
+  used by: slides
+@slidev/theme-default@0.25.0
+  license: MIT
+  author:  antfu
+  source:  https://github.com/slidevjs/themes
+  used by: slides
+@slidev/types@0.47.5
+  license: MIT
+  author:  antfu
+  source:  https://github.com/slidevjs/slidev
+  used by: slides
+@slidev/types@53.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/slidevjs/slidev
+  used by: slides
+@supabase/auth-js@2.104.0
+  license: MIT
+  author:  Supabase
+  source:  https://github.com/supabase/supabase-js
+  used by: portfolio
+@supabase/functions-js@2.104.0
+  license: MIT
+  author:  Supabase
+  source:  https://github.com/supabase/supabase-js
+  used by: portfolio
+@supabase/phoenix@0.4.0
+  license: MIT
+  author:  Chris McCord
+  source:  https://github.com/supabase/phoenix
+  used by: portfolio
+@supabase/postgrest-js@2.104.0
+  license: MIT
+  author:  Supabase
+  source:  https://github.com/supabase/supabase-js
+  used by: portfolio
+@supabase/realtime-js@2.104.0
+  license: MIT
+  author:  Supabase
+  source:  https://github.com/supabase/supabase-js
+  used by: portfolio
+@supabase/storage-js@2.104.0
+  license: MIT
+  author:  Supabase
+  source:  https://github.com/supabase/supabase-js
+  used by: portfolio
+@supabase/supabase-js@2.104.0
+  license: MIT
+  author:  Supabase
+  source:  https://github.com/supabase/supabase-js
+  used by: portfolio
+@swc/helpers@0.5.15
+  license: Apache-2.0
+  author:  강동윤
+  source:  https://github.com/swc-project/swc
+  used by: portfolio
+@swc/helpers@0.5.23
+  license: Apache-2.0
+  author:  강동윤
+  source:  https://github.com/swc-project/swc
+  used by: blog
+@tanstack/query-core@5.90.12
+  license: MIT
+  author:  tannerlinsley
+  source:  https://github.com/TanStack/query
+  used by: portfolio
+@tanstack/react-query@5.90.12
+  license: MIT
+  author:  tannerlinsley
+  source:  https://github.com/TanStack/query
+  used by: portfolio
+@trpc/client@11.8.1
+  license: MIT
+  author:  KATT
+  source:  https://github.com/trpc/trpc
+  used by: portfolio
+@trpc/next@11.8.1
+  license: MIT
+  author:  KATT
+  source:  https://github.com/trpc/trpc
+  used by: portfolio
+@trpc/react-query@11.8.1
+  license: MIT
+  author:  KATT
+  source:  https://github.com/trpc/trpc
+  used by: portfolio
+@trpc/server@11.8.1
+  license: MIT
+  author:  KATT
+  source:  https://github.com/trpc/trpc
+  used by: portfolio
+@ts-morph/common@0.27.0
+  license: MIT
+  author:  David Sherret
+  source:  https://github.com/dsherret/ts-morph
+  used by: portfolio
+@types/d3@7.4.3
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-array@3.2.2
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-axis@3.0.6
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-brush@3.0.6
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-chord@3.0.6
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-color@3.1.3
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-contour@3.0.6
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-delaunay@6.0.4
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-dispatch@3.0.7
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-drag@3.0.7
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-dsv@3.0.7
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-ease@3.0.2
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-fetch@3.0.7
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-force@3.0.10
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-format@3.0.4
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-geo@3.1.1
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-hierarchy@3.1.7
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-interpolate@3.0.4
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-path@3.1.1
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-polygon@3.0.2
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-quadtree@3.0.6
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-random@3.0.4
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-scale@4.0.9
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-scale-chromatic@3.1.0
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-selection@3.0.12
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-shape@3.2.0
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-time@3.0.4
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-time-format@4.0.3
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-timer@3.0.2
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-transition@3.0.9
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/d3-zoom@3.0.9
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/debug@4.1.13
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio, blog, slides
+@types/estree@1.0.8
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio
+@types/estree@1.0.9
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: blog, slides
+@types/estree-jsx@1.0.5
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio, blog
+@types/geojson@7946.0.16
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/hast@3.0.4
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio
+@types/hast@3.0.5
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: blog, slides
+@types/linkify-it@5.0.0
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/markdown-it@14.2.0
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/mdast@4.0.4
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio, blog, slides
+@types/mdurl@2.0.0
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/ms@2.1.0
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio, blog, slides
+@types/node@20.19.23
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio
+@types/node@22.20.5
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/trusted-types@2.0.7
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/unist@2.0.11
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio, blog
+@types/unist@3.0.3
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio, blog, slides
+@types/validate-npm-package-name@4.0.2
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio
+@types/web-bluetooth@0.0.21
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: slides
+@types/ws@8.18.1
+  license: MIT
+  source:  https://github.com/DefinitelyTyped/DefinitelyTyped
+  used by: portfolio
+@typescript/ata@0.9.8
+  license: MIT
+  source:  https://github.com/microsoft/TypeScript-Website
+  used by: slides
+@typescript/vfs@1.6.5
+  license: MIT
+  author:  TypeScript team
+  source:  https://github.com/microsoft/TypeScript-Website
+  used by: slides
+@ungap/structured-clone@1.3.2
+  license: ISC
+  author:  Andrea Giammarchi
+  source:  https://github.com/ungap/structured-clone
+  used by: portfolio
+@ungap/structured-clone@1.4.0
+  license: ISC
+  author:  Andrea Giammarchi
+  source:  https://github.com/ungap/structured-clone
+  used by: blog, slides
+@unhead/bundler@3.4.3
+  license: MIT
+  author:  Harlan Wilton
+  source:  https://github.com/unjs/unhead
+  used by: slides
+@unhead/vue@3.4.3
+  license: MIT
+  author:  Harlan Wilton
+  source:  https://github.com/unjs/unhead
+  used by: slides
+@unocss/autocomplete@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/cli@66.11.0
+  license: MIT
+  author:  Johann Schopplich
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/config@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/core@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/extractor-arbitrary-variants@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/extractor-mdc@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/inspector@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/language-server@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-attributify@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-icons@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-mini@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-tagify@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-typography@66.11.0
+  license: MIT
+  author:  Jeff Yang
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-uno@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-web-fonts@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-wind@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-wind3@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/preset-wind4@66.11.0
+  license: MIT
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/reset@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/rollup@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/rule-utils@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/transformer-attributify-jsx@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/transformer-compile-class@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/transformer-directives@66.11.0
+  license: MIT
+  author:  hannoeru
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/transformer-variant-group@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@unocss/vite@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+@upsetjs/venn.js@2.0.0
+  license: MIT
+  author:  Ben Frederickson
+  source:  https://github.com/upsetjs/venn.js
+  used by: slides
+@vitejs/devtools-kit@0.7.6
+  license: MIT
+  author:  VoidZero Inc.
+  source:  https://github.com/vitejs/devtools
+  used by: slides
+@vitejs/plugin-vue@6.0.10
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vitejs/vite-plugin-vue
+  used by: slides
+@vitejs/plugin-vue-jsx@5.1.6
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vitejs/vite-plugin-vue
+  used by: slides
+@volar/language-core@2.4.28
+  license: MIT
+  source:  https://github.com/volarjs/volar.js
+  used by: slides
+@volar/source-map@2.4.28
+  license: MIT
+  source:  https://github.com/volarjs/volar.js
+  used by: slides
+@vue-macros/common@3.1.4
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/vue-macros/vue-macros
+  used by: slides
+@vue/babel-helper-vue-transform-on@2.0.1
+  license: MIT
+  author:  Amour1688
+  source:  https://github.com/vuejs/babel-plugin-jsx
+  used by: slides
+@vue/babel-plugin-jsx@2.0.1
+  license: MIT
+  author:  Amour1688
+  source:  https://github.com/vuejs/babel-plugin-jsx
+  used by: slides
+@vue/babel-plugin-resolve-type@2.0.1
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/vuejs/babel-plugin-jsx
+  used by: slides
+@vue/compiler-core@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/compiler-dom@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/compiler-sfc@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/compiler-ssr@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/devtools-api@8.2.1
+  license: MIT
+  author:  webfansplz
+  source:  https://github.com/vuejs/devtools
+  used by: slides
+@vue/devtools-kit@8.2.1
+  license: MIT
+  author:  webfansplz
+  source:  https://github.com/vuejs/devtools
+  used by: slides
+@vue/devtools-shared@8.2.1
+  license: MIT
+  author:  webfansplz
+  source:  https://github.com/vuejs/devtools
+  used by: slides
+@vue/language-core@3.3.13
+  license: MIT
+  source:  https://github.com/vuejs/language-tools
+  used by: slides
+@vue/reactivity@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/runtime-core@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/runtime-dom@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/server-renderer@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vue/shared@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+@vueuse/core@13.9.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vueuse/vueuse
+  used by: slides
+@vueuse/core@14.4.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vueuse/vueuse
+  used by: slides
+@vueuse/math@14.4.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vueuse/vueuse
+  used by: slides
+@vueuse/metadata@13.9.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vueuse/vueuse
+  used by: slides
+@vueuse/metadata@14.4.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vueuse/vueuse
+  used by: slides
+@vueuse/motion@3.0.3
+  license: MIT
+  author:  Yaël GUILLOUX
+  source:  https://github.com/vueuse/motion
+  used by: slides
+@vueuse/shared@13.9.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vueuse/vueuse
+  used by: slides
+@vueuse/shared@14.4.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vueuse/vueuse
+  used by: slides
+accepts@2.0.0
+  license: MIT
+  source:  https://github.com/jshttp/accepts
+  used by: portfolio
+acorn@8.19.0
+  license: MIT
+  source:  https://github.com/acornjs/acorn
+  used by: slides
+ajv@8.20.0
+  license: MIT
+  author:  Evgeny Poberezkin
+  source:  https://github.com/ajv-validator/ajv
+  used by: portfolio
+ajv-formats@2.1.1
+  license: MIT
+  author:  Evgeny Poberezkin
+  source:  https://github.com/ajv-validator/ajv-formats
+  used by: portfolio
+ajv-formats@3.0.1
+  license: MIT
+  author:  Evgeny Poberezkin
+  source:  https://github.com/ajv-validator/ajv-formats
+  used by: portfolio
+alien-signals@3.2.1
+  license: MIT
+  source:  https://github.com/stackblitz/alien-signals
+  used by: slides
+ansi-colors@4.1.3
+  license: MIT
+  author:  Brian Woodward
+  source:  https://github.com/doowb/ansi-colors
+  used by: portfolio
+ansi-regex@5.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/chalk/ansi-regex
+  used by: portfolio, slides
+ansi-regex@6.3.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/chalk/ansi-regex
+  used by: portfolio
+ansi-regex@6.4.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/chalk/ansi-regex
+  used by: slides
+ansi-styles@6.2.3
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/chalk/ansi-styles
+  used by: slides
+ansis@4.4.0
+  license: ISC
+  author:  webdiscus
+  source:  https://github.com/webdiscus/ansis
+  used by: slides
+anymatch@3.1.3
+  license: ISC
+  author:  Elan Shanker
+  source:  https://github.com/micromatch/anymatch
+  used by: slides
+argparse@2.0.1
+  license: Python-2.0
+  source:  https://github.com/nodeca/argparse
+  used by: portfolio, slides
+argparse@1.0.10
+  license: MIT
+  source:  https://github.com/nodeca/argparse
+  used by: slides
+argparse@3.0.4
+  license: PSF-2.0
+  source:  https://github.com/nodeca/argparse
+  used by: slides
+aria-hidden@1.2.6
+  license: MIT
+  author:  Anton Korzunov
+  source:  https://github.com/theKashey/aria-hidden
+  used by: portfolio
+ast-kit@2.2.0
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/ast-kit
+  used by: slides
+ast-kit@3.0.0
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/ast-kit
+  used by: slides
+ast-types@0.16.1
+  license: MIT
+  author:  Ben Newman
+  source:  https://github.com/benjamn/ast-types
+  used by: portfolio
+ast-walker-scope@0.10.0
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/ast-walker-scope
+  used by: slides
+atomically@1.7.0
+  license: MIT
+  author:  Fabio Spampinato
+  source:  https://github.com/fabiospampinato/atomically
+  used by: portfolio
+bail@2.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/bail
+  used by: portfolio, blog
+balanced-match@4.0.4
+  license: MIT
+  source:  https://github.com/juliangruber/balanced-match
+  used by: portfolio
+baseline-browser-mapping@2.10.20
+  license: Apache-2.0
+  source:  https://github.com/web-platform-dx/baseline-browser-mapping
+  used by: portfolio
+baseline-browser-mapping@2.11.33
+  license: Apache-2.0
+  source:  https://github.com/web-platform-dx/baseline-browser-mapping
+  used by: blog
+baseline-browser-mapping@2.11.32
+  license: Apache-2.0
+  source:  https://github.com/web-platform-dx/baseline-browser-mapping
+  used by: slides
+binary-extensions@2.3.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/binary-extensions
+  used by: slides
+birpc@2.9.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/birpc
+  used by: slides
+body-parser@2.3.0
+  license: MIT
+  source:  https://github.com/expressjs/body-parser
+  used by: portfolio
+brace-expansion@5.0.9
+  license: MIT
+  source:  https://github.com/juliangruber/brace-expansion
+  used by: portfolio
+braces@3.0.3
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/micromatch/braces
+  used by: portfolio, slides
+browserslist@4.27.0
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/browserslist/browserslist
+  used by: portfolio
+browserslist@4.29.4
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/browserslist/browserslist
+  used by: slides
+bundle-name@4.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/bundle-name
+  used by: portfolio
+bundle-name@4.1.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/bundle-name
+  used by: slides
+bytes@3.1.2
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/visionmedia/bytes.js
+  used by: portfolio
+c12@3.3.4
+  license: MIT
+  source:  https://github.com/unjs/c12
+  used by: slides
+cac@7.1.0
+  license: MIT
+  author:  egoist
+  source:  https://github.com/cacjs/cac
+  used by: slides
+call-bind-apply-helpers@1.0.2
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/call-bind-apply-helpers
+  used by: portfolio
+call-bound@1.0.4
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/call-bound
+  used by: portfolio
+callsites@3.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/callsites
+  used by: portfolio
+caniuse-lite@1.0.30001751
+  license: CC-BY-4.0
+  author:  Ben Briggs
+  source:  https://github.com/browserslist/caniuse-lite
+  used by: portfolio
+caniuse-lite@1.0.30001819
+  license: CC-BY-4.0
+  author:  Ben Briggs
+  source:  https://github.com/browserslist/caniuse-lite
+  used by: blog, slides
+ccount@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/ccount
+  used by: portfolio, blog, slides
+chalk@5.6.2
+  license: MIT
+  source:  https://github.com/chalk/chalk
+  used by: portfolio
+character-entities@2.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/character-entities
+  used by: portfolio, blog, slides
+character-entities-html4@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/character-entities-html4
+  used by: portfolio, blog, slides
+character-entities-legacy@3.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/character-entities-legacy
+  used by: portfolio, blog, slides
+character-reference-invalid@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/character-reference-invalid
+  used by: portfolio, blog
+chevrotain@13.2.0
+  license: Apache-2.0
+  author:  Shahar Soel
+  source:  https://github.com/Chevrotain/chevrotain
+  used by: slides
+chokidar@3.6.0
+  license: MIT
+  author:  Paul Miller
+  source:  https://github.com/paulmillr/chokidar
+  used by: slides
+chokidar@5.0.0
+  license: MIT
+  author:  Paul Miller
+  source:  https://github.com/paulmillr/chokidar
+  used by: slides
+citty@0.1.6
+  license: MIT
+  source:  https://github.com/unjs/citty
+  used by: slides
+class-variance-authority@0.7.1
+  license: Apache-2.0
+  author:  Joe Bell
+  source:  https://github.com/joe-bell/cva
+  used by: portfolio
+cli-cursor@5.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/cli-cursor
+  used by: portfolio
+cli-progress@3.12.0
+  license: MIT
+  author:  Andi Dittrich
+  source:  https://github.com/npkgz/cli-progress
+  used by: slides
+cli-spinners@2.9.2
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/cli-spinners
+  used by: portfolio
+client-only@0.0.1
+  license: MIT
+  used by: portfolio, blog
+cliui@9.0.1
+  license: ISC
+  author:  Ben Coe
+  source:  https://github.com/yargs/cliui
+  used by: slides
+clone-regexp@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/clone-regexp
+  used by: slides
+clsx@2.1.1
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/clsx
+  used by: portfolio
+code-block-writer@13.0.3
+  license: MIT
+  author:  David Sherret
+  source:  https://github.com/dsherret/code-block-writer
+  used by: portfolio
+codemirror-theme-vars@0.1.2
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/codemirror-theme-vars
+  used by: slides
+colorette@2.0.20
+  license: MIT
+  author:  Jorge Bucaran
+  source:  https://github.com/jorgebucaran/colorette
+  used by: slides
+comma-separated-tokens@2.0.3
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/comma-separated-tokens
+  used by: portfolio, blog, slides
+commander@11.1.0
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/tj/commander.js
+  used by: portfolio
+commander@14.0.3
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/tj/commander.js
+  used by: portfolio
+commander@15.0.0
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/tj/commander.js
+  used by: slides
+commander@7.2.0
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/tj/commander.js
+  used by: slides
+conf@10.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/conf
+  used by: portfolio
+confbox@0.1.8
+  license: MIT
+  source:  https://github.com/unjs/confbox
+  used by: slides
+confbox@0.2.4
+  license: MIT
+  source:  https://github.com/unjs/confbox
+  used by: slides
+confbox@0.3.1
+  license: MIT
+  source:  https://github.com/unjs/confbox
+  used by: slides
+connect@3.7.0
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/senchalabs/connect
+  used by: slides
+consola@3.4.2
+  license: MIT
+  source:  https://github.com/unjs/consola
+  used by: slides
+content-disposition@1.1.0
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/jshttp/content-disposition
+  used by: portfolio
+content-type@1.0.5
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/jshttp/content-type
+  used by: portfolio
+content-type@2.1.0
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/jshttp/content-type
+  used by: portfolio
+convert-hrtime@5.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/convert-hrtime
+  used by: slides
+convert-source-map@2.0.0
+  license: MIT
+  author:  Thorsten Lorenz
+  source:  https://github.com/thlorenz/convert-source-map
+  used by: portfolio, slides
+cookie@0.7.2
+  license: MIT
+  author:  Roman Shtylman
+  source:  https://github.com/jshttp/cookie
+  used by: portfolio
+cookie-signature@1.2.2
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/visionmedia/node-cookie-signature
+  used by: portfolio
+core-util-is@1.0.3
+  license: MIT
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/core-util-is
+  used by: slides
+cors@2.8.6
+  license: MIT
+  author:  Troy Goode
+  source:  https://github.com/expressjs/cors
+  used by: portfolio
+cose-base@1.0.3
+  license: MIT
+  source:  https://github.com/iVis-at-Bilkent/cose-base
+  used by: slides
+cose-base@2.2.0
+  license: MIT
+  source:  https://github.com/iVis-at-Bilkent/cose-base
+  used by: slides
+cosmiconfig@9.0.2
+  license: MIT
+  author:  Daniel Fischer
+  source:  https://github.com/cosmiconfig/cosmiconfig
+  used by: portfolio
+cross-spawn@7.0.6
+  license: MIT
+  author:  André Cruz
+  source:  https://github.com/moxystudio/node-cross-spawn
+  used by: portfolio
+crossws@0.4.16
+  license: MIT
+  source:  https://github.com/h3js/crossws
+  used by: slides
+css-tree@3.2.1
+  license: MIT
+  author:  Roman Dvornov
+  source:  https://github.com/csstree/csstree
+  used by: slides
+cssesc@3.0.0
+  license: MIT
+  author:  Mathias Bynens
+  source:  https://github.com/mathiasbynens/cssesc
+  used by: portfolio, slides
+csstype@3.2.3
+  license: MIT
+  author:  Fredrik Nicol
+  source:  https://github.com/frenic/csstype
+  used by: slides
+cytoscape@3.34.4
+  license: MIT
+  source:  https://github.com/cytoscape/cytoscape.js
+  used by: slides
+cytoscape-cose-bilkent@4.1.0
+  license: MIT
+  source:  https://github.com/cytoscape/cytoscape.js-cose-bilkent
+  used by: slides
+cytoscape-fcose@2.2.0
+  license: MIT
+  author:  iVis-at-Bilkent
+  source:  https://github.com/iVis-at-Bilkent/cytoscape.js-fcose
+  used by: slides
+d3@7.9.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3
+  used by: slides
+d3-array@2.12.1
+  license: BSD-3-Clause
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-array
+  used by: slides
+d3-array@3.2.4
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-array
+  used by: slides
+d3-axis@3.0.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-axis
+  used by: slides
+d3-brush@3.0.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-brush
+  used by: slides
+d3-chord@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-chord
+  used by: slides
+d3-color@3.1.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-color
+  used by: slides
+d3-contour@4.0.2
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-contour
+  used by: slides
+d3-delaunay@6.0.4
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-delaunay
+  used by: slides
+d3-dispatch@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-dispatch
+  used by: slides
+d3-drag@3.0.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-drag
+  used by: slides
+d3-dsv@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-dsv
+  used by: slides
+d3-ease@3.0.1
+  license: BSD-3-Clause
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-ease
+  used by: slides
+d3-fetch@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-fetch
+  used by: slides
+d3-force@3.0.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-force
+  used by: slides
+d3-format@3.1.2
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-format
+  used by: slides
+d3-geo@3.1.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-geo
+  used by: slides
+d3-hierarchy@3.1.2
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-hierarchy
+  used by: slides
+d3-interpolate@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-interpolate
+  used by: slides
+d3-path@1.0.9
+  license: BSD-3-Clause
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-path
+  used by: slides
+d3-path@3.1.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-path
+  used by: slides
+d3-polygon@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-polygon
+  used by: slides
+d3-quadtree@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-quadtree
+  used by: slides
+d3-random@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-random
+  used by: slides
+d3-sankey@0.12.3
+  license: BSD-3-Clause
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-sankey
+  used by: slides
+d3-scale@4.0.2
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-scale
+  used by: slides
+d3-scale-chromatic@3.1.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-scale-chromatic
+  used by: slides
+d3-selection@3.0.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-selection
+  used by: slides
+d3-shape@1.3.7
+  license: BSD-3-Clause
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-shape
+  used by: slides
+d3-shape@3.2.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-shape
+  used by: slides
+d3-time@3.1.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-time
+  used by: slides
+d3-time-format@4.1.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-time-format
+  used by: slides
+d3-timer@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-timer
+  used by: slides
+d3-transition@3.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-transition
+  used by: slides
+d3-zoom@3.0.0
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/d3/d3-zoom
+  used by: slides
+dagre-d3-es@7.0.14
+  license: MIT
+  source:  https://github.com/tbo47/dagre-es
+  used by: slides
+dayjs@1.11.23
+  license: MIT
+  author:  iamkun
+  source:  https://github.com/iamkun/dayjs
+  used by: slides
+debounce-fn@4.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/debounce-fn
+  used by: portfolio
+debug@4.4.3
+  license: MIT
+  author:  Josh Junon
+  source:  https://github.com/debug-js/debug
+  used by: portfolio, blog, slides
+debug@2.6.9
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/visionmedia/debug
+  used by: slides
+decode-named-character-reference@1.3.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/decode-named-character-reference
+  used by: portfolio, blog, slides
+dedent@1.7.2
+  license: MIT
+  author:  Desmond Brand
+  source:  https://github.com/dmnd/dedent
+  used by: portfolio
+deepmerge@4.3.1
+  license: MIT
+  source:  https://github.com/TehShrike/deepmerge
+  used by: portfolio
+default-browser@5.5.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/default-browser
+  used by: portfolio
+default-browser@5.5.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/default-browser
+  used by: slides
+default-browser-id@5.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/default-browser-id
+  used by: portfolio, slides
+define-lazy-prop@2.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/define-lazy-prop
+  used by: portfolio
+define-lazy-prop@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/define-lazy-prop
+  used by: portfolio, slides
+defu@6.1.7
+  license: MIT
+  source:  https://github.com/unjs/defu
+  used by: slides
+delaunator@5.1.0
+  license: ISC
+  author:  Vladimir Agafonkin
+  source:  https://github.com/mapbox/delaunator
+  used by: slides
+depd@2.0.0
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/dougwilson/nodejs-depd
+  used by: portfolio
+dequal@2.0.3
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/dequal
+  used by: portfolio, blog, slides
+destr@2.0.5
+  license: MIT
+  source:  https://github.com/unjs/destr
+  used by: slides
+detect-libc@2.1.2
+  license: Apache-2.0
+  author:  Lovell Fuller
+  source:  https://github.com/lovell/detect-libc
+  used by: portfolio, blog, slides
+detect-node-es@1.1.0
+  license: MIT
+  author:  Ilya Kantor
+  source:  https://github.com/thekashey/detect-node
+  used by: portfolio
+devframe@1.2.6
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/devframes/devframe
+  used by: slides
+devlop@1.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/devlop
+  used by: portfolio, blog, slides
+diff@8.0.4
+  license: BSD-3-Clause
+  source:  https://github.com/kpdecker/jsdiff
+  used by: portfolio
+diff-match-patch-es@2.0.1
+  license: Apache-2.0
+  source:  https://github.com/antfu/diff-match-patch-es
+  used by: slides
+dns-packet@5.6.1
+  license: MIT
+  author:  Mathias Buus
+  source:  https://github.com/mafintosh/dns-packet
+  used by: slides
+dns-socket@4.2.2
+  license: MIT
+  author:  Mathias Buus
+  source:  https://github.com/mafintosh/dns-socket
+  used by: slides
+dom-serializer@3.1.1
+  license: MIT
+  author:  Felix Boehm
+  source:  https://github.com/cheeriojs/dom-serializer
+  used by: slides
+domelementtype@3.0.0
+  license: BSD-2-Clause
+  author:  Felix Boehm
+  source:  https://github.com/fb55/domelementtype
+  used by: slides
+domhandler@6.0.1
+  license: BSD-2-Clause
+  author:  Felix Boehm
+  source:  https://github.com/fb55/domhandler
+  used by: slides
+dompurify@3.4.17
+  license: (MPL-2.0 OR Apache-2.0)
+  author:  Dr.-Ing. Mario Heiderich, Cure53
+  source:  https://github.com/cure53/DOMPurify
+  used by: slides
+dompurify@3.4.8
+  license: (MPL-2.0 OR Apache-2.0)
+  author:  Dr.-Ing. Mario Heiderich, Cure53
+  source:  https://github.com/cure53/DOMPurify
+  used by: slides
+domutils@4.0.2
+  license: BSD-2-Clause
+  author:  Felix Boehm
+  source:  https://github.com/fb55/domutils
+  used by: slides
+dot-prop@6.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/dot-prop
+  used by: portfolio
+dotenv@17.4.2
+  license: BSD-2-Clause
+  source:  https://github.com/motdotla/dotenv
+  used by: portfolio, slides
+drauu@1.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/drauu
+  used by: slides
+drizzle-orm@0.45.2
+  license: Apache-2.0
+  author:  Drizzle Team
+  source:  https://github.com/drizzle-team/drizzle-orm
+  used by: portfolio
+drizzle-orm@0.45.4
+  license: Apache-2.0
+  author:  Drizzle Team
+  source:  https://github.com/drizzle-team/drizzle-orm
+  used by: blog
+dunder-proto@1.0.1
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/es-shims/dunder-proto
+  used by: portfolio
+echarts@6.1.0
+  license: Apache-2.0
+  source:  https://github.com/apache/echarts
+  used by: slides
+ee-first@1.1.1
+  license: MIT
+  author:  Jonathan Ong
+  source:  https://github.com/jonathanong/ee-first
+  used by: portfolio, slides
+electron-to-chromium@1.5.240
+  license: ISC
+  author:  Kilian Valkhof
+  source:  https://github.com/kilian/electron-to-chromium
+  used by: portfolio
+electron-to-chromium@1.5.464
+  license: ISC
+  author:  Kilian Valkhof
+  source:  https://github.com/Kilian/electron-to-chromium
+  used by: slides
+elkjs@0.9.3
+  license: EPL-2.0
+  author:  Ulf Rüegg
+  source:  https://github.com/kieler/elkjs
+  used by: slides
+emoji-regex@10.6.0
+  license: MIT
+  author:  Mathias Bynens
+  source:  https://github.com/mathiasbynens/emoji-regex
+  used by: portfolio, slides
+emoji-regex@8.0.0
+  license: MIT
+  author:  Mathias Bynens
+  source:  https://github.com/mathiasbynens/emoji-regex
+  used by: slides
+encodeurl@2.0.0
+  license: MIT
+  source:  https://github.com/pillarjs/encodeurl
+  used by: portfolio
+encodeurl@1.0.2
+  license: MIT
+  source:  https://github.com/pillarjs/encodeurl
+  used by: slides
+enquirer@2.4.1
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/enquirer/enquirer
+  used by: portfolio
+entities@4.5.0
+  license: BSD-2-Clause
+  author:  Felix Boehm
+  source:  https://github.com/fb55/entities
+  used by: slides
+entities@7.0.1
+  license: BSD-2-Clause
+  author:  Felix Boehm
+  source:  https://github.com/fb55/entities
+  used by: slides
+entities@8.1.0
+  license: BSD-2-Clause
+  author:  Felix Boehm
+  source:  https://github.com/fb55/entities
+  used by: slides
+env-paths@2.2.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/env-paths
+  used by: portfolio
+error-ex@1.3.4
+  license: MIT
+  source:  https://github.com/qix-/node-error-ex
+  used by: portfolio
+error-stack-parser-es@2.0.1
+  license: MIT
+  source:  https://github.com/antfu-collective/error-stack-parser-es
+  used by: slides
+errx@0.1.2
+  license: MIT
+  source:  https://github.com/danielroe/errx
+  used by: slides
+es-define-property@1.0.1
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/es-define-property
+  used by: portfolio
+es-errors@1.3.0
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/es-errors
+  used by: portfolio
+es-object-atoms@1.1.1
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/es-object-atoms
+  used by: portfolio
+es-toolkit@1.53.0
+  license: MIT
+  source:  https://github.com/toss/es-toolkit
+  used by: slides
+escalade@3.2.0
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/escalade
+  used by: portfolio, slides
+escape-html@1.0.3
+  license: MIT
+  source:  https://github.com/component/escape-html
+  used by: portfolio, slides
+escape-string-regexp@5.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/escape-string-regexp
+  used by: portfolio, blog, slides
+esprima@4.0.1
+  license: BSD-2-Clause
+  author:  Ariya Hidayat
+  source:  https://github.com/jquery/esprima
+  used by: portfolio, slides
+estree-util-is-identifier-name@3.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/estree-util-is-identifier-name
+  used by: portfolio, blog
+estree-walker@2.0.2
+  license: MIT
+  author:  Rich Harris
+  source:  https://github.com/Rich-Harris/estree-walker
+  used by: slides
+estree-walker@3.0.3
+  license: MIT
+  author:  Rich Harris
+  source:  https://github.com/Rich-Harris/estree-walker
+  used by: slides
+etag@1.8.1
+  license: MIT
+  source:  https://github.com/jshttp/etag
+  used by: portfolio
+eventsource@3.0.7
+  license: MIT
+  author:  Espen Hovlandsdal
+  source:  git://git@github.com/EventSource/eventsource
+  used by: portfolio
+eventsource-parser@3.1.1
+  license: MIT
+  author:  Espen Hovlandsdal
+  source:  https://github.com/rexxars/eventsource-parser
+  used by: portfolio
+execa@5.1.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/execa
+  used by: portfolio
+execa@9.6.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/execa
+  used by: portfolio
+express@5.2.1
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/expressjs/express
+  used by: portfolio
+express-rate-limit@8.6.2
+  license: MIT
+  author:  Nathan Friedly
+  source:  https://github.com/express-rate-limit/express-rate-limit
+  used by: portfolio
+exsolve@1.1.3
+  license: MIT
+  source:  https://github.com/unjs/exsolve
+  used by: slides
+extend@3.0.2
+  license: MIT
+  author:  Stefan Thomas
+  source:  https://github.com/justmoon/node-extend
+  used by: portfolio, blog
+extend-shallow@2.0.1
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/extend-shallow
+  used by: slides
+fast-deep-equal@3.1.3
+  license: MIT
+  author:  Evgeny Poberezkin
+  source:  https://github.com/epoberezkin/fast-deep-equal
+  used by: portfolio, slides
+fast-glob@3.3.3
+  license: MIT
+  author:  Denis Malinochkin
+  source:  https://github.com/mrmlnc/fast-glob
+  used by: portfolio, slides
+fast-uri@3.1.5
+  license: BSD-3-Clause
+  author:  Vincent Le Goff
+  source:  https://github.com/fastify/fast-uri
+  used by: portfolio
+fastq@1.19.1
+  license: ISC
+  author:  Matteo Collina
+  source:  https://github.com/mcollina/fastq
+  used by: portfolio
+fastq@1.20.3
+  license: ISC
+  author:  Matteo Collina
+  source:  https://github.com/mcollina/fastq
+  used by: slides
+fdir@6.5.0
+  license: MIT
+  author:  thecodrr
+  source:  https://github.com/thecodrr/fdir
+  used by: portfolio, slides
+figures@6.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/figures
+  used by: portfolio
+file-saver@2.0.5
+  license: MIT
+  author:  Eli Grey
+  source:  https://github.com/eligrey/FileSaver.js
+  used by: slides
+fill-range@7.1.1
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/fill-range
+  used by: portfolio, slides
+finalhandler@2.1.1
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/pillarjs/finalhandler
+  used by: portfolio
+finalhandler@1.1.2
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/pillarjs/finalhandler
+  used by: slides
+find-up@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/find-up
+  used by: portfolio
+fitty@2.4.2
+  license: MIT
+  author:  Rik Schennink
+  source:  https://github.com/rikschennink/fitty
+  used by: slides
+floating-vue@5.4.0
+  license: MIT
+  author:  Guillaume Chau
+  source:  https://github.com/Akryum/floating-vue
+  used by: slides
+forwarded@0.2.0
+  license: MIT
+  source:  https://github.com/jshttp/forwarded
+  used by: portfolio
+framesync@6.1.2
+  license: MIT
+  author:  Matt Perry
+  source:  https://github.com/Popmotion/popmotion
+  used by: slides
+fresh@2.0.0
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/jshttp/fresh
+  used by: portfolio
+fs-extra@11.4.0
+  license: MIT
+  author:  JP Richardson
+  source:  https://github.com/jprichardson/node-fs-extra
+  used by: portfolio
+fsevents@2.3.3
+  license: MIT
+  source:  https://github.com/fsevents/fsevents
+  used by: slides
+function-bind@1.1.2
+  license: MIT
+  author:  Raynos
+  source:  https://github.com/Raynos/function-bind
+  used by: portfolio
+function-timeout@0.1.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/function-timeout
+  used by: slides
+fuse.js@7.5.0
+  license: Apache-2.0
+  author:  Kiro Risk
+  source:  https://github.com/krisk/Fuse
+  used by: slides
+fuzzysort@3.1.0
+  license: MIT
+  author:  farzher
+  source:  https://github.com/farzher/fuzzysort
+  used by: portfolio
+fzf@0.5.2
+  license: BSD-3-Clause
+  author:  Ajit
+  source:  https://github.com/ajitid/fzf-for-js
+  used by: slides
+gensync@1.0.0-beta.2
+  license: MIT
+  author:  Logan Smyth
+  source:  https://github.com/loganfsmyth/gensync
+  used by: portfolio, slides
+get-caller-file@2.0.5
+  license: ISC
+  author:  Stefan Penner
+  source:  https://github.com/stefanpenner/get-caller-file
+  used by: slides
+get-east-asian-width@1.6.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/get-east-asian-width
+  used by: portfolio
+get-east-asian-width@1.7.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/get-east-asian-width
+  used by: slides
+get-intrinsic@1.3.0
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/get-intrinsic
+  used by: portfolio
+get-nonce@1.0.1
+  license: MIT
+  author:  Anton Korzunov
+  source:  https://github.com/theKashey/get-nonce
+  used by: portfolio
+get-own-enumerable-keys@1.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/get-own-enumerable-keys
+  used by: portfolio
+get-port-please@3.2.0
+  license: MIT
+  source:  https://github.com/unjs/get-port-please
+  used by: slides
+get-proto@1.0.1
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/get-proto
+  used by: portfolio
+get-stream@6.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/get-stream
+  used by: portfolio
+get-stream@9.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/get-stream
+  used by: portfolio
+giget@3.3.1
+  license: MIT
+  source:  https://github.com/unjs/giget
+  used by: slides
+glob-parent@5.1.2
+  license: ISC
+  author:  Gulp Team
+  source:  https://github.com/gulpjs/glob-parent
+  used by: portfolio, slides
+global-directory@4.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/global-directory
+  used by: slides
+global-directory@5.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/global-directory
+  used by: slides
+gopd@1.2.0
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/gopd
+  used by: portfolio
+graceful-fs@4.2.11
+  license: ISC
+  source:  https://github.com/isaacs/node-graceful-fs
+  used by: portfolio
+gray-matter@4.0.3
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/gray-matter
+  used by: slides
+h3@2.0.8
+  license: MIT
+  source:  https://github.com/h3js/h3
+  used by: slides
+hachure-fill@0.5.2
+  license: MIT
+  author:  Preet Shihn
+  source:  https://github.com/pshihn/hachure-fill
+  used by: slides
+has-symbols@1.1.0
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/inspect-js/has-symbols
+  used by: portfolio
+hasown@2.0.2
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/inspect-js/hasOwn
+  used by: portfolio
+hast-util-to-html@9.0.5
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/hast-util-to-html
+  used by: slides
+hast-util-to-jsx-runtime@2.3.6
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/hast-util-to-jsx-runtime
+  used by: portfolio, blog
+hast-util-whitespace@3.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/hast-util-whitespace
+  used by: portfolio, blog, slides
+hey-listen@1.0.8
+  license: MIT
+  author:  Matt Perry
+  source:  https://github.com/Popmotion/hey-listen
+  used by: slides
+hono@4.13.2
+  license: MIT
+  author:  Yusuke Wada
+  source:  https://github.com/honojs/hono
+  used by: portfolio
+hono@4.13.14
+  license: MIT
+  author:  Yusuke Wada
+  source:  https://github.com/honojs/hono
+  used by: slides
+hookable@5.5.3
+  license: MIT
+  source:  https://github.com/unjs/hookable
+  used by: slides
+hookable@6.1.2
+  license: MIT
+  source:  https://github.com/unjs/hookable
+  used by: slides
+html-url-attributes@3.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/rehypejs/rehype-minify.git#main
+  used by: portfolio, blog
+html-void-elements@3.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/html-void-elements
+  used by: slides
+htmlparser2@12.0.0
+  license: MIT
+  author:  Felix Boehm
+  source:  https://github.com/fb55/htmlparser2
+  used by: slides
+http-errors@2.0.1
+  license: MIT
+  author:  Jonathan Ong
+  source:  https://github.com/jshttp/http-errors
+  used by: portfolio
+https@1.0.0
+  license: ISC
+  author:  hardus van der berg
+  used by: slides
+human-signals@2.1.0
+  license: Apache-2.0
+  author:  ehmicky
+  source:  https://github.com/ehmicky/human-signals
+  used by: portfolio
+human-signals@8.0.1
+  license: Apache-2.0
+  author:  ehmicky
+  source:  https://github.com/ehmicky/human-signals
+  used by: portfolio
+iceberg-js@0.8.1
+  license: MIT
+  author:  mandarini
+  source:  https://github.com/supabase/iceberg-js
+  used by: portfolio
+iconv-lite@0.7.3
+  license: MIT
+  author:  Alexander Shtuchkin
+  source:  https://github.com/pillarjs/iconv-lite
+  used by: portfolio
+iconv-lite@0.6.3
+  license: MIT
+  author:  Alexander Shtuchkin
+  source:  https://github.com/ashtuchkin/iconv-lite
+  used by: slides
+ignore@5.3.2
+  license: MIT
+  author:  kael
+  source:  https://github.com/kaelzhang/node-ignore
+  used by: portfolio
+ignore@7.0.14
+  license: MIT
+  author:  kael
+  source:  https://github.com/kaelzhang/node-ignore
+  used by: slides
+image-size@1.2.1
+  license: MIT
+  author:  netroy
+  source:  https://github.com/image-size/image-size
+  used by: slides
+immediate@3.0.6
+  license: MIT
+  source:  https://github.com/calvinmetcalf/immediate
+  used by: slides
+import-fresh@3.3.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/import-fresh
+  used by: portfolio
+import-meta-resolve@4.2.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/import-meta-resolve
+  used by: slides
+inherits@2.0.4
+  license: ISC
+  source:  https://github.com/isaacs/inherits
+  used by: portfolio, slides
+ini@4.1.1
+  license: ISC
+  author:  GitHub Inc.
+  source:  https://github.com/npm/ini
+  used by: slides
+ini@6.0.0
+  license: ISC
+  author:  GitHub Inc.
+  source:  https://github.com/npm/ini
+  used by: slides
+inline-style-parser@0.2.7
+  license: MIT
+  source:  https://github.com/remarkablemark/inline-style-parser
+  used by: portfolio, blog
+internmap@1.0.1
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/mbostock/internmap
+  used by: slides
+internmap@2.0.3
+  license: ISC
+  author:  Mike Bostock
+  source:  https://github.com/mbostock/internmap
+  used by: slides
+ip-address@10.5.0
+  license: MIT
+  author:  Beau Gunderson
+  source:  https://github.com/beaugunderson/ip-address
+  used by: portfolio
+ip-regex@5.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/ip-regex
+  used by: slides
+ipaddr.js@1.9.1
+  license: MIT
+  author:  whitequark
+  source:  https://github.com/whitequark/ipaddr.js
+  used by: portfolio
+is-alphabetical@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/is-alphabetical
+  used by: portfolio, blog
+is-alphanumerical@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/is-alphanumerical
+  used by: portfolio, blog
+is-arrayish@0.2.1
+  license: MIT
+  author:  Qix
+  source:  https://github.com/qix-/node-is-arrayish
+  used by: portfolio
+is-binary-path@2.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-binary-path
+  used by: slides
+is-decimal@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/is-decimal
+  used by: portfolio, blog
+is-docker@2.2.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-docker
+  used by: portfolio
+is-docker@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-docker
+  used by: portfolio, slides
+is-extendable@0.1.1
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/is-extendable
+  used by: slides
+is-extglob@2.1.1
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/is-extglob
+  used by: portfolio, slides
+is-fullwidth-code-point@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-fullwidth-code-point
+  used by: slides
+is-glob@4.0.3
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/micromatch/is-glob
+  used by: portfolio, slides
+is-hexadecimal@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/is-hexadecimal
+  used by: portfolio, blog
+is-in-ssh@1.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-in-ssh
+  used by: portfolio, slides
+is-inside-container@1.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-inside-container
+  used by: portfolio, slides
+is-installed-globally@1.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-installed-globally
+  used by: slides
+is-interactive@2.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-interactive
+  used by: portfolio
+is-ip@5.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-ip
+  used by: slides
+is-number@7.0.0
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/is-number
+  used by: portfolio, slides
+is-obj@2.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-obj
+  used by: portfolio
+is-obj@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-obj
+  used by: portfolio
+is-path-inside@4.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-path-inside
+  used by: slides
+is-plain-obj@4.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-plain-obj
+  used by: portfolio, blog
+is-promise@4.0.0
+  license: MIT
+  author:  ForbesLindesay
+  source:  https://github.com/then/is-promise
+  used by: portfolio
+is-regexp@3.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-regexp
+  used by: portfolio, slides
+is-stream@2.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-stream
+  used by: portfolio
+is-stream@4.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-stream
+  used by: portfolio
+is-unicode-supported@1.3.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-unicode-supported
+  used by: portfolio
+is-unicode-supported@2.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-unicode-supported
+  used by: portfolio
+is-wsl@2.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-wsl
+  used by: portfolio
+is-wsl@3.1.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/is-wsl
+  used by: portfolio, slides
+isarray@1.0.0
+  license: MIT
+  author:  Julian Gruber
+  source:  https://github.com/juliangruber/isarray
+  used by: slides
+isexe@2.0.0
+  license: ISC
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/isexe
+  used by: portfolio
+isexe@3.1.5
+  license: BlueOak-1.0.0
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/isexe
+  used by: portfolio
+jiti@2.7.0
+  license: MIT
+  source:  https://github.com/unjs/jiti
+  used by: slides
+jose@6.2.9
+  license: MIT
+  author:  Filip Skokan
+  source:  https://github.com/panva/jose
+  used by: portfolio
+js-tokens@4.0.0
+  license: MIT
+  author:  Simon Lydell
+  source:  https://github.com/lydell/js-tokens
+  used by: portfolio, slides
+js-yaml@4.1.1
+  license: MIT
+  author:  Vladimir Zapparov
+  source:  https://github.com/nodeca/js-yaml
+  used by: portfolio
+js-yaml@3.15.2
+  license: MIT
+  author:  Vladimir Zapparov
+  source:  https://github.com/nodeca/js-yaml
+  used by: slides
+js-yaml@4.3.2
+  license: MIT
+  author:  Vladimir Zapparov
+  source:  https://github.com/nodeca/js-yaml
+  used by: slides
+jsesc@3.1.0
+  license: MIT
+  author:  Mathias Bynens
+  source:  https://github.com/mathiasbynens/jsesc
+  used by: portfolio, slides
+json-parse-even-better-errors@2.3.1
+  license: MIT
+  author:  Kat Marchán
+  source:  https://github.com/npm/json-parse-even-better-errors
+  used by: portfolio
+json-schema-traverse@1.0.0
+  license: MIT
+  author:  Evgeny Poberezkin
+  source:  https://github.com/epoberezkin/json-schema-traverse
+  used by: portfolio
+json-schema-typed@7.0.3
+  license: BSD-2-Clause
+  source:  https://github.com/typeslick/json-schema-typed
+  used by: portfolio
+json-schema-typed@8.0.2
+  license: BSD-2-Clause
+  author:  Remy Rylan
+  source:  https://github.com/RemyRylan/json-schema-typed
+  used by: portfolio
+json5@2.2.3
+  license: MIT
+  author:  Aseem Kishore
+  source:  https://github.com/json5/json5
+  used by: portfolio, slides
+jsonfile@6.2.1
+  license: MIT
+  author:  JP Richardson
+  source:  https://github.com/jprichardson/node-jsonfile
+  used by: portfolio
+jszip@3.10.2
+  license: (MIT OR GPL-3.0-or-later)
+  author:  Stuart Knightley
+  source:  https://github.com/Stuk/jszip
+  used by: slides
+katex@0.18.10
+  license: MIT
+  source:  https://github.com/KaTeX/KaTeX
+  used by: slides
+khroma@2.1.0
+  license: MIT*
+  source:  https://github.com/fabiospampinato/khroma
+  used by: slides
+kind-of@6.0.3
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/kind-of
+  used by: slides
+kleur@3.0.3
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/kleur
+  used by: portfolio, slides
+kleur@4.1.5
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/kleur
+  used by: portfolio
+klona@2.0.6
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/klona
+  used by: slides
+knitwork@1.3.0
+  license: MIT
+  source:  https://github.com/unjs/knitwork
+  used by: slides
+layout-base@1.0.2
+  license: MIT
+  source:  https://github.com/iVis-at-Bilkent/layout-base
+  used by: slides
+layout-base@2.0.1
+  license: MIT
+  source:  https://github.com/iVis-at-Bilkent/layout-base
+  used by: slides
+lie@3.3.0
+  license: MIT
+  source:  https://github.com/calvinmetcalf/lie
+  used by: slides
+lightningcss@1.33.0
+  license: MPL-2.0
+  source:  https://github.com/parcel-bundler/lightningcss
+  used by: slides
+lightningcss-darwin-arm64@1.33.0
+  license: MPL-2.0
+  source:  https://github.com/parcel-bundler/lightningcss
+  used by: slides
+lines-and-columns@1.2.4
+  license: MIT
+  author:  Brian Donovan
+  source:  https://github.com/eventualbuddha/lines-and-columns
+  used by: portfolio
+linkify-it@5.0.2
+  license: MIT
+  source:  https://github.com/markdown-it/linkify-it
+  used by: slides
+linkify-it@6.1.0
+  license: MIT
+  source:  https://github.com/markdown-it/linkify-it
+  used by: slides
+local-pkg@1.2.1
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/local-pkg
+  used by: slides
+locate-path@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/locate-path
+  used by: portfolio
+lodash-es@4.18.1
+  license: MIT
+  author:  John-David Dalton
+  source:  https://github.com/lodash/lodash
+  used by: slides
+log-symbols@6.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/log-symbols
+  used by: portfolio
+longest-streak@3.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/longest-streak
+  used by: portfolio, blog, slides
+lru-cache@5.1.1
+  license: ISC
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/node-lru-cache
+  used by: portfolio, slides
+lru-cache@11.5.3
+  license: BlueOak-1.0.0
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/node-lru-cache
+  used by: slides
+lucide-react@0.562.0
+  license: ISC
+  author:  Eric Fennis
+  source:  https://github.com/lucide-icons/lucide
+  used by: portfolio
+lz-string@1.5.0
+  license: MIT
+  author:  pieroxy
+  source:  https://github.com/pieroxy/lz-string
+  used by: slides
+lz-string-es@1.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/lz-string-es
+  used by: slides
+magic-string@0.30.21
+  license: MIT
+  author:  Rich Harris
+  source:  https://github.com/Rich-Harris/magic-string
+  used by: slides
+magic-string@1.4.3
+  license: MIT
+  author:  Rich Harris
+  source:  https://github.com/Rich-Harris/magic-string
+  used by: slides
+magic-string-ast@1.0.3
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/magic-string-ast
+  used by: slides
+magic-string-stack@2.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/magic-string-stack
+  used by: slides
+markdown-exit@1.3.0
+  license: MIT
+  source:  https://github.com/serkodev/markdown-exit
+  used by: slides
+markdown-it@14.3.3
+  license: MIT
+  source:  https://github.com/markdown-it/markdown-it
+  used by: slides
+markdown-it@15.0.3
+  license: MIT
+  source:  https://github.com/markdown-it/markdown-it
+  used by: slides
+markdown-it-footnote@4.0.0
+  license: MIT
+  source:  https://github.com/markdown-it/markdown-it-footnote
+  used by: slides
+markdown-it-github-alerts@1.0.1
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/markdown-it-github-alerts
+  used by: slides
+markdown-table@3.0.4
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/markdown-table
+  used by: portfolio, blog, slides
+marked@14.0.0
+  license: MIT
+  author:  Christopher Jeffrey
+  source:  https://github.com/markedjs/marked
+  used by: slides
+marked@16.4.2
+  license: MIT
+  author:  Christopher Jeffrey
+  source:  https://github.com/markedjs/marked
+  used by: slides
+math-intrinsics@1.1.0
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/es-shims/math-intrinsics
+  used by: portfolio
+mdast-util-find-and-replace@3.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-find-and-replace
+  used by: portfolio
+mdast-util-find-and-replace@3.0.4
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-find-and-replace
+  used by: blog, slides
+mdast-util-from-markdown@2.0.3
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-from-markdown
+  used by: portfolio
+mdast-util-from-markdown@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-from-markdown
+  used by: blog, slides
+mdast-util-gfm@3.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-gfm
+  used by: portfolio, blog, slides
+mdast-util-gfm-autolink-literal@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-gfm-autolink-literal
+  used by: portfolio, blog, slides
+mdast-util-gfm-footnote@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-gfm-footnote
+  used by: portfolio, blog, slides
+mdast-util-gfm-strikethrough@2.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-gfm-strikethrough
+  used by: portfolio
+mdast-util-gfm-strikethrough@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-gfm-strikethrough
+  used by: blog, slides
+mdast-util-gfm-table@2.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-gfm-table
+  used by: portfolio, blog, slides
+mdast-util-gfm-task-list-item@2.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-gfm-task-list-item
+  used by: portfolio, blog, slides
+mdast-util-mdx-expression@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-mdx-expression
+  used by: portfolio, blog
+mdast-util-mdx-jsx@3.2.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-mdx-jsx
+  used by: portfolio, blog
+mdast-util-mdxjs-esm@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-mdxjs-esm
+  used by: portfolio, blog
+mdast-util-newline-to-break@2.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-newline-to-break
+  used by: blog
+mdast-util-phrasing@4.1.0
+  license: MIT
+  author:  Victor Felder
+  source:  https://github.com/syntax-tree/mdast-util-phrasing
+  used by: portfolio, blog, slides
+mdast-util-to-hast@13.2.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-to-hast
+  used by: portfolio, blog, slides
+mdast-util-to-markdown@2.1.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-to-markdown
+  used by: portfolio
+mdast-util-to-markdown@2.2.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-to-markdown
+  used by: blog
+mdast-util-to-markdown@2.2.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-to-markdown
+  used by: slides
+mdast-util-to-string@4.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/mdast-util-to-string
+  used by: portfolio, blog, slides
+mdn-data@2.27.1
+  license: CC0-1.0
+  author:  Mozilla Developer Network
+  source:  https://github.com/mdn/data
+  used by: slides
+mdurl@2.1.0
+  license: MIT
+  source:  https://github.com/markdown-it/mdurl
+  used by: slides
+media-typer@1.1.1
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/jshttp/media-typer
+  used by: portfolio
+merge-descriptors@2.0.0
+  license: MIT
+  source:  https://github.com/sindresorhus/merge-descriptors
+  used by: portfolio
+merge-stream@2.0.0
+  license: MIT
+  author:  Stephen Sugden
+  source:  https://github.com/grncdr/merge-stream
+  used by: portfolio
+merge2@1.4.1
+  license: MIT
+  source:  https://github.com/teambition/merge2
+  used by: portfolio, slides
+mermaid@12.2.0
+  license: MIT
+  author:  Knut Sveidqvist
+  source:  https://github.com/mermaid-js/mermaid
+  used by: slides
+micromark@4.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio
+micromark@4.0.3
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: blog, slides
+micromark-core-commonmark@2.0.3
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio
+micromark-core-commonmark@2.0.4
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: blog, slides
+micromark-extension-gfm@3.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm
+  used by: portfolio, blog
+micromark-extension-gfm-autolink-literal@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm-autolink-literal
+  used by: portfolio, blog
+micromark-extension-gfm-footnote@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm-footnote
+  used by: portfolio, blog
+micromark-extension-gfm-strikethrough@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm-strikethrough
+  used by: portfolio, blog
+micromark-extension-gfm-table@2.1.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm-table
+  used by: portfolio
+micromark-extension-gfm-table@2.1.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm-table
+  used by: blog
+micromark-extension-gfm-tagfilter@2.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm-tagfilter
+  used by: portfolio, blog
+micromark-extension-gfm-task-list-item@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark-extension-gfm-task-list-item
+  used by: portfolio, blog
+micromark-factory-destination@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-factory-label@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-factory-space@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio
+micromark-factory-space@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: blog, slides
+micromark-factory-title@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-factory-whitespace@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-character@2.1.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-chunked@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-classify-character@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-combine-extensions@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-decode-numeric-character-reference@2.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-decode-string@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-edit-map@1.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: blog, slides
+micromark-util-encode@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-html-tag-name@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-normalize-identifier@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-resolve-all@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-sanitize-uri@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-subtokenize@2.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-symbol@2.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio, blog, slides
+micromark-util-types@2.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: portfolio
+micromark-util-types@2.0.3
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/micromark/micromark.git#main
+  used by: blog, slides
+micromatch@4.0.8
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/micromatch/micromatch
+  used by: portfolio, slides
+mime-db@1.54.0
+  license: MIT
+  source:  https://github.com/jshttp/mime-db
+  used by: portfolio
+mime-types@3.0.2
+  license: MIT
+  source:  https://github.com/jshttp/mime-types
+  used by: portfolio
+mimic-fn@2.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/mimic-fn
+  used by: portfolio
+mimic-fn@3.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/mimic-fn
+  used by: portfolio
+mimic-function@5.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/mimic-function
+  used by: portfolio
+minimatch@10.2.6
+  license: BlueOak-1.0.0
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/minimatch
+  used by: portfolio
+minimist@1.2.8
+  license: MIT
+  author:  James Halliday
+  source:  https://github.com/minimistjs/minimist
+  used by: portfolio
+mlly@1.8.2
+  license: MIT
+  source:  https://github.com/unjs/mlly
+  used by: slides
+monaco-editor@0.56.0
+  license: MIT
+  author:  Microsoft Corporation
+  source:  https://github.com/microsoft/monaco-editor
+  used by: slides
+mrmime@2.0.1
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/mrmime
+  used by: slides
+ms@2.1.3
+  license: MIT
+  source:  https://github.com/vercel/ms
+  used by: portfolio, blog, slides
+ms@2.0.0
+  license: MIT
+  source:  https://github.com/zeit/ms
+  used by: slides
+muggle-string@0.4.1
+  license: MIT
+  source:  https://github.com/johnsoncodehk/muggle-string
+  used by: slides
+nanoid@3.3.11
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/ai/nanoid
+  used by: portfolio
+nanoid@3.3.20
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/ai/nanoid
+  used by: blog, slides
+nanotar@0.3.0
+  license: MIT
+  source:  https://github.com/unjs/nanotar
+  used by: slides
+negotiator@1.0.0
+  license: MIT
+  source:  https://github.com/jshttp/negotiator
+  used by: portfolio
+next@16.2.4
+  license: MIT
+  source:  https://github.com/vercel/next.js
+  used by: portfolio
+next@16.4.3
+  license: MIT
+  source:  https://github.com/vercel/next.js
+  used by: blog
+next-themes@0.4.6
+  license: MIT
+  source:  https://github.com/pacocoursey/next-themes
+  used by: portfolio
+node-fetch-native@1.6.7
+  license: MIT
+  source:  https://github.com/unjs/node-fetch-native
+  used by: slides
+node-releases@2.0.26
+  license: MIT
+  author:  Sergey Rubanov
+  source:  https://github.com/chicoxyzzy/node-releases
+  used by: portfolio
+node-releases@2.0.60
+  license: MIT
+  author:  Sergey Rubanov
+  source:  https://github.com/chicoxyzzy/node-releases
+  used by: slides
+nodemailer@7.0.13
+  license: MIT-0
+  author:  Andris Reinman
+  source:  https://github.com/nodemailer/nodemailer
+  used by: portfolio
+normalize-path@3.0.0
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/normalize-path
+  used by: slides
+nostics@1.3.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/vercel-labs/nostics
+  used by: slides
+npm-run-path@4.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/npm-run-path
+  used by: portfolio
+npm-run-path@6.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/npm-run-path
+  used by: portfolio
+object-assign@4.1.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/object-assign
+  used by: portfolio
+object-inspect@1.13.4
+  license: MIT
+  author:  James Halliday
+  source:  https://github.com/inspect-js/object-inspect
+  used by: portfolio
+object-treeify@1.1.33
+  license: MIT
+  author:  Lukas Siemon
+  source:  https://github.com/blackflux/object-treeify
+  used by: portfolio
+obug@2.2.1
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/obug
+  used by: slides
+obug@3.0.0
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/obug
+  used by: slides
+ofetch@1.5.1
+  license: MIT
+  source:  https://github.com/unjs/ofetch
+  used by: slides
+ohash@2.0.12
+  license: MIT
+  source:  https://github.com/unjs/ohash
+  used by: slides
+on-finished@2.4.1
+  license: MIT
+  source:  https://github.com/jshttp/on-finished
+  used by: portfolio
+on-finished@2.3.0
+  license: MIT
+  source:  https://github.com/jshttp/on-finished
+  used by: slides
+once@1.4.0
+  license: ISC
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/once
+  used by: portfolio
+onetime@5.1.2
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/onetime
+  used by: portfolio
+onetime@7.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/onetime
+  used by: portfolio
+oniguruma-parser@0.12.2
+  license: MIT
+  author:  Steven Levithan
+  source:  https://github.com/slevithan/oniguruma-parser
+  used by: slides
+oniguruma-to-es@4.3.6
+  license: MIT
+  author:  Steven Levithan
+  source:  https://github.com/slevithan/oniguruma-to-es
+  used by: slides
+open@11.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/open
+  used by: portfolio
+open@8.4.2
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/open
+  used by: portfolio
+open@11.0.4
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/open
+  used by: slides
+ora@8.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/ora
+  used by: portfolio
+oxc-parser@0.153.0
+  license: MIT
+  author:  Boshen and oxc contributors
+  source:  https://github.com/oxc-project/oxc
+  used by: slides
+oxc-walker@1.1.1
+  license: MIT
+  source:  https://github.com/oxc-project/oxc-walker
+  used by: slides
+p-limit@2.3.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/p-limit
+  used by: portfolio
+p-locate@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/p-locate
+  used by: portfolio
+p-map@7.1.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/p-map
+  used by: slides
+p-try@2.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/p-try
+  used by: portfolio
+package-manager-detector@1.9.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/package-manager-detector
+  used by: slides
+pako@1.0.11
+  license: (MIT AND Zlib)
+  source:  https://github.com/nodeca/pako
+  used by: slides
+parent-module@1.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/parent-module
+  used by: portfolio
+parse-entities@4.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/parse-entities
+  used by: portfolio, blog
+parse-json@5.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/parse-json
+  used by: portfolio
+parse-ms@4.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/parse-ms
+  used by: portfolio
+parseurl@1.3.3
+  license: MIT
+  source:  https://github.com/pillarjs/parseurl
+  used by: portfolio, slides
+path-browserify@1.0.1
+  license: MIT
+  author:  James Halliday
+  source:  https://github.com/browserify/path-browserify
+  used by: portfolio, slides
+path-data-parser@0.1.0
+  license: MIT
+  author:  Preet Shihn
+  source:  https://github.com/pshihn/path-data-parser
+  used by: slides
+path-exists@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/path-exists
+  used by: portfolio
+path-key@3.1.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/path-key
+  used by: portfolio
+path-key@4.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/path-key
+  used by: portfolio
+path-to-regexp@8.4.2
+  license: MIT
+  source:  https://github.com/pillarjs/path-to-regexp
+  used by: portfolio
+pathe@2.0.3
+  license: MIT
+  source:  https://github.com/unjs/pathe
+  used by: slides
+pdf-lib@1.17.1
+  license: MIT
+  author:  Andrew Dillon
+  source:  https://github.com/Hopding/pdf-lib
+  used by: slides
+perfect-debounce@2.1.0
+  license: MIT
+  source:  https://github.com/unjs/perfect-debounce
+  used by: slides
+picocolors@1.1.1
+  license: ISC
+  author:  Alexey Raspopov
+  source:  https://github.com/alexeyraspopov/picocolors
+  used by: portfolio, blog, slides
+picomatch@2.3.2
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/micromatch/picomatch
+  used by: portfolio, slides
+picomatch@4.0.5
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/micromatch/picomatch
+  used by: portfolio
+picomatch@4.0.7
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/micromatch/picomatch
+  used by: slides
+pkce-challenge@5.0.1
+  license: MIT
+  author:  crouchcd
+  source:  https://github.com/crouchcd/pkce-challenge
+  used by: portfolio
+pkg-types@1.3.1
+  license: MIT
+  source:  https://github.com/unjs/pkg-types
+  used by: slides
+pkg-types@2.4.0
+  license: MIT
+  source:  https://github.com/unjs/pkg-types
+  used by: slides
+pkg-up@3.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/pkg-up
+  used by: portfolio
+plantuml-encoder@1.4.0
+  license: MIT
+  author:  Markus Hedvall
+  source:  https://github.com/markushedvall/plantuml-encoder
+  used by: slides
+points-on-curve@0.2.0
+  license: MIT
+  author:  Preet Shihn
+  source:  https://github.com/pshihn/bezier-points
+  used by: slides
+points-on-path@0.2.1
+  license: MIT
+  author:  Preet Shihn
+  source:  https://github.com/pshihn/points-on-path
+  used by: slides
+popmotion@11.0.5
+  license: MIT
+  author:  Matt Perry
+  source:  https://github.com/Popmotion/popmotion.git#master
+  used by: slides
+postcss@8.4.31
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/postcss/postcss
+  used by: portfolio
+postcss@8.5.6
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/postcss/postcss
+  used by: portfolio
+postcss@8.5.23
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/postcss/postcss
+  used by: blog
+postcss@8.5.31
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/postcss/postcss
+  used by: slides
+postcss-nested@8.0.1
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/postcss/postcss-nested
+  used by: slides
+postcss-selector-parser@7.1.5
+  license: MIT
+  source:  https://github.com/postcss/postcss-selector-parser
+  used by: portfolio
+postcss-selector-parser@7.1.7
+  license: MIT
+  source:  https://github.com/postcss/postcss-selector-parser
+  used by: slides
+postgres@3.4.7
+  license: Unlicense
+  author:  Rasmus Porsager
+  source:  https://github.com/porsager/postgres
+  used by: portfolio
+postgres@3.4.9
+  license: Unlicense
+  author:  Rasmus Porsager
+  source:  https://github.com/porsager/postgres
+  used by: blog, slides
+powershell-utils@0.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/powershell-utils
+  used by: portfolio
+powershell-utils@0.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/powershell-utils
+  used by: portfolio
+powershell-utils@0.2.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/powershell-utils
+  used by: slides
+pptxgenjs@4.0.1
+  license: MIT
+  author:  Brent Ely
+  source:  https://github.com/gitbrent/PptxGenJS
+  used by: slides
+prettier@3.9.10
+  license: MIT
+  author:  James Long
+  source:  https://github.com/prettier/prettier
+  used by: slides
+pretty-ms@9.3.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/pretty-ms
+  used by: portfolio
+prism-theme-vars@0.2.5
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/prism-theme-vars
+  used by: slides
+process-nextick-args@2.0.1
+  license: MIT
+  source:  https://github.com/calvinmetcalf/process-nextick-args
+  used by: slides
+prompts@2.4.2
+  license: MIT
+  author:  Terkel Gjervig
+  source:  https://github.com/terkelg/prompts
+  used by: portfolio, slides
+property-information@7.2.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/property-information
+  used by: portfolio, blog, slides
+proxy-addr@2.0.7
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/jshttp/proxy-addr
+  used by: portfolio
+public-ip@8.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/public-ip
+  used by: slides
+punycode.js@2.3.1
+  license: MIT
+  author:  Mathias Bynens
+  source:  https://github.com/mathiasbynens/punycode.js
+  used by: slides
+qs@6.15.3
+  license: BSD-3-Clause
+  source:  https://github.com/ljharb/qs
+  used by: portfolio
+quansync@0.2.11
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/quansync-dev/quansync
+  used by: slides
+quansync@1.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/quansync-dev/quansync
+  used by: slides
+queue@6.0.2
+  license: MIT
+  author:  Jesse Tane
+  source:  https://github.com/jessetane/queue
+  used by: slides
+queue-microtask@1.2.3
+  license: MIT
+  author:  Feross Aboukhadijeh
+  source:  https://github.com/feross/queue-microtask
+  used by: portfolio, slides
+radix-ui@1.6.7
+  license: MIT
+  source:  https://github.com/radix-ui/primitives
+  used by: portfolio
+range-parser@1.3.0
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/jshttp/range-parser
+  used by: portfolio
+raw-body@3.0.2
+  license: MIT
+  author:  Jonathan Ong
+  source:  https://github.com/stream-utils/raw-body
+  used by: portfolio
+rc9@3.1.0
+  license: MIT
+  source:  https://github.com/unjs/rc9
+  used by: slides
+react@19.2.3
+  license: MIT
+  source:  https://github.com/facebook/react
+  used by: portfolio
+react@19.3.0
+  license: MIT
+  source:  https://github.com/react/react
+  used by: blog
+react-dom@19.2.3
+  license: MIT
+  source:  https://github.com/facebook/react
+  used by: portfolio
+react-dom@19.3.0
+  license: MIT
+  source:  https://github.com/react/react
+  used by: blog
+react-markdown@10.1.0
+  license: MIT
+  author:  Espen Hovlandsdal
+  source:  https://github.com/remarkjs/react-markdown
+  used by: portfolio, blog
+react-remove-scroll@2.7.2
+  license: MIT
+  author:  Anton Korzunov
+  source:  https://github.com/theKashey/react-remove-scroll
+  used by: portfolio
+react-remove-scroll-bar@2.3.8
+  license: MIT
+  author:  Anton Korzunov
+  source:  https://github.com/theKashey/react-remove-scroll-bar
+  used by: portfolio
+react-style-singleton@2.2.3
+  license: MIT
+  author:  Anton Korzunov
+  source:  https://github.com/theKashey/react-style-singleton
+  used by: portfolio
+readable-stream@2.3.8
+  license: MIT
+  source:  https://github.com/nodejs/readable-stream
+  used by: slides
+readdirp@3.6.0
+  license: MIT
+  author:  Thorsten Lorenz
+  source:  https://github.com/paulmillr/readdirp
+  used by: slides
+readdirp@5.1.1
+  license: MIT
+  author:  Thorsten Lorenz
+  source:  https://github.com/paulmillr/readdirp
+  used by: slides
+recast@0.23.21
+  license: MIT
+  author:  Ben Newman
+  source:  https://github.com/benjamn/recast
+  used by: portfolio
+recordrtc@5.6.2
+  license: MIT
+  author:  Muaz Khan
+  source:  https://github.com/muaz-khan/RecordRTC
+  used by: slides
+regex@6.1.0
+  license: MIT
+  author:  Steven Levithan
+  source:  https://github.com/slevithan/regex
+  used by: slides
+regex-recursion@6.0.2
+  license: MIT
+  author:  Steven Levithan
+  source:  https://github.com/slevithan/regex-recursion
+  used by: slides
+regex-utilities@2.3.0
+  license: MIT
+  author:  Steven Levithan
+  source:  https://github.com/slevithan/regex-utilities
+  used by: slides
+remark-breaks@4.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/remarkjs/remark-breaks
+  used by: blog
+remark-gfm@4.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/remarkjs/remark-gfm
+  used by: portfolio, blog
+remark-parse@11.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/remarkjs/remark.git#main
+  used by: portfolio, blog
+remark-rehype@11.1.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/remarkjs/remark-rehype
+  used by: portfolio, blog
+remark-stringify@11.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/remarkjs/remark.git#main
+  used by: portfolio, blog
+require-from-string@2.0.2
+  license: MIT
+  author:  Vsevolod Strukchinsky
+  source:  https://github.com/floatdrop/require-from-string
+  used by: portfolio
+resolve-from@4.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/resolve-from
+  used by: portfolio
+resolve-from@5.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/resolve-from
+  used by: slides
+resolve-global@2.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/resolve-global
+  used by: slides
+restore-cursor@5.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/restore-cursor
+  used by: portfolio
+reusify@1.1.0
+  license: MIT
+  author:  Matteo Collina
+  source:  https://github.com/mcollina/reusify
+  used by: portfolio, slides
+robust-predicates@3.0.3
+  license: Unlicense
+  author:  Vladimir Agafonkin
+  source:  https://github.com/mourner/robust-predicates
+  used by: slides
+rolldown@1.2.15
+  license: MIT
+  source:  https://github.com/rolldown/rolldown
+  used by: slides
+rou3@1.0.0
+  license: MIT
+  source:  https://github.com/h3js/rou3
+  used by: slides
+roughjs@4.6.6
+  license: MIT
+  author:  Preet Shihn
+  source:  https://github.com/pshihn/rough
+  used by: slides
+router@2.2.0
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/pillarjs/router
+  used by: portfolio
+run-applescript@7.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/run-applescript
+  used by: portfolio, slides
+run-parallel@1.2.0
+  license: MIT
+  author:  Feross Aboukhadijeh
+  source:  https://github.com/feross/run-parallel
+  used by: portfolio, slides
+rw@1.3.3
+  license: BSD-3-Clause
+  author:  Mike Bostock
+  source:  https://github.com/mbostock/rw
+  used by: slides
+safe-buffer@5.1.2
+  license: MIT
+  author:  Feross Aboukhadijeh
+  source:  https://github.com/feross/safe-buffer
+  used by: slides
+safer-buffer@2.1.2
+  license: MIT
+  author:  Nikita Skovoroda
+  source:  https://github.com/ChALkeR/safer-buffer
+  used by: portfolio, slides
+scheduler@0.27.0
+  license: MIT
+  source:  https://github.com/facebook/react
+  used by: portfolio
+scheduler@0.28.0
+  license: MIT
+  source:  https://github.com/react/react
+  used by: blog
+scule@1.3.0
+  license: MIT
+  source:  https://github.com/unjs/scule
+  used by: slides
+section-matter@1.0.0
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/section-matter
+  used by: slides
+semver@6.3.1
+  license: ISC
+  author:  GitHub Inc.
+  source:  https://github.com/npm/node-semver
+  used by: portfolio, slides
+semver@7.7.4
+  license: ISC
+  author:  GitHub Inc.
+  source:  https://github.com/npm/node-semver
+  used by: portfolio
+semver@7.8.5
+  license: ISC
+  author:  GitHub Inc.
+  source:  https://github.com/npm/node-semver
+  used by: portfolio, blog, slides
+send@1.2.1
+  license: MIT
+  author:  TJ Holowaychuk
+  source:  https://github.com/pillarjs/send
+  used by: portfolio
+serve-static@2.2.1
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/expressjs/serve-static
+  used by: portfolio
+setimmediate@1.0.5
+  license: MIT
+  author:  YuzuJS
+  source:  https://github.com/YuzuJS/setImmediate
+  used by: slides
+setprototypeof@1.2.0
+  license: ISC
+  author:  Wes Todd
+  source:  https://github.com/wesleytodd/setprototypeof
+  used by: portfolio
+shadcn@4.18.0
+  license: MIT
+  author:  shadcn
+  source:  https://github.com/shadcn-ui/ui
+  used by: portfolio
+sharp@0.34.5
+  license: Apache-2.0
+  author:  Lovell Fuller
+  source:  https://github.com/lovell/sharp
+  used by: portfolio
+sharp@0.35.5
+  license: Apache-2.0
+  author:  Lovell Fuller
+  source:  https://github.com/lovell/sharp
+  used by: blog
+shebang-command@2.0.0
+  license: MIT
+  author:  Kevin Mårtensson
+  source:  https://github.com/kevva/shebang-command
+  used by: portfolio
+shebang-regex@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/shebang-regex
+  used by: portfolio
+shiki@4.5.0
+  license: MIT
+  author:  Pine Wu
+  source:  https://github.com/shikijs/shiki
+  used by: slides
+side-channel@1.1.1
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/side-channel
+  used by: portfolio
+side-channel-list@1.0.1
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/side-channel-list
+  used by: portfolio
+side-channel-map@1.0.1
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/side-channel-map
+  used by: portfolio
+side-channel-weakmap@1.0.2
+  license: MIT
+  author:  Jordan Harband
+  source:  https://github.com/ljharb/side-channel-weakmap
+  used by: portfolio
+signal-exit@3.0.7
+  license: ISC
+  author:  Ben Coe
+  source:  https://github.com/tapjs/signal-exit
+  used by: portfolio
+signal-exit@4.1.0
+  license: ISC
+  author:  Ben Coe
+  source:  https://github.com/tapjs/signal-exit
+  used by: portfolio
+sirv@3.0.2
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/sirv
+  used by: slides
+sisteransi@1.0.5
+  license: MIT
+  author:  Terkel Gjervig
+  source:  https://github.com/terkelg/sisteransi
+  used by: portfolio, slides
+smart-buffer@4.2.0
+  license: MIT
+  author:  Josh Glazebrook
+  source:  https://github.com/JoshGlazebrook/smart-buffer
+  used by: portfolio
+socks@2.8.9
+  license: MIT
+  author:  Josh Glazebrook
+  source:  https://github.com/JoshGlazebrook/socks
+  used by: portfolio
+sonner@2.0.8
+  license: MIT
+  author:  Emil Kowalski
+  source:  https://github.com/emilkowalski/sonner
+  used by: portfolio
+source-map@0.6.1
+  license: BSD-3-Clause
+  author:  Nick Fitzgerald
+  source:  https://github.com/mozilla/source-map
+  used by: portfolio
+source-map-js@1.2.1
+  license: BSD-3-Clause
+  author:  Valentin 7rulnik Semirulnik
+  source:  https://github.com/7rulnik/source-map-js
+  used by: portfolio
+source-map-js@1.2.2
+  license: BSD-3-Clause
+  author:  Valentin 7rulnik Semirulnik
+  source:  https://github.com/7rulnik/source-map-js
+  used by: blog, slides
+space-separated-tokens@2.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/space-separated-tokens
+  used by: portfolio, blog, slides
+sprintf-js@1.0.3
+  license: BSD-3-Clause
+  author:  Alexandru Marasteanu
+  source:  https://github.com/alexei/sprintf.js
+  used by: slides
+srvx@1.0.7
+  license: MIT
+  source:  https://github.com/h3js/srvx
+  used by: slides
+statuses@2.0.2
+  license: MIT
+  source:  https://github.com/jshttp/statuses
+  used by: portfolio
+statuses@1.5.0
+  license: MIT
+  source:  https://github.com/jshttp/statuses
+  used by: slides
+stdin-discarder@0.2.2
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/stdin-discarder
+  used by: portfolio
+string_decoder@1.1.1
+  license: MIT
+  source:  https://github.com/nodejs/string_decoder
+  used by: slides
+string-width@7.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/string-width
+  used by: portfolio, slides
+string-width@4.2.3
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/string-width
+  used by: slides
+string-width@8.3.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/string-width
+  used by: slides
+stringify-entities@4.0.4
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/stringify-entities
+  used by: portfolio, blog, slides
+stringify-object@5.0.0
+  license: BSD-2-Clause
+  author:  Sindre Sorhus
+  source:  https://github.com/yeoman/stringify-object
+  used by: portfolio
+strip-ansi@6.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/chalk/strip-ansi
+  used by: portfolio, slides
+strip-ansi@7.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/chalk/strip-ansi
+  used by: portfolio, slides
+strip-bom@3.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/strip-bom
+  used by: portfolio
+strip-bom-string@1.0.0
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/jonschlinkert/strip-bom-string
+  used by: slides
+strip-final-newline@2.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/strip-final-newline
+  used by: portfolio
+strip-final-newline@4.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/strip-final-newline
+  used by: portfolio
+style-to-js@1.1.21
+  license: MIT
+  author:  Mark
+  source:  https://github.com/remarkablemark/style-to-js
+  used by: portfolio, blog
+style-to-object@1.0.14
+  license: MIT
+  author:  Mark
+  source:  https://github.com/remarkablemark/style-to-object
+  used by: portfolio, blog
+style-value-types@5.1.2
+  license: MIT
+  author:  Matt Perry
+  source:  https://github.com/Popmotion/popmotion.git#master
+  used by: slides
+styled-jsx@5.1.6
+  license: MIT
+  source:  https://github.com/vercel/styled-jsx
+  used by: portfolio, blog
+stylis@4.4.0
+  license: MIT
+  author:  Sultan Tarimo
+  source:  https://github.com/thysultan/stylis.js
+  used by: slides
+super-regex@0.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/super-regex
+  used by: slides
+systeminformation@5.33.1
+  license: MIT
+  author:  Sebastian Hildebrandt
+  source:  https://github.com/sebhildebrandt/systeminformation
+  used by: portfolio
+tailwind-merge@3.6.0
+  license: MIT
+  author:  Dany Castillo
+  source:  https://github.com/dcastil/tailwind-merge
+  used by: portfolio
+time-span@5.1.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/time-span
+  used by: slides
+tiny-invariant@1.3.3
+  license: MIT
+  author:  Alex Reardon
+  source:  https://github.com/alexreardon/tiny-invariant
+  used by: portfolio
+tinyexec@1.3.1
+  license: MIT
+  author:  James Garbutt
+  source:  https://github.com/tinylibs/tinyexec
+  used by: slides
+tinyglobby@0.2.17
+  license: MIT
+  author:  Superchupu
+  source:  https://github.com/SuperchupuDev/tinyglobby
+  used by: slides
+to-regex-range@5.0.1
+  license: MIT
+  author:  Jon Schlinkert
+  source:  https://github.com/micromatch/to-regex-range
+  used by: portfolio, slides
+toidentifier@1.0.1
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/component/toidentifier
+  used by: portfolio
+totalist@3.0.1
+  license: MIT
+  author:  Luke Edwards
+  source:  https://github.com/lukeed/totalist
+  used by: slides
+trim-lines@3.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/trim-lines
+  used by: portfolio, blog, slides
+trough@2.2.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/trough
+  used by: portfolio, blog
+ts-dedent@2.3.0
+  license: MIT
+  author:  Tamino Martinius
+  source:  https://github.com/tamino-martinius/node-ts-dedent
+  used by: slides
+ts-morph@26.0.0
+  license: MIT
+  author:  David Sherret
+  source:  https://github.com/dsherret/ts-morph
+  used by: portfolio
+tsconfig-paths@4.2.0
+  license: MIT
+  author:  Jonas Kello
+  source:  https://github.com/dividab/tsconfig-paths
+  used by: portfolio
+tslib@2.8.1
+  license: 0BSD
+  author:  Microsoft Corp.
+  source:  https://github.com/Microsoft/tslib
+  used by: portfolio, blog, slides
+tslib@1.14.1
+  license: 0BSD
+  author:  Microsoft Corp.
+  source:  https://github.com/Microsoft/tslib
+  used by: slides
+tslib@2.3.0
+  license: 0BSD
+  author:  Microsoft Corp.
+  source:  https://github.com/Microsoft/tslib
+  used by: slides
+tslib@2.4.0
+  license: 0BSD
+  author:  Microsoft Corp.
+  source:  https://github.com/Microsoft/tslib
+  used by: slides
+tw-animate-css@1.4.0
+  license: MIT
+  author:  Luca Bosin
+  source:  https://github.com/Wombosvideo/tw-animate-css
+  used by: portfolio
+twoslash@0.3.9
+  license: MIT
+  author:  TypeScript team
+  source:  https://github.com/twoslashes/twoslash
+  used by: slides
+twoslash-protocol@0.3.9
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/twoslashes/twoslash
+  used by: slides
+twoslash-vue@0.3.9
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/twoslashes/twoslash
+  used by: slides
+type-is@2.1.0
+  license: MIT
+  source:  https://github.com/jshttp/type-is
+  used by: portfolio
+typescript@6.0.3
+  license: Apache-2.0
+  author:  Microsoft Corp.
+  source:  https://github.com/microsoft/TypeScript
+  used by: slides
+uc.micro@2.1.0
+  license: MIT
+  source:  https://github.com/markdown-it/uc.micro
+  used by: slides
+uc.micro@3.0.0
+  license: MIT
+  source:  https://github.com/markdown-it/uc.micro
+  used by: slides
+ufo@1.6.4
+  license: MIT
+  source:  https://github.com/unjs/ufo
+  used by: slides
+unconfig@7.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/unconfig
+  used by: slides
+unconfig-core@7.5.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/unconfig
+  used by: slides
+unctx@2.5.0
+  license: MIT
+  source:  https://github.com/unjs/unctx
+  used by: slides
+undici@7.29.0
+  license: MIT
+  source:  https://github.com/nodejs/undici
+  used by: portfolio
+undici-types@6.21.0
+  license: MIT
+  source:  https://github.com/nodejs/undici
+  used by: portfolio, slides
+unhead@3.4.3
+  license: MIT
+  author:  Harlan Wilton
+  source:  https://github.com/unjs/unhead
+  used by: slides
+unicorn-magic@0.3.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/unicorn-magic
+  used by: portfolio
+unified@11.0.5
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/unifiedjs/unified
+  used by: portfolio, blog
+unist-util-is@6.0.1
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/unist-util-is
+  used by: portfolio, blog, slides
+unist-util-position@5.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/unist-util-position
+  used by: portfolio, blog, slides
+unist-util-stringify-position@4.0.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/unist-util-stringify-position
+  used by: portfolio, blog, slides
+unist-util-visit@5.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/unist-util-visit
+  used by: portfolio
+unist-util-visit@5.2.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/unist-util-visit
+  used by: blog, slides
+unist-util-visit-parents@6.0.2
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/unist-util-visit-parents
+  used by: portfolio
+unist-util-visit-parents@6.1.0
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/syntax-tree/unist-util-visit-parents
+  used by: blog, slides
+universalify@2.0.1
+  license: MIT
+  author:  Ryan Zimmerman
+  source:  https://github.com/RyanZim/universalify
+  used by: portfolio
+unocss@66.11.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unocss/unocss
+  used by: slides
+unpipe@1.0.0
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/stream-utils/unpipe
+  used by: portfolio, slides
+unplugin@2.3.11
+  license: MIT
+  source:  https://github.com/unjs/unplugin
+  used by: slides
+unplugin@3.4.0
+  license: MIT
+  source:  https://github.com/unjs/unplugin
+  used by: slides
+unplugin-icons@24.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unplugin/unplugin-icons
+  used by: slides
+unplugin-utils@0.3.2
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/unplugin-utils
+  used by: slides
+unplugin-vue-components@32.1.0
+  license: MIT
+  author:  antfu
+  source:  https://github.com/unplugin/unplugin-vue-components
+  used by: slides
+unplugin-vue-markdown@32.1.1
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unplugin/unplugin-vue-markdown
+  used by: slides
+untun@0.2.2
+  license: MIT
+  source:  https://github.com/unjs/untun
+  used by: slides
+untyped@2.0.0
+  license: MIT
+  source:  https://github.com/unjs/untyped
+  used by: slides
+update-browserslist-db@1.1.4
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/browserslist/update-db
+  used by: portfolio
+update-browserslist-db@1.3.4
+  license: MIT
+  author:  Andrey Sitnik
+  source:  https://github.com/browserslist/update-db
+  used by: slides
+uqr@0.1.3
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/unjs/uqr
+  used by: slides
+use-callback-ref@1.3.3
+  license: MIT
+  author:  theKashey
+  source:  https://github.com/theKashey/use-callback-ref
+  used by: portfolio
+use-sidecar@1.1.3
+  license: MIT
+  author:  theKashey
+  source:  https://github.com/theKashey/use-sidecar
+  used by: portfolio
+util-deprecate@1.0.2
+  license: MIT
+  author:  Nathan Rajlich
+  source:  https://github.com/TooTallNate/util-deprecate
+  used by: portfolio, slides
+utils-merge@1.0.1
+  license: MIT
+  author:  Jared Hanson
+  source:  https://github.com/jaredhanson/utils-merge
+  used by: slides
+uuid@14.0.3
+  license: MIT
+  source:  https://github.com/uuidjs/uuid
+  used by: slides
+validate-npm-package-name@7.0.2
+  license: ISC
+  author:  GitHub Inc.
+  source:  https://github.com/npm/validate-npm-package-name
+  used by: portfolio
+vary@1.1.2
+  license: MIT
+  author:  Douglas Christopher Wilson
+  source:  https://github.com/jshttp/vary
+  used by: portfolio
+verkit@0.4.1
+  license: MIT
+  author:  Kevin Deng
+  source:  https://github.com/sxzz/verkit
+  used by: slides
+vfile@6.0.3
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/vfile/vfile
+  used by: portfolio, blog, slides
+vfile-message@4.0.3
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/vfile/vfile-message
+  used by: portfolio, blog, slides
+vite@8.3.5
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vitejs/vite
+  used by: slides
+vite-plugin-inspect@12.1.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu-collective/vite-plugin-inspect
+  used by: slides
+vite-plugin-remote-assets@2.1.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/vite-plugin-remote-assets
+  used by: slides
+vite-plugin-static-copy@4.1.1
+  license: MIT
+  author:  sapphi-red
+  source:  https://github.com/sapphi-red/vite-plugin-static-copy
+  used by: slides
+vite-plugin-vue-server-ref@1.0.0
+  license: MIT
+  author:  Anthony Fu
+  source:  https://github.com/antfu/vite-plugin-vue-server-ref
+  used by: slides
+vitefu@1.1.3
+  license: MIT
+  source:  https://github.com/svitejs/vitefu
+  used by: slides
+vscode-jsonrpc@9.0.3
+  license: MIT
+  author:  Microsoft Corporation
+  source:  https://github.com/Microsoft/vscode-languageserver-node
+  used by: slides
+vscode-languageserver@10.1.2
+  license: MIT
+  author:  Microsoft Corporation
+  source:  https://github.com/Microsoft/vscode-languageserver-node
+  used by: slides
+vscode-languageserver-protocol@3.18.4
+  license: MIT
+  author:  Microsoft Corporation
+  source:  https://github.com/Microsoft/vscode-languageserver-node
+  used by: slides
+vscode-languageserver-textdocument@1.0.16
+  license: MIT
+  author:  Microsoft Corporation
+  source:  https://github.com/Microsoft/vscode-languageserver-node
+  used by: slides
+vscode-languageserver-types@3.18.4
+  license: MIT
+  author:  Microsoft Corporation
+  source:  https://github.com/Microsoft/vscode-languageserver-node
+  used by: slides
+vue@3.5.44
+  license: MIT
+  author:  Evan You
+  source:  https://github.com/vuejs/core
+  used by: slides
+vue-router@5.4.0
+  license: MIT
+  author:  Eduardo San Martin Morote
+  source:  https://github.com/vuejs/router
+  used by: slides
+webpack-virtual-modules@0.6.2
+  license: MIT
+  author:  SysGears INC
+  source:  https://github.com/sysgears/webpack-virtual-modules
+  used by: slides
+which@2.0.2
+  license: ISC
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/node-which
+  used by: portfolio
+which@4.0.0
+  license: ISC
+  author:  GitHub Inc.
+  source:  https://github.com/npm/node-which
+  used by: portfolio
+wrap-ansi@9.0.2
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/chalk/wrap-ansi
+  used by: slides
+wrappy@1.0.2
+  license: ISC
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/npm/wrappy
+  used by: portfolio
+ws@8.20.0
+  license: MIT
+  author:  Einar Otto Stangvik
+  source:  https://github.com/websockets/ws
+  used by: portfolio
+wsl-utils@1.0.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/wsl-utils
+  used by: portfolio
+wsl-utils@1.0.1
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/wsl-utils
+  used by: slides
+y18n@5.0.8
+  license: ISC
+  author:  Ben Coe
+  source:  https://github.com/yargs/y18n
+  used by: slides
+yallist@3.1.1
+  license: ISC
+  author:  Isaac Z. Schlueter
+  source:  https://github.com/isaacs/yallist
+  used by: portfolio, slides
+yaml@2.9.1
+  license: ISC
+  author:  Eemeli Aro
+  source:  https://github.com/eemeli/yaml
+  used by: slides
+yargs@18.2.0
+  license: MIT
+  source:  https://github.com/yargs/yargs
+  used by: slides
+yargs-parser@22.0.0
+  license: ISC
+  author:  Ben Coe
+  source:  https://github.com/yargs/yargs-parser
+  used by: slides
+yocto-spinner@1.2.2
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/yocto-spinner
+  used by: portfolio
+yoctocolors@2.2.0
+  license: MIT
+  author:  Sindre Sorhus
+  source:  https://github.com/sindresorhus/yoctocolors
+  used by: portfolio
+zigpty@0.2.1
+  license: MIT*
+  source:  https://github.com/pithings/zigpty
+  used by: slides
+zod@3.25.76
+  license: MIT
+  author:  Colin McDonnell
+  source:  https://github.com/colinhacks/zod
+  used by: portfolio
+zod@4.3.6
+  license: MIT
+  author:  Colin McDonnell
+  source:  https://github.com/colinhacks/zod
+  used by: portfolio
+zod@4.6.7
+  license: MIT
+  author:  Colin McDonnell
+  source:  https://github.com/colinhacks/zod
+  used by: slides
+zod-to-json-schema@3.25.2
+  license: ISC
+  author:  Stefan Terdell
+  source:  https://github.com/StefanTerdell/zod-to-json-schema
+  used by: portfolio
+zrender@6.1.0
+  license: BSD-3-Clause
+  source:  https://github.com/ecomfe/zrender
+  used by: slides
+zwitch@2.0.4
+  license: MIT
+  author:  Titus Wormer
+  source:  https://github.com/wooorm/zwitch
+  used by: portfolio, blog, slides

@@ -1,12 +1,13 @@
 import path from "path";
 import { randomUUID } from "crypto";
 import { supabaseAdmin } from "@/lib/supabase/server";
+import { withLog } from '@/lib/request-log'
 
 const BUCKET = "skill_images";
 const ALLOWED = new Set(["image/png", "image/jpeg", "image/webp", "image/svg+xml"]);
 const MAX_BYTES = 2 * 1024 * 1024;
 
-export async function POST(request: Request) {
+const handlePost = async (request: Request): Promise<Response> => {
   try {
     const form = await request.formData();
     const file = form.get("file");
@@ -48,3 +49,6 @@ export async function POST(request: Request) {
     return Response.json({ success: false, message: "アップロード失敗" }, { status: 500 });
   }
 }
+
+/* 記録は入口で取る。経路は型のまま */
+export const POST = withLog('/api/upload', handlePost)

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import "./shadcn-theme.css";
+@import "./murecho.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -59,6 +60,13 @@
 /* ベースフォント（未指定要素がブラウザ既定=Timesに落ちるのを防ぐ） */
 body {
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+/* 読み込み中の芯。Loading.tsx が使う（styled-jsx はサーバ側で使えない） */
+@keyframes loading {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0.6); }
+  100% { transform: scaleX(1); }
 }
 
 @keyframes scroll {
@@ -275,3 +283,65 @@ body {
     @apply font-sans;
   }
 }
+
+/* ==========================================================================
+ * 3 サイト共通のデザイン言語（slides / blog と同じ値）
+ *
+ * **shadcn のトークンとは名前を分けている。** shadcn は --color-accent や
+ * --color-border を自前の意味で使っているので、上書きすると管理画面や
+ * 既存コンポーネントの見た目が壊れる。こちらは sky / ink / line を使う。
+ *
+ * ページを 1 枚ずつ寄せていく途中なので、方眼紙の地は body ではなく
+ * .paper を当てたページだけに出す。全ページ移し終わったら body に移す。
+ * ========================================================================== */
+:root {
+  --c-ink: #16191d;
+  --c-ink-2: #4b5563;
+  --c-ink-3: #8b949e;
+  --c-line: #e4e7eb;
+  --c-surface: #f7f8fa;
+
+  /* アクセントは空色 1 色。面は --c-sky、文字は --c-sky-ink */
+  --c-sky: #5bc5e8;
+  --c-sky-ink: #1b7ea3;
+  --c-sky-soft: #e6f6fc;
+  --c-sky-deep: #2aa4cd;
+
+  /* 方眼紙の線。**本文より強くしない** */
+  --c-grid: #f3f9fc;
+  --c-grid-strong: #e8f3f9;
+
+  /* 表紙の外周の帯 */
+  --c-band: #cbe9f5;
+}
+
+@theme inline {
+  --color-ink: var(--c-ink);
+  --color-ink-2: var(--c-ink-2);
+  --color-ink-3: var(--c-ink-3);
+  --color-line: var(--c-line);
+  --color-paper: #ffffff;
+  --color-sky: var(--c-sky);
+  --color-sky-ink: var(--c-sky-ink);
+  --color-sky-soft: var(--c-sky-soft);
+  --color-sky-deep: var(--c-sky-deep);
+
+  /* 見出し。英数字 Space Grotesk 700 + 和文 Murecho 900 */
+  --font-display: var(--font-space-grotesk), "Murecho", -apple-system,
+    "Hiragino Sans", sans-serif;
+}
+
+/* 方眼紙の地。28px の薄い線と 140px の濃い線の二層 */
+.paper {
+  position: relative;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(var(--c-grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-grid-strong) 1px, transparent 1px),
+    linear-gradient(var(--c-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
+  background-size: 140px 140px, 140px 140px, 28px 28px, 28px 28px;
+}
+
+/* 空色の帯はヘッダーの一番上に出す（Header.tsx）。
+   全ページにヘッダーが出るので、.paper 側では描かない。 */

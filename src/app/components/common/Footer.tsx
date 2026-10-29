@@ -1,58 +1,44 @@
 'use client'
 
-import { ActivityIcon, Highlighter, Rabbit, Send, UserRound } from "lucide-react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useCurrentPath } from '@/app/utils/path'
+import { links } from "@/app/utils/data"
+
+/*
+ * 狭い画面の下部ナビ。ヘッダーと同じ並び（@/app/utils/data の links）を使う。
+ *
+ * 以前は /links という項目があったが、そのルートは存在せず 404 だった。
+ * 並びを links に一本化して、増減が 1 箇所で済むようにした。
+ */
 
 const Footer = () => {
-  const pathname = usePathname()
+  const pathname = useCurrentPath()
 
-  // Home（ヒーロー）ではスマホ下部ナビを出さない
-  if (pathname === "/") return null
+  const hrefOf = (link: string) => (link === "/" ? "/" : `/${link}`)
+  const isActive = (link: string) => (link === "/" ? pathname === "/" : pathname.startsWith(`/${link}`))
 
   return (
-    <footer className='md:hidden bottom-0 fixed w-screen'>
-      <ul className="bg-slate-300 flex justify-between w-full h-full">
-        <li className="w-1/5 h-full flex items-center justify-center text-sm py-4">
-          <Link href="/">
-            <div>
-              <UserRound className="mx-auto" />
-              <p>Top</p>
-            </div>
-          </Link>
-        </li>
-        <li className="w-1/5 h-full flex items-center justify-center text-sm py-4">
-          <Link href="/about">
-            <div>
-              <Highlighter className="mx-auto" />
-              <p>About</p>
-            </div>
-          </Link>
-        </li>
-        <li className="w-1/5 h-full flex items-center justify-center text-sm py-4">
-          <Link href="/projects">
-            <div>
-              <ActivityIcon className="mx-auto" />
-              <p>Works</p>
-            </div>
-          </Link>
-        </li>
-        <li className="w-1/5 h-full flex items-center justify-center text-sm py-4">
-          <Link href="/contact">
-            <div>
-              <Send className="mx-auto" />
-              <p>Contact</p>
-            </div>
-          </Link>
-        </li>
-        <li className="w-1/5 h-full flex items-center justify-center text-sm py-4">
-          <Link href="/links">
-            <div>
-              <Rabbit className="mx-auto" />
-              <p>Links</p>
-            </div>
-          </Link>
-        </li>
+    <footer className="fixed bottom-0 z-30 w-full border-t border-line bg-white/95 backdrop-blur md:hidden">
+      <ul className="mx-auto flex max-w-lg">
+        {links.map((item) => (
+          <li key={item.id} className="flex-1">
+            <Link
+              href={hrefOf(item.link)}
+              aria-current={isActive(item.link) ? "page" : undefined}
+              className="relative flex flex-col items-center gap-0.5 py-3"
+            >
+              {/* 現在地の芯。上辺に出す */}
+              {isActive(item.link) && <span className="absolute top-0 h-[2px] w-8 bg-sky" />}
+              <span
+                className={`font-mono text-[10px] tracking-wider ${
+                  isActive(item.link) ? "text-sky-ink" : "text-ink-3"
+                }`}
+              >
+                {item.topic.toUpperCase()}
+              </span>
+            </Link>
+          </li>
+        ))}
       </ul>
     </footer>
   )

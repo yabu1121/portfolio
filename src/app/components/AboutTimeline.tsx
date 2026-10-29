@@ -1,11 +1,10 @@
-'use client'
 import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
-import { api } from '@/trpc/client'
-import Section from './common/Section'
-import Error from './common/Error'
+import Section, { SectionHead } from './common/Section'
+import { DeckCard } from './common/DeckCard'
 import LinkPreview from './common/LinkPreview'
 import { formatTimelinePeriod } from '@/app/utils/timelineDate'
+import { listTimelineForPublic } from '@/lib/about'
 
 // 外部リンクの種類はホスト名で判別する。項目ごとにラベルを持たせるより、
 // URL を1つ登録するだけで済む方が運用が楽なため。
@@ -25,25 +24,8 @@ const linkLabel = (url: string) => {
   }
 }
 
-// 読み込み中は生テキストではなく、実際の項目と同じ骨格を出して
-// データ到着時のガタつきを抑える。
-const TimelineSkeleton = () => (
-  <ol className="ml-2 space-y-4 border-l-2 border-slate-200 sm:ml-3 md:ml-6">
-    {[0, 1, 2].map((i) => (
-      <li key={i} className="relative pl-8 md:pl-12">
-        <span className="absolute left-0 top-2 size-3 -translate-x-1/2 rounded-full bg-slate-200" />
-        <div className="flex items-center gap-3">
-          <div className="h-4 w-24 rounded bg-slate-100" />
-          <div className="h-4 w-12 rounded-full bg-slate-100" />
-          <div className="h-4 w-40 rounded bg-slate-100" />
-        </div>
-      </li>
-    ))}
-  </ol>
-)
-
-const AboutTimeline = () => {
-  const { data: timeline, isLoading, error } = api.timeline.getAllForPublic.useQuery()
+const AboutTimeline = async () => {
+  const timeline = await listTimelineForPublic()
 
   // 年ごとに束ねる。一列で流すと目的の時期を探しにくいので、
   // 年を見出しにして視線の足がかりを作る。
@@ -57,39 +39,27 @@ const AboutTimeline = () => {
   const years = Object.keys(byYear).sort()
 
   return (
-    <Section className="bg-white rounded">
-      <header className="mb-10">
-        <h2 className="mb-2 text-2xl font-medium">Timeline</h2>
-        <p className="text-sm text-slate-500">これまでの経歴（項目をクリックすると詳細が開きます）</p>
-      </header>
+    <Section className="border-t border-line">
+      <SectionHead en="Timeline" title="経歴" note="押すと詳しく出ます" />
 
-      {isLoading ? (
-        <TimelineSkeleton />
-      ) : error ? (
-        <Error error={error} />
-      ) : (
-        <div className="space-y-8">
+      <div className="space-y-8">
           {years.map((year) => (
-            <section key={year}>
+            /*
+              **年は左の柱に置く。** 丸い点を線の上に並べる形はどこでも
+              見かけるうえ、点とタイトルの間が空くだけで読みやすくはない。
+              年を柱にして、その年の出来事を右に積む。
+            */
+            <section key={year} className="grid gap-x-6 sm:grid-cols-[4rem_1fr]">
               <h3
                 style={{ fontFamily: 'var(--font-geist-mono)' }}
-                className="mb-3 text-sm font-medium tabular-nums text-slate-400"
+                className="mb-2 font-mono text-[15px] tabular-nums text-ink-3 sm:mb-0 sm:pt-3"
               >
                 {year}
               </h3>
 
-              <ol className="ml-2 space-y-4 border-l-2 border-slate-200 sm:ml-3 md:ml-6">
+              <ol className="divide-y divide-line border-t border-line">
                 {byYear[year].map((item) => (
-                  <li
-                    key={`${item.year}-${item.month}-${item.title}`}
-                    className="group relative pl-8 md:pl-12"
-                  >
-                    {/* 線の上に乗る点。ring はレイアウトに影響しないので hover で色だけ変える */}
-                    <span
-                      aria-hidden
-                      className="absolute left-0 top-2 size-3 -translate-x-1/2 rounded-full bg-white ring-2 ring-slate-300 transition-colors group-hover:ring-sky-500"
-                    />
-
+                  <li key={`${item.year}-${item.month}-${item.title}`} className="group py-3">
                     {/* details/summary を使うと開閉のキーボード操作とフォーカスがブラウザ標準で効く */}
                     <details className="group/detail">
                       <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
@@ -103,27 +73,25 @@ const AboutTimeline = () => {
                             <span className="flex shrink-0 items-baseline gap-3 sm:contents">
                               <span
                                 style={{ fontFamily: 'var(--font-geist-mono)' }}
-                                className="shrink-0 text-xs font-medium tabular-nums text-sky-700 sm:w-48"
+                                className="shrink-0 font-mono text-[11px] tabular-nums text-sky-ink sm:w-48"
                               >
                                 {formatTimelinePeriod(item)}
                               </span>
 
-                              {/* タグは幅が揃うよう固定幅の枠に入れる（中のピルは自然幅のまま） */}
-                              <span className="shrink-0 sm:w-20">
-                                <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600">
-                                  {item.category}
-                                </span>
+                              {/* 区分は囲わない。小さな札を並べると作り物めいて見える */}
+                              <span className="shrink-0 font-mono text-[10px] tracking-wider text-ink-3 sm:w-20">
+                                {item.category}
                               </span>
                             </span>
 
-                            <h4 className="min-w-0 text-balance font-bold text-slate-800 transition-colors group-hover:text-sky-700">
+                            <h4 className="min-w-0 text-balance font-display font-black text-ink transition-colors group-hover:text-sky-ink">
                               {item.title}
                             </h4>
                           </div>
 
                           <ChevronDown
                             aria-hidden
-                            className="mt-0.5 size-4 shrink-0 text-slate-400 transition-transform duration-150 group-open/detail:rotate-180"
+                            className="mt-0.5 size-4 shrink-0 text-ink-3 transition-transform duration-150 group-open/detail:rotate-180"
                           />
                         </div>
                       </summary>
@@ -133,16 +101,19 @@ const AboutTimeline = () => {
                       <div>
                       {/* whitespace-pre-line で管理画面のtextareaで入れた改行をそのまま反映する。
                           連続する空白は畳まれるのでインデントの混入は気にしなくてよい。 */}
-                      <p className="mt-2 whitespace-pre-line text-pretty text-sm leading-relaxed text-slate-600">
+                      <p className="mt-2 whitespace-pre-line text-pretty text-sm leading-relaxed text-ink-2">
                         {item.detail}
                       </p>
+
+                    {/* 紐付けたスライド。公開中のものだけ出る */}
+                    <DeckCard deck={item} />
 
                       {/* 動きのある成果物。details の中なので、開くまで再生は始まらない。
                           controls を付けて、動きを止めたい人が止められるようにしている。 */}
                       {item.videoUrl && (
                         <video
                           src={item.videoUrl}
-                          className="mt-3 w-full rounded-lg border border-slate-200 bg-white"
+                          className="mt-3 w-full border border-line bg-white"
                           autoPlay
                           loop
                           muted
@@ -168,7 +139,7 @@ const AboutTimeline = () => {
                                   alt={`${item.title} の図`}
                                   width={800}
                                   height={600}
-                                  className="w-full rounded-lg border border-slate-200 bg-white transition-colors hover:border-sky-300"
+                                  className="w-full border border-line bg-white transition-colors hover:border-sky"
                                 />
                               </a>
                             </li>
@@ -188,8 +159,7 @@ const AboutTimeline = () => {
               </ol>
             </section>
           ))}
-        </div>
-      )}
+      </div>
     </Section>
   )
 }

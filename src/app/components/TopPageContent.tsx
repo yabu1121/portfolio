@@ -1,125 +1,214 @@
-import Image from "next/image"
 import Link from "next/link"
-import { snsLinks, iconFor } from "@/app/utils/snsLinks"
+import { Mascot } from "@/app/components/common/Mascot"
+import { GutterMascots } from "@/app/components/common/GutterMascots"
+import { visibleSnsLinks, iconFor } from "@/app/utils/snsLinks"
+import { links } from "@/app/utils/data"
+import { SITES } from "@/app/utils/siteFooter"
 
-const MONO = { fontFamily: "var(--font-geist-mono)" }
-const DISPLAY = { fontFamily: "var(--font-fraunces)" }
+/*
+ * トップ。写真背景・グラデーション・ぼかしブロブをやめ、方眼紙の地だけにした。
+ * 見出しは英数字 Space Grotesk 700 + 和文 Murecho 900、アクセントは空色 1 色。
+ * 他のページ（contact / blog / slides）と同じ言語で、左揃えに合わせている。
+ *
+ * 名前は以前 Fraunces（セリフ）だったが、3 サイトで書体を揃えるため display に寄せた。
+ *
+ * **置くのは名乗りと行き先だけ。** 記事やスライドの一覧はここには出さない
+ * （以前は Feeds で出していた）。トップで中身まで見せると、どこを見れば
+ * いいか決まらない画面になる。中身は行った先で見せる。
+ */
 
-// CSS のみで段階的リビール
+// CSS のみで段階的リビール（keyframes は globals.css）
 const reveal = (delay: string) => ({
   animation: "fadeInUp 0.85s ease-out both",
   animationDelay: delay,
 })
 
+/** 小見出し。フッターと同じ言い方にしている */
+const Label = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="font-mono text-[10px] tracking-widest text-ink-3">{children}</h2>
+)
+
+const rowClass =
+  "group flex items-baseline border border-line bg-white px-4 py-3 transition-[border-color,transform] duration-200 hover:-translate-y-[2px] hover:border-sky"
+
+/*
+ * 行き先の列。名前を左、行き先を右に置く。
+ * 自サイトのページも外のサイトも同じ形にして、下の SNS とも揃える。
+ */
+const Row = ({
+  href,
+  name,
+  hint,
+  external,
+}: {
+  href: string
+  name: string
+  hint: string
+  external?: boolean
+}) => {
+  const body = (
+    <>
+      <span className="font-display text-[15px] font-bold text-ink group-hover:text-sky-ink">
+        {name}
+      </span>
+      <span className="ml-auto truncate pl-4 font-mono text-[11px] text-ink-3">{hint}</span>
+    </>
+  )
+
+  return external ? (
+    <a href={href} className={rowClass}>
+      {body}
+    </a>
+  ) : (
+    <Link href={href} className={rowClass}>
+      {body}
+    </Link>
+  )
+}
+
+// トップ自身は行き先に出さない
+const pages = links.filter((item) => item.link !== "/")
+const otherSites = SITES.filter((site) => !site.internal)
+
 const TopPageContent = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-sky-50 via-white to-cyan-50">
-      {/* 写真背景（ゆっくりズーム） */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/heroimage.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-          style={{ animation: "heroZoom 9s ease-out forwards" }}
+    <div className="paper min-h-screen">
+      <section className="relative mx-auto w-full max-w-4xl px-5 pt-24 pb-24">
+        {/* 本文の外側に散らす。xl 未満では出ない */}
+        <GutterMascots
+          /*
+            右上はヒーローのハヤブサが居るので空ける。隣り合うと 2 羽が
+            並んで見えて、どちらが主役か分からなくなる。
+          */
+          /*
+            右上はヒーローのハヤブサが居るので空ける（天 155〜297px）。
+            下端は地（.paper）の 100vh までに収める。はみ出すとフッターに
+            重なる（実測で飛んでいる個体が 1147〜1277px に出てしまっていた）。
+          */
+          /* 置く数は控えめに。多いほど飾りに見えて、1 羽ごとの効き目が落ちる */
+          items={[
+            { pose: "coding", side: "left", top: 400, width: 120 },
+            { pose: "flying", side: "right", top: 620, width: 130 },
+          ]}
         />
-      </div>
 
-      {/* 明るい水色オーバーレイ（暗くせず写真の質感を残す） */}
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-50/88 via-white/82 to-cyan-50/90" />
-
-      {/* 柔らかい水色のブロブで親しみやすい空気感 */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-sky-200/50 blur-3xl sm:h-96 sm:w-96" />
-        <div className="absolute right-[-5rem] top-1/3 h-72 w-72 rounded-full bg-cyan-200/50 blur-3xl sm:h-96 sm:w-96" />
-        <div className="absolute bottom-[-5rem] left-1/4 h-64 w-64 rounded-full bg-blue-200/40 blur-3xl sm:h-80 sm:w-80" />
-      </div>
-
-      {/* 中央コンテンツ */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-12 text-center sm:py-16">
-        {/* キッカー（水色ピル） */}
-        <p
-          style={{ ...MONO, ...reveal("0.1s") }}
-          className="mb-5 rounded-full bg-sky-100 px-3.5 py-1.5 text-[10px] uppercase tracking-[0.3em] text-sky-600 sm:mb-6 sm:px-4 sm:text-[11px] sm:tracking-[0.35em]"
-        >
-          Backend&nbsp;Engineer
-        </p>
-
-        {/* 名前 */}
-        <h1
-          style={{ ...DISPLAY, ...reveal("0.25s") }}
-          className="text-6xl font-light leading-none tracking-tight text-slate-800 sm:text-8xl md:text-[9rem]"
-        >
-          hayato
-        </h1>
-
-        {/* 技術ライン */}
-        <p
-          style={{ ...MONO, ...reveal("0.5s") }}
-          className="mt-6 text-[11px] tracking-[0.2em] text-slate-400 sm:mt-7 sm:text-sm sm:tracking-[0.25em]"
-        >
-          Go&nbsp;&middot;&nbsp;TypeScript&nbsp;&middot;&nbsp;Next.js
-        </p>
-
-        {/* 一言（カジュアル・軽め） */}
-        <p
-          style={reveal("0.65s")}
-          className="mt-4 max-w-xs text-sm leading-relaxed text-slate-500 sm:mt-5 sm:max-w-sm sm:text-base"
-        >
-          バックエンドが好き。作って、出して、また作る。
-        </p>
-
-        {/* ボタン（モバイルは全幅で縦、sm以上は横） */}
-        <div
-          style={reveal("0.85s")}
-          className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:mt-10 sm:w-auto sm:max-w-none sm:flex-row"
-        >
-          <Link
-            href="/about"
-            className="rounded-full bg-sky-500 px-8 py-3 text-center text-sm font-medium text-white shadow-lg shadow-sky-500/25 transition-all duration-300 hover:scale-[1.03] hover:bg-sky-600"
+        {/*
+          左にキャラクター、右に名乗り。
+          名乗りの幅は広げない（行が長くなって読みにくい）。
+          狭い画面ではキャラクターを上に回す。
+        */}
+        <header className="relative grid items-center gap-8 sm:grid-cols-[minmax(0,13rem)_1fr] sm:gap-12">
+          <span
+            style={reveal("0.1s")}
+            className="block w-36 justify-self-center sm:w-full sm:justify-self-start"
           >
-            About Me
-          </Link>
-          <Link
-            href="/projects"
-            className="rounded-full border border-sky-200 bg-white px-8 py-3 text-center text-sm font-medium text-sky-700 transition-all duration-300 hover:scale-[1.03] hover:border-sky-400 hover:bg-sky-50"
-          >
-            View Projects
-          </Link>
-        </div>
+            <Mascot pose="wave" width={260} priority className="h-auto w-full" />
+          </span>
 
-        {/* SNS リンク（縦並び・ロゴ＋ユーザー名の踏めるブロック） */}
-        <div style={reveal("1s")} className="mt-8 flex w-full max-w-xs flex-col gap-2 sm:mt-11 sm:gap-2.5">
-          {snsLinks.map((s) => (
-            <a
-              key={s.href}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-white/80 px-4 py-2 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-white hover:shadow-md hover:shadow-sky-100 sm:py-2.5"
+          <div className="relative max-w-xl">
+            <p
+              style={reveal("0.1s")}
+              className="bg-sky-soft inline-block px-2.5 py-1 font-mono text-[10px] tracking-[0.25em] text-sky-ink"
             >
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-50">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={iconFor(s, "light")}
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="h-4 w-4"
-                />
-              </span>
-              <span className="text-sm font-medium text-slate-700">{s.label}</span>
-              <span style={MONO} className="ml-auto truncate text-xs text-slate-400">
-                {s.user}
-              </span>
-            </a>
-          ))}
+              BACKEND ENGINEER
+            </p>
+
+            <h1
+              style={reveal("0.25s")}
+              className="mt-5 font-display text-6xl leading-none font-bold tracking-tight text-ink sm:text-7xl"
+            >
+              hayato
+            </h1>
+
+            <p
+              style={reveal("0.4s")}
+              className="mt-3 font-mono text-[11px] tracking-[0.16em] text-ink-3"
+            >
+              那須隼人 / HAYATO NASU
+            </p>
+
+            <p style={reveal("0.5s")} className="mt-4 font-mono text-[12px] tracking-[0.2em] text-ink-3">
+              Go · TypeScript · Next.js
+            </p>
+
+            <p style={reveal("0.65s")} className="mt-5 max-w-sm text-[14px] leading-relaxed text-ink-2">
+              バックエンドが好き。作って、出して、また作る。
+            </p>
+
+          </div>
+        </header>
+
+        {/*
+          行き先は横に並べる。縦に積むと短い一覧が 3 つ続いて、
+          目的のものに行き当たるまで画面を送ることになる。
+        */}
+        <div className="mt-14 grid gap-10 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-3">
+        {/* このサイトの中 */}
+        <div style={reveal("0.9s")}>
+          <Label>PAGES</Label>
+          <ul className="mt-3 grid gap-2">
+            {pages.map((item) => (
+              <li key={item.id}>
+                <Row href={`/${item.link}`} name={item.topic} hint={`/${item.link}`} />
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-    </section>
+
+        {/* 別のサイト。記事やスライドの中身はあちらで見せる */}
+        <div style={reveal("1s")}>
+          <Label>SITES</Label>
+          <ul className="mt-3 grid gap-2">
+            {otherSites.map((site) => (
+              <li key={site.label}>
+                <Row
+                  href={site.href}
+                  name={site.label}
+                  hint={site.href.replace(/^https:\/\//, "")}
+                  external
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* 外部リンク。ロゴ・サービス名・ハンドルの 3 列で、ID は等幅 */}
+        <div style={reveal("1.1s")} className="sm:col-span-2 lg:col-span-1">
+          <Label>ELSEWHERE</Label>
+          <ul className="mt-3 grid gap-2">
+            {visibleSnsLinks.map((sns) => (
+              <li key={sns.href}>
+                <a
+                  href={sns.href}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  aria-label={sns.label}
+                  className={rowClass}
+                >
+                  {/* 外部 CDN の画像なので next/image は通さない */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={iconFor(sns, "light")}
+                    alt=""
+                    width={16}
+                    height={16}
+                    loading="lazy"
+                    className="mr-3 size-4 shrink-0 self-center"
+                  />
+                  <span className="font-display text-[15px] font-bold text-ink group-hover:text-sky-ink">
+                    {sns.label}
+                  </span>
+                  <span className="ml-auto truncate pl-4 font-mono text-[11px] text-ink-3">
+                    {sns.user}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        </div>
+      </section>
+    </div>
   )
 }
 

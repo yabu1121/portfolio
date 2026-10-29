@@ -1,102 +1,134 @@
-'use client'
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import Thumbnail from "@/app/components/Thumbnail";
-import { api } from "@/trpc/client";
-import { useParams, useRouter } from "next/navigation";
+import { MediaSlideshow } from "@/app/components/common/MediaSlideshow";
 import Image from "next/image";
-import Loading from "@/app/components/common/Loading";
-import Error from "@/app/components/common/Error";
 import { isLanguage } from "@/app/utils/techKind";
+import { Mascot } from "@/app/components/common/Mascot";
+import { LikeButton } from "@/app/components/common/LikeButton"
+import { getWork, listWorks } from "@/lib/works"
+import { CrumbLeaf } from "@/app/utils/crumb"
 
-const ProjectDetail = () => {
-  const params = useParams();
-  const router = useRouter();
+/*
+ * 作品の詳細。
+ *
+ * **サーバーで、1 件だけ引く。** 以前は全作品を取ってきて目的の 1 件を
+ * 探していた（しかもブラウザから）。中身が出るまで 2 秒かかっていた。
+ *
+ * **全作品ぶんを先に作っておく。** その場で作ると、冷えた初回に 5.5 秒
+ * かかっていた（DB まで往復するため）。件数は数十なので、作っておいても
+ * ビルドは重くならない。ここに無い id（あとで足した作品）は、最初の 1 人が
+ * 開いたときに作られて以降は使い回される。
+ *
+ * 作り直しは admin が保存のたびに /api/revalidate を叩いて起こす。
+ */
+export const generateStaticParams = async () => {
+  const works = await listWorks()
+  return works.map((work) => ({ id: work.id }))
+}
 
-  const { data: works, isLoading, error } = api.work.getAll.useQuery();
+const ProjectDetail = async ({ params }: PageProps<'/projects/[id]/detail'>) => {
+  const { id } = await params;
+  const work = await getWork(id);
+  if (!work) notFound();
 
-  if (isLoading) return <Loading />;
-  if (error) return <Error error={error}/>;
+  const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
 
-  const work = works?.find((work) => work.id === params.id);
-
-  if (!work) return <div className="text-center py-20 text-gray-400">Project not found.</div>;
-
-  const byName = (a: { tech: { name: string } }, b: { tech: { name: string } }) =>
-    a.tech.name.localeCompare(b.tech.name);
-
-  const usedTechs = work.worksToTechs ?? [];
   // 言語は理解度バー付き、それ以外は「何に使ったか」を主役にする
-  const languages = usedTechs.filter((t) => isLanguage(t.tech.kind)).toSorted(byName);
-  const libraries = usedTechs.filter((t) => !isLanguage(t.tech.kind)).toSorted(byName);
+  const languages = work.techs.filter((t) => isLanguage(t.kind)).toSorted(byName);
+  const libraries = work.techs.filter((t) => !isLanguage(t.kind)).toSorted(byName);
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12">
-      <button onClick={() => router.push('/projects')} className="cursor-pointer mb-8 text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-2">
-        ← Back to Projects
-      </button>
+    <div className="paper min-h-screen pb-28">
+      <main className="mx-auto max-w-6xl px-5 pt-20">
+        <Link
+          href="/projects"
+          className="font-mono text-[11px] tracking-wider text-ink-3 transition-colors hover:text-sky-ink"
+        >
+          ← 作品一覧
+        </Link>
 
-      <section>
-        <h1 className="text-4xl font-black text-gray-900 mb-6">{work.title}</h1>
-        <div className="rounded-2xl bg-white my-10 py-8 flex justify-center">
-          {work.thumbnail && <Thumbnail url={work.thumbnail} altText={work.title} />}
-        </div>
-      </section>
+        {/* 帯のパンくずの末尾に作品名を出す。画面には何も出さない */}
+        <CrumbLeaf title={work.title} />
 
-      <div className="space-y-20">
+        <header className="relative mt-8">
+          <h1 className="font-display text-4xl font-black tracking-tight text-ink">{work.title}</h1>
+          <div className="mt-4 h-[3px] w-10 bg-sky" />
+          <Mascot pose="coding" width={140} className="absolute -top-4 right-0 hidden h-auto w-24 sm:block" />
+        </header>
+
+        {/*
+          メディアがあればそちらを出す。無ければ表紙 1 枚。
+          表紙はメディアに重複して入れない約束なので、両方は出さない。
+        */}
+        {work.media?.length ? (
+          <div className="my-10">
+            <MediaSlideshow items={work.media} title={work.title} />
+          </div>
+        ) : (
+          work.thumbnail && (
+            <div className="my-10 flex justify-center border border-line bg-white py-8">
+              <Thumbnail url={work.thumbnail} altText={work.title} icon={work.miniThumbnail} />
+            </div>
+          )
+        )}
+
+      <div className="space-y-16">
         <section>
-          <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <span className="w-1 h-6 bg-blue-600 rounded-full"></span>
+          <h2 className="mb-4 flex items-center gap-3 font-display text-xl font-black text-ink">
+            <span className="h-5 w-[3px] bg-sky" />
             About This Project
           </h2>
-          <p className="text-gray-700 leading-relaxed whitespace-pre-wrap pl-3">
+          <p className="pl-4 text-[14px] leading-relaxed whitespace-pre-wrap text-ink-2">
             {work.description}
           </p>
         </section>
 
         {languages.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <span className="w-1 h-6 bg-blue-600 rounded-full"></span>
+            <h2 className="mb-6 flex items-center gap-3 font-display text-xl font-black text-ink">
+              <span className="h-5 w-[3px] bg-sky" />
               言語
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid gap-3 md:grid-cols-2">
               {languages.map((item) => {
-                const level = item.tech.myTechs?.[0]?.level ?? null;
+                const level = item.level ?? null;
                 return (
                   <div
-                    key={item.tech.id}
-                    className="p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                    key={item.id}
+                    className="border border-line bg-white p-5 transition-colors hover:border-sky"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="shrink-0 w-14 h-14 relative rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
-                        {item.tech.iconUrl ? (
+                      <div className="relative size-12 shrink-0 overflow-hidden border border-line bg-white">
+                        {item.iconUrl ? (
                           <Image
-                            src={item.tech.iconUrl}
-                            alt={item.tech.name}
+                            src={item.iconUrl}
+                            alt={item.name}
                             fill
                             className="object-contain p-2"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-400">No Image</div>
+                          <div className="flex size-full items-center justify-center font-mono text-[9px] text-ink-3">NO IMAGE</div>
                         )}
                       </div>
-                      <h3 className="font-bold text-gray-900 text-lg">{item.tech.name}</h3>
+                      <h3 className="font-display text-[16px] font-black text-ink">{item.name}</h3>
                       {level !== null && (
-                        <span className="ml-auto font-mono text-xs text-gray-400">理解度 {level}</span>
+                        <span className="ml-auto font-mono text-[11px] tabular-nums text-sky-ink">理解度 {level}</span>
                       )}
                     </div>
 
                     {level !== null && (
-                      <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+                      <div className="mt-4 h-[3px] w-full overflow-hidden bg-surface">
                         <div
-                          className="h-full rounded-full bg-sky-500 transition-all duration-1000"
+                          className="h-full bg-sky"
                           style={{ width: `${level}%` }}
                         />
                       </div>
                     )}
 
                     <div className="mt-5">
-                      <h4 className="text-sm tracking-wider text-gray-500 mb-1">このプロジェクトでの役割</h4>
-                      <p className="text-gray-700 text-sm leading-relaxed">
+                      <h4 className="mb-1.5 font-mono text-[10px] tracking-wider text-ink-3">このプロジェクトでの役割</h4>
+                      <p className="text-[13px] leading-relaxed text-ink-2">
                         {item.description || "この技術を使用して構築されました。"}
                       </p>
                     </div>
@@ -109,40 +141,42 @@ const ProjectDetail = () => {
 
         {libraries.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <span className="w-1 h-6 bg-blue-600 rounded-full"></span>
+            <h2 className="mb-6 flex items-center gap-3 font-display text-xl font-black text-ink">
+              <span className="h-5 w-[3px] bg-sky" />
               使用ライブラリ・ツール
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid gap-3 md:grid-cols-2">
               {libraries.map((item) => (
                 <div
-                  key={item.tech.id}
-                  className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                  key={item.id}
+                  className="flex flex-col gap-5 border border-line bg-white p-5 transition-colors hover:border-sky md:flex-row"
                 >
-                  <div className="flex items-center gap-4 md:w-1/2 md:border-r border-gray-100 md:pr-6">
-                    <div className="shrink-0 w-20 h-20 relative rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
-                      {item.tech.iconUrl ? (
+                  <div className="flex items-center gap-4 md:w-1/2 md:border-r md:border-line md:pr-5">
+                    <div className="relative size-16 shrink-0 overflow-hidden border border-line bg-white">
+                      {item.iconUrl ? (
                         <Image
-                          src={item.tech.iconUrl}
-                          alt={item.tech.name}
+                          src={item.iconUrl}
+                          alt={item.name}
                           fill
                           className="object-contain p-2"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-400">No Image</div>
+                        <div className="flex size-full items-center justify-center font-mono text-[9px] text-ink-3">NO IMAGE</div>
                       )}
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 text-lg">{item.tech.name}</h3>
-                      <p className="text-sm text-gray-500 leading-snug mt-1">
-                        {item.tech.description}
-                      </p>
+                      <h3 className="font-display text-[16px] font-black text-ink">{item.name}</h3>
+                      {item.about && (
+                        <p className="mt-1 text-[12px] leading-snug text-ink-3">
+                          {item.about}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   <div className="md:w-1/2 flex flex-col justify-center">
-                    <h4 className="text-lg tracking-wider mb-2">使用理由</h4>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <h4 className="mb-2 font-mono text-[10px] tracking-wider text-ink-3">使用理由</h4>
+                    <p className="text-[13px] leading-relaxed text-ink-2">
                       {item.description || "この技術を使用して構築されました。"}
                     </p>
                   </div>
@@ -151,8 +185,14 @@ const ProjectDetail = () => {
             </div>
           </section>
         )}
-      </div>
-    </main>
+
+        {/* 読み終わり。押せるのはここ 1 つだけ */}
+        <div className="mt-16 border-t border-line pt-8">
+          <LikeButton kind="work" target={work.id} />
+        </div>
+        </div>
+      </main>
+    </div>
   )
 }
 

@@ -1,30 +1,36 @@
-"use client"; 
-
-import { CheckCircle2 } from 'lucide-react'; 
-import CommonButton from '@/app/components/common/CommonButton';
+import Link from 'next/link';
+import { Mascot } from '@/app/components/common/Mascot';
 
 const SendPage = () => {
   return (
-    <main className="flex min-h-[80vh] flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md text-center space-y-6 bg-white p-8">
-        
-        <div className="flex justify-center">
-          <CheckCircle2 className="w-16 h-16 text-green-500 animate-in zoom-in duration-300" />
-        </div>
+    <div className="paper min-h-screen">
+      <main className="mx-auto flex min-h-screen w-full max-w-2xl flex-col justify-center px-5 py-28">
+        {/* 送信できたときだけ出る。祝うポーズ */}
+        <Mascot pose="celebrate" width={200} className="mb-6 h-auto w-36" />
 
-        <div className="space-y-2">
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-            送信が完了しました
-          </h1>
-          <p className="text-gray-600">
-            お問い合わせいただきありがとうございます。<br />
-            確認メールを送信しましたので、ご確認ください。
-          </p>
-        </div>
+        <p className="font-mono text-[11px] tracking-widest text-sky-ink">SENT</p>
 
-        <CommonButton text="ホームへ戻る"/>
-      </div>
-    </main>
+        <h1 className="mt-3 font-display text-3xl leading-snug font-black tracking-tight text-ink">
+          送信が完了しました
+        </h1>
+
+        <p className="mt-4 text-[14px] leading-relaxed text-ink-2">
+          お問い合わせいただきありがとうございます。
+          <br />
+          いただいたメールアドレスに返信します。
+        </p>
+
+        {/* 空色の芯。slides のカードと同じ手 */}
+        <div className="mt-10 h-[3px] w-16 bg-sky" />
+
+        <Link
+          href="/"
+          className="mt-10 inline-block font-mono text-[11px] tracking-wider text-ink-3 transition-colors hover:text-sky-ink"
+        >
+          ← ホームへ戻る
+        </Link>
+      </main>
+    </div>
   );
 };
 

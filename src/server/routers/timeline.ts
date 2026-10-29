@@ -1,7 +1,8 @@
+import { deckIsPublic, decks } from '@/db/slides';
 import { timeline } from "@/db/schema";
 import { adminProcedure, createTRPCRouter, publicProcedure } from "../trpc";
 import { z } from "zod";
-import { asc, eq } from "drizzle-orm";
+import { and, asc, eq, sql } from "drizzle-orm";
 
 // create / update で共通の入力。day と end_* は任意なので
 // 「月～月」「日～日」どちらの粒度でも登録できる。
@@ -94,8 +95,27 @@ export const timelineRouter = createTRPCRouter({
         urls: timeline.urls,
         imageUrls: timeline.imageUrls,
         videoUrl: timeline.videoUrl,
+        /*
+         * 紐付けたスライド。slides schema を左外部結合して題名と日付も持ってくる。
+         * **外部キーは張っていない**ので、消えたデッキは deckTitle が null になる。
+         * その場合は出さない（画面側で判定）。
+         *
+         * **出していいデッキかの判定は結合の条件に入れる。** 以前は公開状態も
+         * いっしょに返して画面側で隠していたが、これは誰でも叩ける API なので、
+         * 隠したはずの題名・日付・公開予定時刻がそのまま読めてしまっていた。
+         * 条件に合わないデッキは結合自体が成立せず、すべて null で返る。
+         */
+        deckSlug: sql<string | null>`case when ${decks.slug} is null then null else ${timeline.deckSlug} end`,
+        deckTitle: decks.title,
+        deckDate: decks.date,
+        deckSlideCount: decks.slideCount,
       })
       .from(timeline)
+      .leftJoin(
+        decks,
+        // 条件は db/slides.ts に 1 つだけ置いてある
+        and(eq(timeline.deckSlug, decks.slug), deckIsPublic()),
+      )
       .orderBy(asc(timeline.year), asc(timeline.month), asc(timeline.day))
     return rows
   }),
